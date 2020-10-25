@@ -126,7 +126,7 @@ kubectl delete pa -n istio-system mesh-strict-policy
 ```
 ---
 
-### <font color='orange'> 3.1.2 Secure the default Namespace </font>
+### <font color='orange'> 3.1.3 Secure the default Namespace </font>
 Let’s ensure that all services in the default namespace should be secure. 
 
 
@@ -135,52 +135,6 @@ Let’s ensure that all services in the default namespace should be secure.
 
 [![Secure default Namespace](./img/lumada.png)](https://youtu.be/Yuv_EaQY3VY "secure namespace")
 
-```
-kubectl apply -f 02_namespace-mTLS-STRICT.yaml
-```
-check policy:
-```
-kubectl describe pa -n default
-```
-
-> back to the sleep container session
-
-find the sleep app container:
-```
-docker container ls --filter name=k8s_sleep
-```
-retrieve the container ID
-```
-$id=$(docker container ls --filter name=k8s_sleep --format '{{ .ID}}')
-```
-run a shell in the container:
-```
-docker container exec -it $id sh
-```
-use the details API:  
-it fails as the default namespace is now STRICT mTLS:
-does not have the required istio cert:  
-```
-curl http://details.default.svc.cluster.local:9080/details/1
-```
-port forward:  
-```
-kubectl port-forward -n istio-system svc/istio-ingressgateway 6324:80
-```
-> http://localhost/productpage  
-> http://localhost:6324/productpage
-
-access kiali dashboard:
-```
-istioctl dashboard kiali
-````
-notice the change to mTLS.  
-
-![Istio - Security](./img/istio-mTLS-enabled.png)
-
----
-
-change default namespace to PERMISSIVE mTLS:
 ```
 kubectl apply -f 02_namespace-mTLS-PERMISSIVE.yaml
 ```
@@ -204,7 +158,8 @@ run a shell in the container:
 docker container exec -it $id sh
 ```
 use the details API:  
-it accepts http requests as the default namespace has been configured as PERMISSIVE:
+default namespace is now PERMISSIVE mTLS:
+accepts http requests &mTLS:  
 ```
 curl http://details.default.svc.cluster.local:9080/details/1
 ```
@@ -219,13 +174,13 @@ access kiali dashboard:
 ```
 istioctl dashboard kiali
 ````
+notice the change to mTLS.  
 
-> check http://localhost/productpage  
-> check http://localhost:6324/productpage
+![Istio - Security](./img/istio-mTLS-enabled.png)
 
 ---
 
-### <font color='orange'> 3.1.3 Secure a Service </font>
+### <font color='orange'> 3.1.4 Secure a Service </font>
 To set a peer authentication policy for a specific workload (service), you must configure the selector section and specify  
 the labels that match the desired workload. However, Istio cannot aggregate workload-level policies for outbound mutual TLS traffic to a service. 
 Configure a destination rule to manage that behavior.  
