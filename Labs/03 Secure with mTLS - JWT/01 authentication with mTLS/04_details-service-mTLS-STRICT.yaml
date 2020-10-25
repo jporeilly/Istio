@@ -1,7 +1,15 @@
-apiVersion: "security.istio.io/v1beta1"
-kind: "PeerAuthentication"
+kind: PeerAuthentication
 metadata:
-  name: details-service-strict-policy
+  name: default-namespace-permissive
+  namespace: default
+spec:
+  mtls:
+    mode: PERMISSIVE
+---
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: details-service-strict
   namespace: default
 spec:
   selector:
