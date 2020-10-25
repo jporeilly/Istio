@@ -8,7 +8,6 @@ kubectl apply -f 01_deny-all.yaml
 ```
 
 > check http://localhost/productpage  
-> check http://localhost:6324/productpage  
 
 RBAC: access denied - authenticated with mTLS but not authorized.  
 
@@ -18,7 +17,6 @@ apply the updated authorization policy to allow access to productpage service:
 kubectl apply -f 02_allow-productpage.yaml
 ```
 > check http://localhost/productpage  
-> check http://localhost:6324/productpage
 
 #### <font color='orange'>4.2.3 Allow access to details and reviews service </font>
 apply the updated authorization policy to allow access to details & reviews service:
@@ -26,7 +24,6 @@ apply the updated authorization policy to allow access to details & reviews serv
 kubectl apply -f 03_allow-details-reviews.yaml
 ```
 > check http://localhost/productpage  
-> check http://localhost:6324/productpage
 
 #### <font color='orange'> 4.2.4 Try from unauthorized service </font>
 run a shell in the reviews container:
