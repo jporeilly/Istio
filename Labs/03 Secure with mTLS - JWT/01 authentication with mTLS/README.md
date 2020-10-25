@@ -7,11 +7,11 @@ With a root certificate authority (CA) in place, Access only allows requests fro
 
 Mutual TLS can be enabled on 3 levels:
 
-<font color='teal'>Mesh: </font> Enable mTLS for the entire mesh network.  
+<font color='teal'> Mesh: </font> Enable mTLS for the entire mesh network.  
 
-<font color='teal'>Namespace: </font>Enable mTLS for a specific namespace. Services within the namespace will have mTLS installed and communicate using TLS. 
+<font color='teal'> Namespace: </font>Enable mTLS for a specific namespace. Services within the namespace will have mTLS installed and communicate using TLS. 
 
-<font color='teal'>Service: </font>Enable mTLS for a subset of services. It can be a service on the edge that communicate with the external world and need an encrypted communication. 
+<font color='teal'> Service: </font>Enable mTLS for a subset of services. It can be a service on the edge that communicate with the external world and need an encrypted communication. 
 
 > Watch a video: Istio Security (09:00):  
 
@@ -69,9 +69,9 @@ Just http requests.
 ### <font color='orange'> 3.1.2 Secure the Istio Mesh </font>
 in a new terminal session:  
 enforce mTLS for all services in the istio mesh:  
-STRICT - only mTLS:  
-PERMISSIVE - allows for both http and mTLS:  
-DISABLE - mTLS is disabled:
+<font color="teal"> STRICT </font>- only mTLS:  
+<font color="teal"> PERMISSIVE </font>- allows for both http and mTLS:  
+<font color="teal"> DISABLE </font>- mTLS is disabled:
 
 > Watch a video: Secure Istio Mesh (04:33):  
 
@@ -124,7 +124,7 @@ remove mesh mTLS
 ```
 kubectl delete pa -n istio-system default
 ```
-
+---
 ### <font color='orange'> 3.1.2 Secure the default Namespace </font>
 Let’s ensure that all services in the default namespace should be secure. 
 
