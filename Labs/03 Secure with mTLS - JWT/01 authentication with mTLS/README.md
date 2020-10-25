@@ -233,7 +233,10 @@ docker container exec -it $id sh
 ```
 use the details API:  
 default namespace is now PERMISSIVE mTLS:
-accepts http requests &mTLS:  
+```
+curl http://reviews.default.svc.cluster.local:9080/reviews/1
+```
+however details service set as STRICT:  
 ```
 curl http://details.default.svc.cluster.local:9080/details/1
 ```
