@@ -129,12 +129,15 @@ kubectl delete pa -n istio-system mesh-strict-policy
 ### <font color='orange'> 3.1.3 Secure the default Namespace </font>
 Let’s ensure that all services in the default namespace should be secure. 
 
-
-
 > Watch a video: Secure default Namespace (03:49):  
 
 [![Secure default Namespace](./img/lumada.png)](https://youtu.be/-SnLEhVMx14 "secure namespace")
 
+check peer athentication:
+```
+kubectl get peerauthentication --all-namespaces
+```
+apply default namespace PERMISSIVE policy:
 ```
 kubectl apply -f 03_namespace-mTLS-PERMISSIVE.yaml
 ```
@@ -197,9 +200,17 @@ Istio applies the narrowest matching policy for each workload using the followin
   > namespace-wide  
   > mesh-wide  
 
+check peer athentication:
+```
+kubectl get pa --all-namespaces
+```
+check destination rules:
+```
+kubectl get dr --all-namespaces
+```
 change default namespace to STRICT mTLS:
 ```
-kubectl apply -f 04_namespace-mTLS-STRICT.yaml
+kubectl apply -f 04_details-service-mTLS-STRICT.yaml
 ```
 check policy:
 ```
