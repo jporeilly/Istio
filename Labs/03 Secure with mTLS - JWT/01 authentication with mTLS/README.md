@@ -120,7 +120,7 @@ notice the change to mTLS.
 
 ![Istio - Security](./img/istio-mTLS-enabled.png)
 
-remove mesh mTLS
+remove mesh mTLS:
 ```
 kubectl delete pa -n istio-system mesh-strict-policy
 ```
@@ -131,12 +131,12 @@ Let’s ensure that all services in the default namespace should be secure.
 
 
 
-> Watch a video: Secure default Namespace (04:33):  
+> Watch a video: Secure default Namespace (03:49):  
 
-[![Secure default Namespace](./img/lumada.png)](https://youtu.be/Yuv_EaQY3VY "secure namespace")
+[![Secure default Namespace](./img/lumada.png)](https://youtu.be/-SnLEhVMx14 "secure namespace")
 
 ```
-kubectl apply -f 02_namespace-mTLS-PERMISSIVE.yaml
+kubectl apply -f 03_namespace-mTLS-PERMISSIVE.yaml
 ```
 check policy:
 ```
@@ -177,6 +177,11 @@ istioctl dashboard kiali
 notice the change to mTLS.  
 
 ![Istio - Security](./img/istio-mTLS-enabled.png)
+
+remove namespace mTLS:
+```
+kubectl delete pa -n default namespace-permissive-policy
+```
 
 ---
 
