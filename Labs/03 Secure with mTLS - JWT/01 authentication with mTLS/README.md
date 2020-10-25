@@ -73,16 +73,16 @@ enforce mTLS for all services in the istio mesh:
 <font color="teal"> PERMISSIVE </font>- allows for both http and mTLS:  
 <font color="teal"> DISABLE </font>- mTLS is disabled:
 
-> Watch a video: Secure Istio Mesh (04:33):  
+> Watch a video: Secure Istio Mesh (02:48):  
 
-[![Secure Istio Mesh](./img/lumada.png)](https://youtu.be/Yuv_EaQY3VY "secure mesh")
+[![Secure Istio Mesh](./img/lumada.png)](https://youtu.be/-SnLEhVMx14 "secure mesh")
 
 ```
 kubectl apply -f 02_mesh-mTLS-STRICT.yaml
 ```
 check policy:
 ```
-kubectl describe pa -n default
+kubectl describe pa -n istio-system
 ```
 
 > back to the sleep container session
@@ -122,9 +122,10 @@ notice the change to mTLS.
 
 remove mesh mTLS
 ```
-kubectl delete pa -n istio-system default
+kubectl delete pa -n istio-system mesh-strict-policy
 ```
 ---
+
 ### <font color='orange'> 3.1.2 Secure the default Namespace </font>
 Let’s ensure that all services in the default namespace should be secure. 
 
