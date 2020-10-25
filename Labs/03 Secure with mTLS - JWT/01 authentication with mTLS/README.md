@@ -216,6 +216,31 @@ check policy:
 ```
 kubectl describe pa -n default
 ```
+
+> back to the sleep container session
+
+find the sleep app container:
+```
+docker container ls --filter name=k8s_sleep
+```
+retrieve the container ID
+```
+$id=$(docker container ls --filter name=k8s_sleep --format '{{ .ID}}')
+```
+run a shell in the container:
+```
+docker container exec -it $id sh
+```
+use the details API:  
+default namespace is now PERMISSIVE mTLS:
+accepts http requests &mTLS:  
+```
+curl http://details.default.svc.cluster.local:9080/details/1
+```
+
+
+
+
 change details service to ISTIO-MUTUAL:
 ```
 kubectl apply -f 04_details-ISTIO-MUTUAL.yaml
