@@ -1,9 +1,7 @@
 apiVersion: "security.istio.io/v1beta1"
 kind: PeerAuthentication
 metadata:
-  name: 
-  
-  strict-policy
+  name: namespace-permmisive-policy
   namespace: default
 spec:
   mtls:
