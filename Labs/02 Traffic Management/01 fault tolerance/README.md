@@ -27,7 +27,6 @@ view the destination rules::
 kubectl get destinationrules -o yaml
 ```
 > check http://localhost/productpage (same functionality - just v1)  
-> check http://localhost:6324/productpage (same functionality - just v1)
 ---
 
 ### <font color="orange"> 2.1.2 Reviews Service - Timeout </font>
@@ -42,21 +41,18 @@ deploy reviews v2 destination rule - black stars:
 kubectl apply -f 02_reviews-v2-destination-rule.yaml
 ```
 > check http://localhost/productpage - reviews-v2.  
-> check http://localhost:6324/productpage - reviews-v2.
 
 lets add a 2sec delay to the ratings service:  
 ```
 kubectl apply -f 02_ratings-virtualservice-fault-timeout-2sec.yaml
 ```
 > check http://localhost/productpage - 2s timeout.  
-> check http://localhost:6324/productpage - 2s timeout.
 
 route the requests to reviews v2 with 0.5 sec delay:  
 ```
 kubectl apply -f 02_reviews-virtualservice-fault-timeout-0.5s.yaml
 ```
 > check http://localhost/productpage  
-> check http://localhost:6324/productpage   
 fails as the request to the review page timeouts after 0.5sec which is less than the 2 sec timeout to the ratings.
 
 ---

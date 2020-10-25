@@ -39,10 +39,9 @@ kubectl describe vs bookinfo-test
 ```
 
 > live v1 http://bookinfo.local/productpage  
-> test v2 http://test.bookinfo.local/productpage  
 
 > live v1 http://bookinfo.local:6324/productpage  
-> test v2 http://test.bookinfo.local:6324/productpage
+
 ---
 
 ### <font color="orange"> 2.3.2 Blue/Green Deployment - Test to Live </font>
@@ -55,15 +54,13 @@ check live deployment:
 kubectl describe vs bookinfo
 ```
 > live is now v2 http://bookinfo.local/productpage  
-> live is now v2 http://bookinfo.local:6324/productpage
 
 check test deployment:
 ```
 kubectl describe vs bookinfo-test
 ```
 > test is now v1 http://test.bookinfo.local/productpage  
-> test is now v1 http://test.bookinfo.local:6324/productpage
----
+
 
 ### <font color="orange"> 2.3.3 Blue/Green deployment - Switch back </font>
 deploy live to test:
@@ -71,8 +68,7 @@ deploy live to test:
 kubectl apply -f 03_productpage-live-to-test.yaml
 ```
 > live is back v1 http://bookinfo.local/productpage  
-> live is back v1 http://bookinfo.local:6324/productpage  
 
 > test is back v2 http://test.bookinfo.local/productpage  
-> test is back v2 http://test.bookinfo.local:6324/productpage
+
 ---

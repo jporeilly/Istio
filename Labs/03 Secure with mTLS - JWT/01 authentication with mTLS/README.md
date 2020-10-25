@@ -110,7 +110,6 @@ port forward:
 kubectl port-forward -n istio-system svc/istio-ingressgateway 6324:80
 ```
 > http://localhost/productpage  
-> http://localhost:6324/productpage
 
 access kiali dashboard:
 ```
@@ -171,7 +170,6 @@ port forward:
 kubectl port-forward -n istio-system svc/istio-ingressgateway 6324:80
 ```
 > http://localhost/productpage  
-> http://localhost:6324/productpage
 
 access kiali dashboard:
 ```
@@ -240,51 +238,10 @@ however details service set as STRICT:
 ```
 curl http://details.default.svc.cluster.local:9080/details/1
 ```
-
-
-
-
-change details service to ISTIO-MUTUAL:
-```
-kubectl apply -f 04_details-ISTIO-MUTUAL.yaml
-```
-check policy:
-```
-kubectl describe dr details
-```
-
-> back to the sleep container session
-
-find the sleep app container:
-```
-docker container ls --filter name=k8s_sleep
-```
-retrieve the container ID
-```
-$id=$(docker container ls --filter name=k8s_sleep --format '{{ .ID}}')
-```
-run a shell in the container:
-```
-docker container exec -it $id sh
-```
-use the details API:  
-it accepts http requests as the details service has a destination rule ISTIO-MUTUAL:
-```
-curl http://details.default.svc.cluster.local:9080/details/1
-```
-port forward:  
-```
-kubectl port-forward -n istio-system svc/istio-ingressgateway 6324:80
-```
-> http://localhost/productpage  
-> http://localhost:6324/productpage
-
 access kiali dashboard:
 ```
 istioctl dashboard kiali
 ````
-
 > check http://localhost/productpage  
-> check http://localhost:6324/productpage
 
 ---

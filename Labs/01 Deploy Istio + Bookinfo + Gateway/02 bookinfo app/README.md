@@ -17,13 +17,9 @@ clear the screen:
 ```
 cls
 ```
-check PODs:
+check PODs & services:
 ```
-kubectl get pods
-```
-check services:
-```
-kubectl get svc
+kubectl get pods,svc
 ```
 clear the screen:
 ```

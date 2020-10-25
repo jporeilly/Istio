@@ -23,17 +23,10 @@ kubectl get pods
 ```
 check deployment:
 ```
-kubectl describe svc details
-```
-```
-kubectl describe vs details
-```
-```
-kubectl describe dr details
+kubectl describe svc,vs,dr details
 ```
 
 > check http://localhost/productpage & refresh lots. Around 50% of details call fail.  
-> check http://localhost:6324/productpage & refresh lots. Around 50% of details call fail.
 
 check logs:
 ```

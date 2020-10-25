@@ -20,8 +20,8 @@ check reviews virtualservice:
 kubectl describe vs reviews
 ```
 
-> check http://localhost/productpage - all users see v1 except `testuser` who sees v2  
-> check http://localhost:6324/productpage - all users see v1 except `testuser` who sees v2
+> check http://localhost/productpage - all users see v1 except `testuser` who sees v2
+ 
 ---
 
 ### <font color="orange"> 2.2.2 Test with network delay </font>
@@ -29,8 +29,8 @@ deploy reviews-v2 - delay 2.5s:
 ```
 kubectl apply -f 02_reviews-v2-virtualservice-testuser-delay.yaml
 ```
-> check http://localhost/productpage - `testuser` gets delayed response, all others OK  
-> check http://localhost:6324/productpage - `testuser` gets delayed response, all others OK
+> check http://localhost/productpage - `testuser` gets delayed response, all others OK
+ 
 ---
 
 ### <font color="orange"> 2.2.3 Test with service fault </font>
@@ -38,6 +38,6 @@ deploy reviews-v2 - 503 fault 75% of requests:
 ```
 kubectl apply -f 03_reviews-v2-virtualservice-testuser-503.yaml
 ```
-> check http://localhost/productpage -  `testuser` gets 75% failures, all others OK  
-> check http://localhost:6324/productpage -  `testuser` gets 75% failures, all others OK  
+> check http://localhost/productpage -  `testuser` gets 75% failures, all others OK 
+ 
 ---

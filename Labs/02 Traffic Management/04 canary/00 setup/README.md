@@ -41,5 +41,5 @@ deploy destination rules:
 kubectl apply -f 00_all-destination-rules-v1+v2.yaml
 ```
 > check http://bookinfo.local/productpage  
-> check http://bookinfo.local:6324/productpage  
+
 ---

@@ -14,7 +14,7 @@ istioctl install --set profile=demo
 ### <font color="orange"> Configure auto proxy injection </font>
 anything that gets deployed to the default namespace will have Istio proxy - Envoy - automatically injected: 
 ```
-kubectl label namespace default istio-injection=enabled
+kubectl label -n default istio-injection=enabled
 ```
 ---
 
@@ -23,13 +23,9 @@ deploy the bookinfo app:
 ```
 kubectl apply -f 00_bookinfo.yaml
 ```
-check PODs:
+check PODs & services:
 ```
-kubectl get pods
-```
-check services:
-```
-kubectl get svc
+kubectl get pods,svc
 ```
 ---
 

@@ -39,10 +39,7 @@ cls
 ### <font color="orange"> 1.1.2 Verify Istio </font>
 check running objects:
 ```
-kubectl get svc
-```
-```
-kubectl get pods
+kubectl get pods,svc
 ```
 istio has been deployed to its own namespace istio-system:
 ```
@@ -67,7 +64,7 @@ kubectl label namespace default istio-injection=enabled
 ```
 check label:
 ```
-kubectl describe namespace default
+kubectl describe -n default
 ```
 clear the screen:
 ```
@@ -80,12 +77,9 @@ check everything:
 kubectl - no app installed / running:
 docker info - look at the number of istio containers running:
 ```
-kubectl get services
+kubectl get pods,svc
 ```
-```
-kubectl get pods
-```
-lets check Docker:  
+let's check Docker:  
 notice the number of Containers:
 ```
 docker info

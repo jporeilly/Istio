@@ -24,13 +24,9 @@ deploy the bookinfo app v1:
 ```
 kubectl apply -f 00_bookinfo.yaml
 ```
-check PODs:
+check PODs & services:
 ```
-kubectl get pods
-```
-check services:
-```
-kubectl get svc
+kubectl get pods,svc
 ```
 ---
 
