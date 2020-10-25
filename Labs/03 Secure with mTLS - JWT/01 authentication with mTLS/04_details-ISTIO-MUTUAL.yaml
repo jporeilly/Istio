@@ -1,9 +1,9 @@
 apiVersion: "networking.istio.io/v1alpha3"
-kind: DestinationRule
+kind: "DestinationRule"
 metadata:
-  name: default
+  name: details-security-destination-rule
 spec:
   host: details.default.svc.cluster.local
   trafficPolicy:
     tls:
-      mode: ISTIO_MUTUAL     
+      mode: ISTIO_MUTUAL    

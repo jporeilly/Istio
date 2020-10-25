@@ -190,9 +190,16 @@ To set a peer authentication policy for a specific workload (service), you must 
 the labels that match the desired workload. However, Istio cannot aggregate workload-level policies for outbound mutual TLS traffic to a service. 
 Configure a destination rule to manage that behavior.  
 
+A workload-specific peer authentication policy takes precedence over a namespace-wide policy. 
+
+Istio applies the narrowest matching policy for each workload using the following order:  
+  > workload-specific  
+  > namespace-wide  
+  > mesh-wide  
+
 change default namespace to STRICT mTLS:
 ```
-kubectl apply -f 03_namespace-mTLS-STRICT.yaml
+kubectl apply -f 04_namespace-mTLS-STRICT.yaml
 ```
 check policy:
 ```
@@ -200,7 +207,7 @@ kubectl describe pa -n default
 ```
 change details service to ISTIO-MUTUAL:
 ```
-kubectl apply -f 03_details-ISTIO-MUTUAL.yaml
+kubectl apply -f 04_details-ISTIO-MUTUAL.yaml
 ```
 check policy:
 ```
@@ -222,7 +229,7 @@ run a shell in the container:
 docker container exec -it $id sh
 ```
 use the details API:  
-it accepts http requests as the default namespace has been configured as PERMISSIVE:
+it accepts http requests as the details service has a destination rule ISTIO-MUTUAL:
 ```
 curl http://details.default.svc.cluster.local:9080/details/1
 ```
