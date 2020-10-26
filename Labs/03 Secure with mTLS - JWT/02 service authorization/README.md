@@ -19,22 +19,19 @@ check destination rules:
 kubectl get dr --all-namespaces
 ```
 
-<font color="red"> delete </font>any peer authentication policies and destination rules:
-
-
-
+<font color="red"> delete </font>any peer authentication policies and destination rules:  
 
 ---
 
-#### <font color='orange'> 4.2.1 Restrict access to all Services </font>
-apply a deny-all authorization policy for all service:
+#### <font color='orange'> 4.2.1 DENY authorization to all Services </font>
+apply a deny-all authorization policy for all services:
 ```
 kubectl apply -f 01_deny-all.yaml
 ```
 
 > check http://localhost/productpage  
 
-RBAC: access denied - authenticated with mTLS but not authorized.  
+RBAC: access denied - not authorized.  
 
 > Watch a video: Istio Authorization - DENY (09:00):  
 
@@ -42,16 +39,13 @@ RBAC: access denied - authenticated with mTLS but not authorized.
 
 ---
 
-#### <font color='orange'>4.2.2 Allow access to productpage </font>
+#### <font color='orange'>4.2.2 ALLOW access to Services </font>
 apply the updated authorization policy to allow access to productpage service:
 ```
 kubectl apply -f 02_allow-productpage.yaml
 ```
 > check http://localhost/productpage  
 
----
-
-#### <font color='orange'>4.2.3 Allow access to details and reviews service </font>
 apply the updated authorization policy to allow access to details & reviews service:
 ```
 kubectl apply -f 03_allow-details-reviews.yaml
@@ -60,7 +54,7 @@ kubectl apply -f 03_allow-details-reviews.yaml
 
 ---
 
-#### <font color='orange'> 4.2.4 Try from unauthorized service </font>
+#### <font color='orange'> 4.2.3 Try from unauthorized service </font>
 run a shell in the reviews container:
 ```
 docker container ls --filter name=k8s_reviews

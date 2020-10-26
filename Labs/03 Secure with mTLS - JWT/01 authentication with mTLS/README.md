@@ -66,7 +66,7 @@ Just http requests.
 
 ---
 
-### <font color='orange'> 3.1.2 Secure the Istio Mesh </font>
+### <font color="orange"> 3.1.2 Secure the Istio Mesh </font>
 in a new terminal session:  
 enforce mTLS for all services in the istio mesh:  
 <font color="teal"> STRICT </font>- only mTLS:  
@@ -125,7 +125,7 @@ kubectl delete pa -n istio-system mesh-strict-policy
 ```
 ---
 
-### <font color='orange'> 3.1.3 Secure the default Namespace </font>
+### <font color="orange"> 3.1.3 Secure the default Namespace </font>
 Let’s ensure that all services in the default namespace should be secure. 
 
 > Watch a video: Secure default Namespace (03:49):  
