@@ -48,7 +48,7 @@ kubectl apply -f 02_allow-productpage.yaml
 
 apply the updated authorization policy to allow access to details & reviews service:
 ```
-kubectl apply -f 03_allow-details-reviews.yaml
+kubectl apply -f 02_allow-details-reviews.yaml
 ```
 > check http://localhost/productpage  
 
