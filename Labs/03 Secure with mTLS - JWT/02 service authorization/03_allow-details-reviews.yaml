@@ -1,7 +1,7 @@
 apiVersion: "security.istio.io/v1beta1"
 kind: "AuthorizationPolicy"
 metadata:
-  name: "details-viewer"
+  name: details-viewer
   namespace: default
 spec:
   selector:
@@ -18,7 +18,7 @@ spec:
 apiVersion: "security.istio.io/v1beta1"
 kind: "AuthorizationPolicy"
 metadata:
-  name: "reviews-viewer"
+  name: reviews-viewer
   namespace: default
 spec:
   selector:

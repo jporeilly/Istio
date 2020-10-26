@@ -1,4 +1,7 @@
 ### <font color='orange'> 4.2 Service Authorization </font>
+Kubernetes authorizes API requests using the API server. It evaluates all of the request attributes against all policies and allows or denies the request.  
+
+All parts of an API request must be allowed by some policy in order to proceed. This means that permissions are denied by default.
 Istio Authorization Policy enables access control on workloads in the mesh.
 
 ![Istio - Authorization](./img/bookinfo-authorization.png)
