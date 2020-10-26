@@ -1,6 +1,9 @@
 ### <font color='orange'> 4.2 Service Authorization </font>
 Istio Authorization Policy enables access control on workloads in the mesh.
 
+![Istio - Security](./img/istio-security-architecture.png)
+
+
 #### <font color='orange'> 4.2.1 Restrict access to all Services </font>
 apply a deny-all authorization policy for all service:
 ```
