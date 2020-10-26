@@ -7,6 +7,8 @@ Istio Authorization Policy enables access control on workloads in the mesh.
 
 [![Istio Authorization](./img/lumada.png)](https://youtu.be/j3Mz0LS5U2s "istio authorization")
 
+---
+
 #### <font color='orange'> 4.2.1 Restrict access to all Services </font>
 apply a deny-all authorization policy for all service:
 ```
@@ -16,6 +18,10 @@ kubectl apply -f 01_deny-all.yaml
 > check http://localhost/productpage  
 
 RBAC: access denied - authenticated with mTLS but not authorized.  
+
+> Watch a video: Istio Authorization - DENY ALL (09:00):  
+
+[![Istio Authorization - DENY ALL](./img/lumada.png)](https://youtu.be/j3Mz0LS5U2s "istio authorization")
 
 #### <font color='orange'>4.2.2 Allow access to productpage </font>
 apply the updated authorization policy to allow access to productpage service:
