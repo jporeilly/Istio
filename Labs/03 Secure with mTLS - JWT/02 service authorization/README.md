@@ -60,7 +60,7 @@ run a shell in the reviews container:
 docker container ls --filter name=k8s_reviews
 ```
 ```
-docker container exec -it $(docker container ls --filter name=k8s_reviews --format '{{ .ID}}') sh
+docker container exec -it $(docker container ls --filter name=k8s_reviews_reviews-v1 --format '{{ .ID}}') sh
 ```
 try accessing the reviews & ratings APIs:
 ```
