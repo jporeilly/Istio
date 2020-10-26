@@ -19,9 +19,11 @@ kubectl apply -f 01_deny-all.yaml
 
 RBAC: access denied - authenticated with mTLS but not authorized.  
 
-> Watch a video: Istio Authorization - DENY ALL (09:00):  
+> Watch a video: Istio Authorization - DENY (09:00):  
 
 [![Istio Authorization - DENY ALL](./img/lumada.png)](https://youtu.be/j3Mz0LS5U2s "istio authorization")
+
+---
 
 #### <font color='orange'>4.2.2 Allow access to productpage </font>
 apply the updated authorization policy to allow access to productpage service:
@@ -30,12 +32,16 @@ kubectl apply -f 02_allow-productpage.yaml
 ```
 > check http://localhost/productpage  
 
+---
+
 #### <font color='orange'>4.2.3 Allow access to details and reviews service </font>
 apply the updated authorization policy to allow access to details & reviews service:
 ```
 kubectl apply -f 03_allow-details-reviews.yaml
 ```
 > check http://localhost/productpage  
+
+---
 
 #### <font color='orange'> 4.2.4 Try from unauthorized service </font>
 run a shell in the reviews container:
@@ -52,3 +58,4 @@ curl http://productpage:9080/1
 ```
 curl http://ratings:9080/ratings/1
 ```
+---
