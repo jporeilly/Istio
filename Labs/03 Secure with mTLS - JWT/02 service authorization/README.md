@@ -10,6 +10,20 @@ Istio Authorization Policy enables access control on workloads in the mesh.
 
 [![Istio Authorization](./img/lumada.png)](https://youtu.be/j3Mz0LS5U2s "istio authorization")
 
+check peer athentication:
+```
+kubectl get pa --all-namespaces
+```
+check destination rules:
+```
+kubectl get dr --all-namespaces
+```
+
+<font color="red"> delete </font>any peer authentication policies and destination rules:
+
+
+
+
 ---
 
 #### <font color='orange'> 4.2.1 Restrict access to all Services </font>
