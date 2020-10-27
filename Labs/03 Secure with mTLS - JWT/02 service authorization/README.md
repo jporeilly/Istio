@@ -8,9 +8,9 @@ To configure an authorization policy, you create an AuthorizationPolicy custom r
 
 ![Istio - Authorization](./img/bookinfo-authorization.png)
 
-> Watch a video: Istio Authorization (09:00):  
+> Watch a video: Istio Authorization (02:54):  
 
-[![Istio Authorization](./img/lumada.png)](https://youtu.be/j3Mz0LS5U2s "istio authorization")
+[![Istio Authorization](./img/lumada.png)](https://youtu.be/dg9SJrMh5o8 "istio authorization")
 
 check peer athentication:
 ```
@@ -23,9 +23,18 @@ kubectl get dr --all-namespaces
 
 <font color="red"> delete </font>any peer authentication policies and destination rules:  
 
+delete peer athentication:
+```
+kubectl delete pa -n <namespace> <peerathentication>
+```
 ---
 
 #### <font color='orange'> 4.2.1 DENY authorization to all Services </font>
+
+> Watch a video: Istio Authorization - DENY (02:54):  
+
+[![Istio Authorization - DENY](./img/lumada.png)](https://youtu.be/dg9SJrMh5o8 "istio authorization - DENY")
+
 apply a deny-all authorization policy for all services:
 ```
 kubectl apply -f 01_deny-all.yaml
@@ -48,12 +57,17 @@ kubectl apply -f 02_allow-productpage.yaml
 ```
 > check http://localhost/productpage  
 
-apply the updated authorization policy to allow access to details & reviews service:
+apply the updated authorization policy to allow access to details & reviews from productpage service:
 ```
 kubectl apply -f 02_allow-details-reviews.yaml
 ```
 > check http://localhost/productpage  
 
+apply the updated authorization policy to allow access to ratings from reviews service:
+```
+kubectl apply -f 02_allow-reviews-ratings.yaml
+```
+> check http://localhost/productpage  
 ---
 
 #### <font color='orange'> 4.2.3 Try from unauthorized service </font>
@@ -71,4 +85,20 @@ curl http://productpage:9080/1
 ```
 curl http://ratings:9080/ratings/1
 ```
----
+
+clean up:
+```
+kubectl delete authorizationpolicy.security.istio.io/deny-all
+```
+```
+kubectl delete authorizationpolicy.security.istio.io/productpage-viewer
+```
+```
+kubectl delete authorizationpolicy.security.istio.io/details-viewer
+```
+```
+kubectl delete authorizationpolicy.security.istio.io/reviews-viewer
+```
+```
+kubectl delete authorizationpolicy.security.istio.io/ratings-viewer
+```
