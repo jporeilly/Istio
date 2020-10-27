@@ -130,11 +130,11 @@ Let’s ensure that all services in the default namespace should be secure.
 
 > Watch a video: Secure default Namespace (03:49):  
 
-[![Secure default Namespace](./img/lumada.png)](https://youtu.be/-SnLEhVMx14 "secure namespace")
+[![Secure default Namespace](./img/lumada.png)](https://youtu.be/9qCYcbgBrrU "secure namespace")
 
 check peer athentication:
 ```
-kubectl get peerauthentication --all-namespaces
+kubectl get pa --all-namespaces
 ```
 apply default namespace PERMISSIVE policy:
 ```
