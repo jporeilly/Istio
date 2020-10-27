@@ -2,7 +2,9 @@
 Kubernetes authorizes API requests using the API server. It evaluates all of the request attributes against all policies and allows or denies the request.  
 
 All parts of an API request must be allowed by some policy in order to proceed. This means that permissions are denied by default.
-Istio Authorization Policy enables access control on workloads in the mesh.
+Istio Authorization Policy enables access control on workloads in the mesh.  
+
+To configure an authorization policy, you create an AuthorizationPolicy custom resource. An authorization policy includes a selector, an action, and a list of rules.
 
 ![Istio - Authorization](./img/bookinfo-authorization.png)
 
