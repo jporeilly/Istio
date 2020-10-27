@@ -1,4 +1,4 @@
-### <font color='orange'> 4.2 Service Authorization </font>
+### <font color='orange'> 3.2 Service Authorization </font>
 Kubernetes authorizes API requests using the API server. It evaluates all of the request attributes against all policies and allows or denies the request.  
 
 All parts of an API request must be allowed by some policy in order to proceed. This means that permissions are denied by default.
@@ -29,7 +29,7 @@ kubectl delete pa -n <namespace> <peerathentication>
 ```
 ---
 
-#### <font color='orange'> 4.2.1 DENY authorization to all Services </font>
+#### <font color='orange'> 3.2.1 DENY authorization to all Services </font>
 
 > Watch a video: Istio Authorization - DENY (02:54):  
 
@@ -50,7 +50,7 @@ RBAC: access denied - not authorized.
 
 ---
 
-#### <font color='orange'>4.2.2 ALLOW access to Services </font>
+#### <font color='orange'>3.2.2 ALLOW access to Services </font>
 
 > Watch a video: Istio Authorization - ALLOW (09:00):  
 
@@ -75,7 +75,7 @@ kubectl apply -f 02_allow-reviews-ratings.yaml
 > check http://localhost/productpage  
 ---
 
-#### <font color='orange'> 4.2.3 Try from unauthorized service </font>
+#### <font color='orange'> 3.2.3 Try from unauthorized service </font>
 run a shell in the reviews container:
 ```
 docker container ls --filter name=k8s_reviews
