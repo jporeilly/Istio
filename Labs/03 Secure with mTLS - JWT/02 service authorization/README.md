@@ -51,6 +51,11 @@ RBAC: access denied - not authorized.
 ---
 
 #### <font color='orange'>4.2.2 ALLOW access to Services </font>
+
+> Watch a video: Istio Authorization - ALLOW (09:00):  
+
+[![Istio Authorization - DENY ALL](./img/lumada.png)](https://youtu.be/j3Mz0LS5U2s "istio authorization")
+
 apply the updated authorization policy to allow access to productpage service:
 ```
 kubectl apply -f 02_allow-productpage.yaml
