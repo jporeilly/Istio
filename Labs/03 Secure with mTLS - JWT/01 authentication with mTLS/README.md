@@ -198,6 +198,10 @@ Istio applies the narrowest matching policy for each workload using the followin
   > namespace-wide  
   > mesh-wide  
 
+> Watch a video: Secure default details service (03:31):  
+
+[![Secure details Service](./img/lumada.png)](https://youtu.be/9qCYcbgBrrU "secure details")
+
 check peer athentication:
 ```
 kubectl get pa --all-namespaces
