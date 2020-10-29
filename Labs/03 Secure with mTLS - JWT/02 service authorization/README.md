@@ -76,6 +76,11 @@ kubectl apply -f 02_allow-reviews-ratings.yaml
 ---
 
 #### <font color='orange'> 3.2.3 Try from unauthorized service </font>
+```
+kubectl exec -it $(kubectl get pod -l app=ratings -o jsonpath=’{.items[0].metadata.name}’) -c ratings -- curl productpage:9080/productpage
+```
+
+
 run a shell in the reviews container:
 ```
 docker container ls --filter name=k8s_reviews
