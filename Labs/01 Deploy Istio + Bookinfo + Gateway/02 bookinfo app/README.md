@@ -3,7 +3,7 @@
 
 ---
 
-### <font color="orange"> 1.2.1 Deploy BookInfo + Istio Gateway</font>
+### <font color="orange"> 1.2.1 Deploy BookInfo + Ingress Gateway</font>
 
 deploy the bookinfo app:
 ```
@@ -51,11 +51,11 @@ cls
 ````
 ---
 
-### <font color="orange"> 1.2.2 Deploy Gateway </font>
+### <font color="orange"> 1.2.2 Deploy Ingress Gateway </font>
 
 deploy gateway:
 ```
-kubectl apply -f 02_bookinfo-gateway.yaml
+kubectl apply -f 02_bookinfo-ingress-gateway.yaml
 ```
 clear the screen:
 ```
@@ -63,7 +63,7 @@ cls
 ````
 ---
 
-### <font color="orange"> 1.2.3 Verify the Gateway </font>
+### <font color="orange"> 1.2.3 Verify the Ingress Gateway </font>
 
 check PODs:
 ```
