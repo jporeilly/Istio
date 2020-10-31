@@ -31,6 +31,16 @@ cls
 
 ### <font color="orange"> 1.1.2 Verify Istio </font>
 
+check docker is up and running:
+```
+systemctl status docker
+```
+check minikube:
+```
+minikube start
+```
+
+
 check running objects:
 ```
 kubectl get pods,svc
