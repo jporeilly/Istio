@@ -181,7 +181,16 @@ spec:
           value: "/tmp/logs"
         ports:
         - containerPort: 9080
-
+        volumeMounts:
+        - name: tmp
+          mountPath: /tmp
+        - name: wlp-output
+          mountPath: /opt/ibm/wlp/output
+      volumes:
+      - name: wlp-output
+        emptyDir: {}
+      - name: tmp
+        emptyDir: {}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -212,7 +221,16 @@ spec:
           value: "/tmp/logs"
         ports:
         - containerPort: 9080
-
+        volumeMounts:
+        - name: tmp
+          mountPath: /tmp
+        - name: wlp-output
+          mountPath: /opt/ibm/wlp/output
+      volumes:
+      - name: wlp-output
+        emptyDir: {}
+      - name: tmp
+        emptyDir: {}
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -243,7 +261,16 @@ spec:
           value: "/tmp/logs"
         ports:
         - containerPort: 9080
-
+        volumeMounts:
+        - name: tmp
+          mountPath: /tmp
+        - name: wlp-output
+          mountPath: /opt/ibm/wlp/output
+      volumes:
+      - name: wlp-output
+        emptyDir: {}
+      - name: tmp
+        emptyDir: {}
 ---
 ##################################################################################################
 # Productpage services
@@ -295,5 +322,10 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
-
+        volumeMounts:
+        - name: tmp
+          mountPath: /tmp
+      volumes:
+      - name: tmp
+        emptyDir: {}
 ---
