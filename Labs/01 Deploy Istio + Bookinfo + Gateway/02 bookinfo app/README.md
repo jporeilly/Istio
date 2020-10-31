@@ -1,13 +1,9 @@
 ## <font color="orange"> Deploying Bookinfo App </font>
 > modified version of the [Istio BookInfo sample app](https://github.com/istio/istio/tree/master/samples/bookinfo)
 
-> Watch a video: Istio + Bookinfo (40:40):  
-
-[![Istio Installation](./img/lumada.png)](https://youtu.be/Rs08YxgF0H8 "Istio Installation")
 ---
 
 ### <font color="orange"> 1.2.1 Deploy BookInfo + Istio Gateway</font>
-![Bookinfo App](./img/bookinfo.png)
 
 deploy the bookinfo app:
 ```
@@ -25,8 +21,6 @@ clear the screen:
 ```
 cls
 ```
-
-![Bookinfo App](./img/bookinfo-istio.png)
 
 show the productpage proxy setup:
 ```
@@ -58,6 +52,7 @@ cls
 ---
 
 ### <font color="orange"> 1.2.2 Deploy Gateway </font>
+
 deploy gateway:
 ```
 kubectl apply -f 02_bookinfo-gateway.yaml
@@ -69,6 +64,7 @@ cls
 ---
 
 ### <font color="orange"> 1.2.3 Verify the Gateway </font>
+
 check PODs:
 ```
 kubectl get pods
@@ -98,9 +94,8 @@ kubectl port-forward -n istio-system svc/istio-ingressgateway 6324:80
 ----
 
 ### <font color="orange"> 1.2.5 Kiali + Prometheus + Grafana </font>
-Lets have a look at the flow of traffic bweteen the services:
 
-![Kiali dashboard](./img/kiali.png)
+Lets have a look at the flow of traffic bweteen the services:
 
 install prometheus:  
 ````

@@ -2,16 +2,9 @@
 
 > Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/)
 
-> Watch a video: Course Setup (3:24):  
-
-[![Istio Course Setup](./img/lumada.png)](https://youtu.be/BluvZh_TsXk "Istio Course Setup")
-
 ---
 
 ### <font color="orange"> 1.1.1 Deploy Istio </font>
-> Watch a video: Istio + Bookinfo (40:40):  
-
-[![Istio Installation](./img/lumada.png)](https://youtu.be/Rs08YxgF0H8 "Istio Installation")
 
 check whats running on Kubernetes:
 ```
@@ -37,6 +30,7 @@ cls
 ---
 
 ### <font color="orange"> 1.1.2 Verify Istio </font>
+
 check running objects:
 ```
 kubectl get pods,svc
@@ -54,6 +48,7 @@ cls
 ---
 
 ### <font color="orange"> 1.1.3 Configure auto proxy injection </font>
+
 check namespaces:
 ```
 istioctl analyze --all-namespaces
@@ -73,6 +68,7 @@ cls
 ---
 
 ### <font color="orange"> 1.1.4 Check what's running </font>
+
 check everything:
 kubectl - no app installed / running:
 docker info - look at the number of istio containers running:
