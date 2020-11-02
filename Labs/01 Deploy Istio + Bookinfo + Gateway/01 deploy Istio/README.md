@@ -10,10 +10,7 @@ check whats running on Kubernetes:
 ```
 kubectl get all
 ```
-clear the screen:
-```
-cls
-```
+
 install istio demo configuration:
 list istio profiles:
 ```
@@ -23,10 +20,11 @@ deploy Istio 'demo' profile:
 ```
 istioctl install --set profile=demo
 ```
-clear the screen:
+check istio:
 ```
-cls
+kubectl -n istio-system get deploy
 ```
+
 ---
 
 ### <font color="orange"> 1.1.2 Verify Istio </font>
@@ -35,11 +33,6 @@ check docker is up and running:
 ```
 systemctl status docker
 ```
-check minikube:
-```
-minikube start
-```
-
 
 check running objects:
 ```
@@ -51,10 +44,6 @@ kubectl get pods -n istio-system
 ```
 > all components have memory requests
 
-clear the screen:
-```
-cls
-```
 ---
 
 ### <font color="orange"> 1.1.3 Configure auto proxy injection </font>
@@ -71,10 +60,7 @@ check label:
 ```
 kubectl describe -n default
 ```
-clear the screen:
-```
-cls
-```
+
 ---
 
 ### <font color="orange"> 1.1.4 Check what's running </font>
@@ -90,8 +76,5 @@ notice the number of Containers:
 ```
 docker info
 ```
-clear the screen:
-```
-cls
-```
+
 ---

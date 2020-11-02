@@ -9,35 +9,23 @@ deploy the bookinfo app:
 ```
 kubectl apply -f 01_bookinfo.yaml
 ```
-clear the screen:
-```
-cls
-```
+
 check PODs & services:
 ```
 kubectl get pods,svc
 ```
-clear the screen:
-```
-cls
-```
+
 
 show the productpage proxy setup:
 ```
 kubectl describe pods -l app=productpage
 ```
-clear the screen:
-```
-cls
-```
+
 find all proxy containers:
 ```
 docker container ls --filter name=istio-proxy_*
 ```
-clear the screen:
-```
-cls
-````
+
 check proxy processes for the product page:
 ```
 docker container ls --filter name=istio-proxy_productpage* -q  
@@ -45,10 +33,7 @@ docker container ls --filter name=istio-proxy_productpage* -q
 ```
 docker container top $(docker container ls --filter name=istio-proxy_productpage* -q)
 ```
-clear the screen:
-```
-cls
-````
+
 ---
 
 ### <font color="orange"> 1.2.2 Deploy Ingress Gateway </font>
@@ -57,10 +42,7 @@ deploy gateway:
 ```
 kubectl apply -f 02_bookinfo-ingress-gateway.yaml
 ```
-clear the screen:
-```
-cls
-````
+
 ---
 
 ### <font color="orange"> 1.2.3 Verify the Ingress Gateway </font>
@@ -76,6 +58,12 @@ kubectl get gateway
 ```
 kubectl get svc istio-ingressgateway -n istio-system
 ```
+notice the EXTERNAL-IP 10.x.x.x  this will have to be mapped to localhost in etc/hosts
+```
+sudo nano /etc/hosts
+```
+replace the 127.0.0.1 with IP address
+
 clear the screen (ensure PODs are up and running):
 ```
 cls
@@ -83,8 +71,10 @@ cls
 > check http://localhost/productpage
 
 ---
+
 ### <font color="orange"> 1.2.4 Port Forward Gateway </font>
-Depending on your environment port forward requests. 
+
+depending on your environment you may have to port forward requests. 
 
 port forward:
 ````
@@ -95,7 +85,7 @@ kubectl port-forward -n istio-system svc/istio-ingressgateway 6324:80
 
 ### <font color="orange"> 1.2.5 Kiali + Prometheus + Grafana </font>
 
-Lets have a look at the flow of traffic bweteen the services:
+Lets have a look at the telementry between the services:
 
 install prometheus:  
 ````
@@ -129,10 +119,7 @@ check grafana service:
 ````
 kubectl -n istio-system get svc grafana
 ````
-clear the screen:
-```
-cls
-````
+
 access kiali dashboard:
 ```
 istioctl dashboard kiali
