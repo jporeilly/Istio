@@ -44,7 +44,7 @@ kubectl apply -f 02_reviews-v2-destination-rule.yaml
 
 lets add a 2sec delay to the ratings service:  
 ```
-kubectl apply -f 02_ratings-virtualservice-fault-timeout-2sec.yaml
+kubectl apply -f 02_ratings-virtualservice-fault-timeout-2s.yaml
 ```
 > check http://localhost/productpage - 2s timeout.  
 
