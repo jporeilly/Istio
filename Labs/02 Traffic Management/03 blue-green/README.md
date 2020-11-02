@@ -1,19 +1,17 @@
-### <font color="orange"> 2.3.1 Deploy Productpage-v2 with test Domain </font>
+### <font color="orange"> 2.3 Deploy Productpage-v2 with test Domain </font>
 The blue-green deployment approach does this by ensuring you have two production environments, as identical as possible. At any time one of them, let's say blue for the example, is live. As you prepare a new release of your software you do your final stage of testing in the green environment.  
 
 Once the software is working in the green environment, you switch the router so that all incoming requests go to the green environment - the blue one is now idle.  
 
-![Blue / Green Deployment](./img/blue-green.png) 
-
-> Watch a video: Blue/Green Deployment (08:12):  
-
-[![Blue / Green Deployment](./img/lumada.png)](https://youtu.be/9S7wMpNYN0U "blue - green")
 
 add `bookinfo.local` and `test.bookinfo.local` domains to hosts file:
 ```
-cat C:\Windows\System32\drivers\etc\hosts
+$ sudo nano /etc/hosts
 ```
-#### on Linux or Mac add to `/etc/hosts`  
+
+---
+
+### <font color="orange"> 2.3.1 deploy Productpage-v2 </font>  
 
 use existing gateway:
 ```
@@ -40,8 +38,6 @@ kubectl describe vs bookinfo-test
 
 > live v1 http://bookinfo.local/productpage  
 
-> live v1 http://bookinfo.local:6324/productpage  
-
 ---
 
 ### <font color="orange"> 2.3.2 Blue/Green Deployment - Test to Live </font>
@@ -61,6 +57,7 @@ kubectl describe vs bookinfo-test
 ```
 > test is now v1 http://test.bookinfo.local/productpage  
 
+---
 
 ### <font color="orange"> 2.3.3 Blue/Green deployment - Switch back </font>
 deploy live to test:
