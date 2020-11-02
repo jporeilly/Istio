@@ -1,12 +1,6 @@
 ### <font color="orange"> 2.2.1 Dark Launch </font>
 Dark launching is the process of releasing production-ready features to a subset of your users prior to a full release. This enables you to decouple deployment from release, get real user feedback, test for bugs, and assess infrastructure performance.  
 
-![Dark Launch](./img/dark_launch.png)  
-
-> Watch a video: Dark Launch (08:49):  
-
-[![Dark Launch](./img/lumada.png)](https://youtu.be/bQUtunBWNWA "dark launch")
-
 deploy virtualservice reviews v1 + v2 (testuser):
 ```
 kubectl apply -f 01_reviews-v1+v2-virtualservice-testuser.yaml
