@@ -100,6 +100,7 @@ install kiali:
 kubectl apply -f 05_kiali.yaml
 ````
 check kiali service:
+make a note of the IP:
 ````
 kubectl -n istio-system get svc kiali
 ````
@@ -116,6 +117,7 @@ install grafana:
 kubectl apply -f 05_grafana.yaml
 ````
 check grafana service:
+make a note of the IP:
 ````
 kubectl -n istio-system get svc grafana
 ````
@@ -126,6 +128,6 @@ istioctl dashboard kiali
 ````
 access grafana dashboard:
 
-> http://localhost:3000/dashboard/db/istio-service-dashboard
+> http://<IP>:3000/dashboard/db/istio-service-dashboard
 
 ---
