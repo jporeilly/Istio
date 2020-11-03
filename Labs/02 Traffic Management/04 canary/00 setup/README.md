@@ -1,8 +1,6 @@
 ## <font color="orange"> 2.4 Canary Deployment </font>
 Canary deployment is like blue-green, except it’s more risk-averse. Instead of switching from blue to green in one step, you use a phased approach.
 
-![Canary Deployment](../img/canary.png)  
-
 ---
 Ensure you have reset the virtualservices + destination rules.
 
@@ -30,7 +28,6 @@ kubectl port-forward -n istio-system svc/istio-ingressgateway 6324:80
 ```
 
  > check http://bookinfo.local/productpage  
- > check http://bookinfo.local:6324/productpage  
 
 deploy virtualservices:
 ```

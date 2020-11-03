@@ -15,9 +15,9 @@ kubectl apply -f 01_productpage-v2.yaml
 ```
 deploy destination rules:
 ```
-kubectl apply -f 00_all-destination-rules-v1+v2.yaml
+kubectl apply -f 01_all-destination-rules-v1+v2.yaml
 ```
-> check http://bookinfo.local/productpage  - just v1 as no weighting has been added  
+> check http://bookinfo.local/productpage
 
 
 ```
