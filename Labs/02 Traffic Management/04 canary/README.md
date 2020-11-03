@@ -13,10 +13,7 @@ deploy productpage-v2:
 ```
 kubectl apply -f 01_productpage-v2.yaml
 ```
-deploy destination rules:
-```
-kubectl apply -f 01_all-destination-rules-v1+v2.yaml
-```
+
 > check http://bookinfo.local/productpage
 
 
