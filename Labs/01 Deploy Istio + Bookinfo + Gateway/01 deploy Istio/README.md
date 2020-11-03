@@ -11,6 +11,19 @@ check whats running on Kubernetes:
 kubectl get all
 ```
 
+in a terminal download istio: 
+```
+curl -L https://istio.io/downloadIstio | sh -
+```
+add the istioctl client to your path:
+```
+export PATH=”$PATH:/home/foundry/Istio-1.7.4/bin”
+```
+check istio:
+```
+istioctl x precheck
+```
+
 install istio demo configuration:
 list istio profiles:
 ```
