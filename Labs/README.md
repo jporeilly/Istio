@@ -15,13 +15,14 @@ The course is composed of 5 Modules:
   02 Traffic Managemnt  
   03 Secure with mTLS  
   04 Observability  
-  05 Istio in Production
+  05 Istio & Foundry
 
 > Each lab has a README.md file which outlines the commands.
 
 ---
 
 ### <font color="orange"> Module 01 - Deploy Istio + Bookinfo App </font>
+Get up and running with Istio & Bookinfo app.
 
 ### <font color="teal"> Lab: 01 Deploy Istio </font>
 Install Istio - 'demo' profile.
@@ -34,6 +35,7 @@ Deploy Ingress Gateway.
 ---
 
 ### <font color="orange"> Module 02 - Traffic Management </font>
+Traffic shaping using VirtualServices & Destination Rules.
 
 ### <font color="teal"> Lab: 00 Deploy Istio </font> 
 Deploy Istio with auto sidecar injection. 
@@ -58,11 +60,12 @@ traffic shaping
 
 ### <font color="teal"> Lab: 05 Circut Breaker </font>
 Deploy Details:v2 and 4 replicas.
-Outlier detection enables unhealthy POds to be terminated.
+Outlier detection enables unhealthy PODs to be terminated.
 
 ---
 
 ### <font color="orange"> Module 03 - Secure with mTLS </font>
+Apply mTLS authentication with authorization policies>
 
 ### <font color="teal"> Lab: 00 Deploy Default Istio </font>
 Deploy Istio with auto sidecar injection. 
@@ -74,10 +77,10 @@ Trusted network - hack network.
 Authentication with mTLS. 
 
 ### <font color="teal"> Lab: 03 Service Auth </font>
-Deploy Productpage:v2
+Http service Authorization.
 
 ### <font color="teal"> Lab: 04 JWT Auth </font>
-Deploy Productpage:v2
+Authorization with JWT.
 
 ---
 
@@ -100,15 +103,8 @@ Deploy Productpage:v2
 
 ---
 
-### <font color="orange"> Module 05 - Istio in Production </font>
+### <font color="orange"> Module 05 - Istio and Foundry </font>
 
-### <font color="teal"> Lab: 00 Deploy Istio </font>
-Deploy Istio with auto sidecar injection. 
 
-### <font color="teal"> Lab: 01 Configure & Deploy </font>
-Authentication with mTLS. 
-
-### <font color="teal"> Lab: 02 Migrate to production </font>
-Deploy Productpage:v2
 
 ---
