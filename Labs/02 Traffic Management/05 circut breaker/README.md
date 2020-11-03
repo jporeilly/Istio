@@ -2,14 +2,7 @@
 The basic idea behind the circuit breaker is very simple. You wrap a protected function call in a circuit breaker object, which monitors for failures.   
 Once the failures reach a certain threshold, the circuit breaker trips, and all further calls to the circuit breaker return with an error, without the protected call being made at all. 
 
-![Bookinfo - Circut Breaker](.\img\bookinfo-circut-breaker.png)
-
-> Watch a video: Circut Breaker (11:44):  
-
-[![Circut Breaker](./img/lumada.png)](https://youtu.be/5SbUiSBQysI "circut breaker")
-
-
-Ensure you have reset the the cluster.
+#### <font color='red'> Ensure you have reset the the cluster. </font>
 
 ---
 #### <font color="orange"> 2.5.1  Details Service v2 </font>
