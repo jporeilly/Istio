@@ -61,7 +61,7 @@ kubectl get pods -n istio-system
 
 ### <font color="orange"> 1.1.3 Configure auto proxy injection </font>
 
-check namespaces:
+in a terminal check namespaces:
 ```
 istioctl analyze --all-namespaces
 ```
