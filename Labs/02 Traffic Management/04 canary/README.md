@@ -1,14 +1,14 @@
 ## <font color="orange"> 2.4 Canary Deployment </font>
 Canary deployment is like blue-green, except it’s more risk-averse. Instead of switching from blue to green in one step, you use a phased approach.
 
-![Canary Deployment](./img/canary.png) 
+---
 
-> Watch a video: Canary Deployment (16:54):  
+### <font color="orange"> 2.4.1 Canary with 30% traffic to v2 </font>
+deploy canary rules with 70/30 split:  
+> productpage:v1 → bookinfo.local 70%  
+> productpage:v2 → bookinfo.local 30%  
 
-[![Canary Deployment](./img/lumada.png)](https://youtu.be/HAEpC-zklxs "canary")
-
-
-let's set the virtualservices + destination rules:  
+let's set the virtualservice:  
 deploy productpage-v2:
 ```
 kubectl apply -f 01_productpage-v2.yaml
@@ -19,12 +19,6 @@ kubectl apply -f 00_all-destination-rules-v1+v2.yaml
 ```
 > check http://bookinfo.local/productpage  - just v1 as no weighting has been added  
 
----
-
-### <font color="orange"> 2.4.1 Canary with 30% traffic to v2 </font>
-deploy canary rules with 70/30 split:  
-> productpage:v1 → bookinfo.local 70%  
-> productpage:v2 → bookinfo.local 30%  
 
 ```
 kubectl apply -f 01_productpage-canary-70-30.yaml
