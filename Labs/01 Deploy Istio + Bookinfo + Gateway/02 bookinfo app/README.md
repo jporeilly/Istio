@@ -3,7 +3,7 @@
 
 ---
 
-### <font color="orange"> 1.2.1 Deploy BookInfo + Ingress Gateway</font>
+### <font color="orange"> 1.2.1 Deploy BookInfo</font>
 
 deploy the bookinfo app:
 ```
@@ -15,37 +15,23 @@ check PODs & services:
 kubectl get pods,svc
 ```
 
-
-show the productpage proxy setup:
-```
-kubectl describe pods -l app=productpage
-```
-
-find all proxy containers:
-```
-docker container ls --filter name=istio-proxy_*
-```
-
-check proxy processes for the product page:
-```
-docker container ls --filter name=istio-proxy_productpage* -q  
-```
-```
-docker container top $(docker container ls --filter name=istio-proxy_productpage* -q)
-```
-
 ---
 
 ### <font color="orange"> 1.2.2 Deploy Ingress Gateway </font>
 
+ensure external minikube loadbalancer is up and running:
+```
+minikube tunnel
+```
+
 deploy gateway:
 ```
-kubectl apply -f 02_bookinfo-ingress-gateway.yaml
+kubectl apply -f 02_bookinfo-istio-gateway.yaml
 ```
 
 ---
 
-### <font color="orange"> 1.2.3 Verify the Ingress Gateway </font>
+### <font color="orange"> 1.2.3 Verify the Istio-Ingress Gateway </font>
 
 check PODs:
 ```
@@ -64,10 +50,6 @@ sudo nano /etc/hosts
 ```
 replace the 127.0.0.1 with IP address
 
-clear the screen (ensure PODs are up and running):
-```
-cls
-````
 > check http://localhost/productpage
 
 ---

@@ -71,7 +71,7 @@ kubectl label namespace default istio-injection=enabled
 ```
 check label:
 ```
-kubectl describe -n default
+kubectl describe ns default
 ```
 
 ---
