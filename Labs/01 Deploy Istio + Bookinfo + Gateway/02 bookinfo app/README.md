@@ -52,6 +52,11 @@ replace the 127.0.0.1 with IP address
 
 > check http://localhost/productpage
 
+view minikube dashboard:
+```
+minikube dashboard
+```
+
 ---
 
 ### <font color="orange"> 1.2.4 Port Forward Gateway </font>
