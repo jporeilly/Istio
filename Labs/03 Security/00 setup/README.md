@@ -27,9 +27,9 @@ list istio profiles:
 ```
 istioctl profile list
 ```
-deploy Istio 'demo' profile:
+deploy Istio 'default' profile:
 ```
-istioctl install --set profile=demo
+istioctl install --set profile=default
 ```
 check istio:
 ```
@@ -61,7 +61,21 @@ deploy gateway:
 ```
 kubectl apply -f 00_bookinfo-gateway.yaml
 ```
-> browse to http://localhost/productpage
+
+check gateway:
+```
+kubectl get gateway
+```
+```
+kubectl get svc istio-ingressgateway -n istio-system
+```
+notice the EXTERNAL-IP 10.x.x.x  this will have to be mapped to localhost in etc/hosts
+```
+sudo nano /etc/hosts
+```
+replace the existing IP with current IP address:
+
+> check http://localhost/productpage
 
 ---
 
