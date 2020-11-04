@@ -6,12 +6,6 @@ Istio Authorization Policy enables access control on workloads in the mesh.
 
 To configure an authorization policy, you create an AuthorizationPolicy custom resource. An authorization policy includes a selector, an action, and a list of rules.
 
-![Istio - Authorization](./img/bookinfo-authorization.png)
-
-> Watch a video: Istio Authorization (02:54):  
-
-[![Istio Authorization](./img/lumada.png)](https://youtu.be/dg9SJrMh5o8 "istio authorization")
-
 check peer athentication:
 ```
 kubectl get pa --all-namespaces
@@ -31,10 +25,6 @@ kubectl delete pa -n <namespace> <peerathentication>
 
 #### <font color='orange'> 3.2.1 DENY authorization to all Services </font>
 
-> Watch a video: Istio Authorization - DENY (02:54):  
-
-[![Istio Authorization - DENY](./img/lumada.png)](https://youtu.be/dg9SJrMh5o8 "istio authorization - DENY")
-
 apply a deny-all authorization policy for all services:
 ```
 kubectl apply -f 01_deny-all.yaml
@@ -46,15 +36,10 @@ RBAC: access denied - not authorized.
 
 > Watch a video: Istio Authorization - DENY (09:00):  
 
-[![Istio Authorization - DENY ALL](./img/lumada.png)](https://youtu.be/j3Mz0LS5U2s "istio authorization")
 
 ---
 
 #### <font color='orange'>3.2.2 ALLOW access to Services </font>
-
-> Watch a video: Istio Authorization - ALLOW (09:00):  
-
-[![Istio Authorization - DENY ALL](./img/lumada.png)](https://youtu.be/j3Mz0LS5U2s "istio authorization")
 
 apply the updated authorization policy to allow access to productpage service:
 ```
