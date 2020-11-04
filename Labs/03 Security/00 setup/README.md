@@ -3,11 +3,39 @@ Mutual TLS (mTLS) authentication ensures that traffic is both secure and trusted
 
 With a root certificate authority (CA) in place, Access only allows requests from devices with a corresponding client certificate. When a request reaches the application, Access responds with a request for the client to present a certificate. If the device fails to present the certificate, the request is not allowed to proceed. If the client does have a certificate, Access completes a key exchange to verify.
 
----
- install istio default configuration (no mTLS):
+install istio default configuration (no mTLS):
+check whats running on Kubernetes:
 ```
- istioctl install --set profile=default
+kubectl get all
 ```
+
+in a terminal download istio: 
+```
+curl -L https://istio.io/downloadIstio | sh -
+```
+add the istioctl client to your path:
+```
+export PATH="$PATH:/home/foundry/Istio-1.7.4/bin"
+```
+check istio:
+```
+istioctl x precheck
+```
+
+install istio demo configuration:
+list istio profiles:
+```
+istioctl profile list
+```
+deploy Istio 'demo' profile:
+```
+istioctl install --set profile=demo
+```
+check istio:
+```
+kubectl -n istio-system get deploy
+```
+
 ---
 
 ### <font color="orange"> Configure auto proxy injection </font>
