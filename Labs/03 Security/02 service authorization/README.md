@@ -29,17 +29,13 @@ apply a deny-all authorization policy for all services:
 ```
 kubectl apply -f 01_deny-all.yaml
 ```
-
 > check http://localhost/productpage  
 
 RBAC: access denied - not authorized.  
 
-> Watch a video: Istio Authorization - DENY (09:00):  
-
-
 ---
 
-#### <font color='orange'>3.2.2 ALLOW access to Services </font>
+#### <font color='orange'>3.2.2 ALLOW access to Productpage Service </font>
 
 apply the updated authorization policy to allow access to productpage service:
 ```
@@ -58,9 +54,10 @@ apply the updated authorization policy to allow access to ratings from reviews s
 kubectl apply -f 02_allow-reviews-ratings.yaml
 ```
 > check http://localhost/productpage  
+  
 ---
 
-#### <font color='orange'> 3.2.3 Try from unauthorized service </font>
+#### <font color='orange'> 3.2.3 Try from Unauthorized Service </font>
 ```
 kubectl exec -it $(kubectl get pod -l app=ratings -o jsonpath=’{.items[0].metadata.name}’) -c ratings -- curl productpage:9080/productpage
 ```
