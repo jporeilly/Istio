@@ -3,12 +3,10 @@ Mutual TLS (mTLS) authentication ensures that traffic is both secure and trusted
 
 With a root certificate authority (CA) in place, Access only allows requests from devices with a corresponding client certificate. When a request reaches the application, Access responds with a request for the client to present a certificate. If the device fails to present the certificate, the request is not allowed to proceed. If the client does have a certificate, Access completes a key exchange to verify.
 
-![Istio - Security](./img/istio-security-architecture.png)
-
 ---
-install istio default configuration (no mTLS):
+ install istio default configuration (no mTLS):
 ```
-istioctl install --set profile=default
+ istioctl install --set profile=default
 ```
 ---
 
@@ -37,11 +35,6 @@ kubectl apply -f 00_bookinfo-gateway.yaml
 ```
 > browse to http://localhost/productpage
 
-port forward:  
-```
-kubectl port-forward -n istio-system svc/istio-ingressgateway 6324:80
-```
-> browse to http://localhost:6324/productpage
 ---
 
 ### <font color="orange"> Deploy Legacy App </font>
