@@ -23,6 +23,7 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRIRmJwb0lVcXJZOHQyenBBMnFYZk
 
 > http://localhost/productpage -> `200`  
 
+---
 
 ### <font color='orange'> 3.2 Restrict access to productpage </font>
 
@@ -33,6 +34,8 @@ kubectl apply -f productpage-authz-deny-all.yaml
 
 > Repeat edit & send request -> `403`
 
+---
+
 ### <font color='orange'> 3.3 Decode the JWT </font>
 
 The JWT is a base64 encoded string. Read the claims - browse to 
@@ -42,6 +45,8 @@ The JWT is a base64 encoded string. Read the claims - browse to
 - Subject: `testing@secure.istio.io`
 - Custom: `foo=bar`
 
+---
+
 ## 3.4 Allow access by issuer
 
 apply an authorization policy which allows access by issuer:
@@ -49,6 +54,8 @@ apply an authorization policy which allows access by issuer:
 kubectl apply -f productpage-authz-allow-issuer.yaml
 ```
 > Repeat edit & send request -> `200`
+
+---
 
 ## 3.5 Allow access by subject
 
@@ -58,6 +65,8 @@ kubectl apply -f productpage-authz-allow-subject.yaml
 ```
 > Repeat edit & send request -> `403`
 
+---
+
 ## 3.6 Allow access by custom claim
 
 apply an authorization policy which allows access by claim:
@@ -65,3 +74,5 @@ apply an authorization policy which allows access by claim:
 kubectl apply -f productpage-authz-allow-claim.yaml
 ```
 > Repeat edit & send request -> `200`
+
+---
