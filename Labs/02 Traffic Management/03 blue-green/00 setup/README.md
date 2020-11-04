@@ -3,8 +3,6 @@ The blue-green deployment approach does this by ensuring you have two production
 
 Once the software is working in the green environment, you switch the router so that all incoming requests go to the green environment - the blue one is now idle.
 
-![Blue / Green](../img/blue-green.png)  
-
 ---
 Ensure you have reset the virtualservices + destination rules.
 

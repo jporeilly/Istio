@@ -4,12 +4,6 @@ Traffic management in Istio is governed by 2 important concepts:
 - virtualservice
 - destination rules
 
-> Watch a video: Fault Tolerance (15:20):  
-
-[![Fault Tolerance](./img/lumada.png)](https://youtu.be/FK8ZWRVM4RI "fault Tolerance")
-
-![Bookinfo App - Virtualservice + Destination Rules](./img/bookinfo-virtualservice.png)
-
 ---
 
 ### <font color="orange"> 2.1.1 Route traffic through Istio </font>

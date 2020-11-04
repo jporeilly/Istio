@@ -60,7 +60,6 @@ enforce mTLS for all services in the istio mesh:
 <font color="teal"> PERMISSIVE </font>- allows for both http and mTLS:  
 <font color="teal"> DISABLE </font>- mTLS is disabled:
 
-
 ```
 kubectl apply -f 02_mesh-mTLS-STRICT.yaml
 ```

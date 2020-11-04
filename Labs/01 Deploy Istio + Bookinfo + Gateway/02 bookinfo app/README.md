@@ -1,4 +1,4 @@
-## <font color="orange"> Deploying Bookinfo App </font>
+## <font color="orange"> 1.2 Deploying Bookinfo App </font>
 > modified version of the [Istio BookInfo sample app](https://github.com/istio/istio/tree/master/samples/bookinfo)
 
 ---

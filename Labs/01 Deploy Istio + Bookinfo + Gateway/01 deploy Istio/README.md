@@ -1,4 +1,4 @@
-## <font color="orange"> Installing Istio </font>
+## <font color="orange"> 1.1 Installing Istio </font>
 
 > Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/)
 
