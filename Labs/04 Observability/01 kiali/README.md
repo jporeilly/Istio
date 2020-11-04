@@ -1,4 +1,4 @@
-# Demo 1 - Visualizing the Service Mesh
+## Visualizing the Service Mesh
 
 Using [Kiali](https://kiali.io) to graph active services and see the traffic flow between them.
 
@@ -12,10 +12,9 @@ kubectl apply -f ../setup/
 
 > There are some new ports in the [Istio ingress gateway](../setup/02_istio-demo.yaml).
 
-## 1.1 Publish the Kiali UI
+#### 1.1 Publish the Kiali UI
 
-Deploy a [Gateway and VirtualService](kiali.yaml) for Kiali:
-
+deploy a Gateway and VirtualService:
 ```
 kubectl apply -f kiali.yaml
 ```
