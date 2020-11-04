@@ -1,10 +1,10 @@
-## <font color='orange'> 4.3 End-user Authorization </font>
+## <font color='orange'> 3.3 End-user Authorization </font>
 
 require end-user authentication with JWT and enforce access control based on the JWT calims.
 
 ---
 
-### <font color='orange'> 4.3.1 Require JWT  </font>
+### <font color='orange'> 3.3.1 Require JWT  </font>
 apply the JWT authentication policy for the product page:
 ```
 kubectl apply -f 01_productpage-auth-jwt.yaml
@@ -25,7 +25,7 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRIRmJwb0lVcXJZOHQyenBBMnFYZk
 
 ---
 
-### <font color='orange'> 3.2 Restrict access to productpage </font>
+### <font color='orange'> 3.3.2 Restrict access to productpage </font>
 
 apply a deny-all authorization policy for the product page:
 ```
@@ -36,7 +36,7 @@ kubectl apply -f productpage-authz-deny-all.yaml
 
 ---
 
-### <font color='orange'> 3.3 Decode the JWT </font>
+### <font color='orange'> 3.3.3 Decode the JWT </font>
 
 The JWT is a base64 encoded string. Read the claims - browse to 
  https://jwt.io and paste contents of [demo.jwt](demo.jwt)
@@ -47,7 +47,7 @@ The JWT is a base64 encoded string. Read the claims - browse to
 
 ---
 
-## 3.4 Allow access by issuer
+### <font color='orange'> 3.3.4 Allow access by issuer </font>
 
 apply an authorization policy which allows access by issuer:
 ```
@@ -57,7 +57,7 @@ kubectl apply -f productpage-authz-allow-issuer.yaml
 
 ---
 
-## 3.5 Allow access by subject
+### <font color='orange'> 3.5 Allow access by subject </font>
 
 apply an authorization policy which allows access by subject:
 ```
@@ -67,7 +67,7 @@ kubectl apply -f productpage-authz-allow-subject.yaml
 
 ---
 
-## 3.6 Allow access by custom claim
+## <font color='orange'> 3.6 Allow access by custom claim </font>
 
 apply an authorization policy which allows access by claim:
 ```
