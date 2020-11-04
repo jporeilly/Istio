@@ -38,8 +38,8 @@ kubectl apply -f productpage-authz-deny-all.yaml
 
 ### <font color='orange'> 3.3.3 Decode the JWT </font>
 
-The JWT is a base64 encoded string. Read the claims - browse to 
- https://jwt.io and paste contents of [demo.jwt](demo.jwt)
+The JWT is a base64 encoded string. 
+Read the claims - select demo.jwt
 
 - Issuer: `testing@secure.istio.io`
 - Subject: `testing@secure.istio.io`
