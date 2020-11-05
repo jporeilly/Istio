@@ -1,4 +1,4 @@
-## <font color='orange'> 3.3 End-user Authorization </font>
+## <font color='orange'> 3.3 End-user Authorization </font>  
 
 require end-user authentication with JWT and enforce access control based on the JWT claims.
 ---
@@ -9,9 +9,7 @@ apply the JWT authentication policy for the productpage:
 kubectl apply -f 01_productpage-auth-jwt.yaml
 ```
 > check http://localhost/productpage -> `401`  
-
 you need to add an authentication header. In Firefox's network tab:
-
 - Refresh
 - Edit & resend 
 - Add header
