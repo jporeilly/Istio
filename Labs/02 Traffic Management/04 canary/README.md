@@ -13,9 +13,7 @@ deploy productpage-v2:
 ```
 kubectl apply -f 01_productpage-v2.yaml
 ```
-
 > check http://bookinfo.local/productpage
-
 
 ```
 kubectl apply -f 01_productpage-canary-70-30.yaml
@@ -31,7 +29,6 @@ check deployment on test.bookinfo.local:
 kubectl describe vs bookinfo-test
 ```
 > check http://test.bookinfo.local/productpage & refresh, just v2  
-
 ---
 
 ### <font color="orange"> 2.4.2 Canary Rollout </font>
@@ -42,7 +39,6 @@ shift traffic to v2:
 - 0/100 split: kubectl apply -f 02_productpage-canary-0-100.yaml  
 
 > check http://bookinfo.local/productpage & refresh  
-
 ---
 
 ### <font color="orange"> 2.4.3 Canary with Sticky Session </font>
@@ -60,7 +56,6 @@ deploy canary split (70-30) with cookie:
 ```
 kubectl apply -f 03_productpage-canary-with-cookie.yaml
 ```
-
 > check http://bookinfo.local/productpage & refresh - once you hit v2 that puts a cookie in your browser, and you'll always get v2  
 
 Check by disabling cookies:
@@ -69,7 +64,5 @@ _e.g. in Firefox_
 - Search "cookies"
 - Manage permissions
 - Add `bookinfo.local` - with `Block`
-
 > check http://bookinfo.local/productpage & refresh - back to 70/30 split  
-
 ---

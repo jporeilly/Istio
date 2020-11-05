@@ -26,7 +26,6 @@ port forward:
 ```
 kubectl port-forward -n istio-system svc/istio-ingressgateway 6324:80 
 ```
-
  > check http://bookinfo.local/productpage  
 
 deploy virtualservices:
@@ -38,5 +37,4 @@ deploy destination rules:
 kubectl apply -f 00_all-destination-rules-v1+v2.yaml
 ```
 > check http://bookinfo.local/productpage  
-
 ---

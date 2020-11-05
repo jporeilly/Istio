@@ -3,7 +3,6 @@
 Traffic management in Istio is governed by 2 important concepts:
 - virtualservice
 - destination rules
-
 ---
 
 ### <font color="orange"> 2.1.1 Route traffic through Istio </font>
@@ -48,6 +47,4 @@ kubectl apply -f 02_reviews-virtualservice-fault-timeout-0.5s.yaml
 ```
 > check http://localhost/productpage  
 fails as the request to the review page timeouts after 0.5sec which is less than the 2 sec timeout to the ratings.
-
 ---
-

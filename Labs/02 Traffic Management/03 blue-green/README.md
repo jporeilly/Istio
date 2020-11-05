@@ -8,11 +8,9 @@ add `bookinfo.local` and `test.bookinfo.local` domains to hosts file:
 ```
 $ sudo nano /etc/hosts
 ```
-
 ---
 
 ### <font color="orange"> 2.3.1 deploy Productpage-v2 </font>  
-
 use existing gateway:
 ```
 kubectl describe gateway bookinfo-gateway
@@ -35,9 +33,7 @@ check test.bookinfo.local host/gateway virtualservice for productpage-v2:
 ```
 kubectl describe vs bookinfo-test
 ```
-
 > live v1 http://bookinfo.local/productpage  
-
 ---
 
 ### <font color="orange"> 2.3.2 Blue/Green Deployment - Test to Live </font>
@@ -56,7 +52,6 @@ check test deployment:
 kubectl describe vs bookinfo-test
 ```
 > test is now v1 http://test.bookinfo.local/productpage  
-
 ---
 
 ### <font color="orange"> 2.3.3 Blue/Green deployment - Switch back </font>
@@ -67,5 +62,4 @@ kubectl apply -f 03_productpage-live-to-test.yaml
 > live is back v1 http://bookinfo.local/productpage  
 
 > test is back v2 http://test.bookinfo.local/productpage  
-
 ---

@@ -39,5 +39,4 @@ deploy destination rules:
 kubectl apply -f 00_all-destination-rules-v1.yaml
 ```
 > check http://localhost/productpage  
-
 ---

@@ -1,10 +1,9 @@
 ## <font color="orange"> 1.2 Deploying Bookinfo App </font>
-> modified version of the [Istio BookInfo sample app](https://github.com/istio/istio/tree/master/samples/bookinfo)
 
+> modified version of the [Istio BookInfo sample app](https://github.com/istio/istio/tree/master/samples/bookinfo)
 ---
 
 ### <font color="orange"> 1.2.1 Deploy BookInfo</font>
-
 deploy the bookinfo app:
 ```
 kubectl apply -f 01_bookinfo.yaml
@@ -14,25 +13,16 @@ check PODs & services:
 ```
 kubectl get pods,svc
 ```
-
 ---
 
 ### <font color="orange"> 1.2.2 Deploy Ingress Gateway </font>
-
-ensure external minikube loadbalancer is up and running:
-```
-minikube tunnel
-```
-
 deploy gateway:
 ```
 kubectl apply -f 02_bookinfo-istio-gateway.yaml
 ```
-
 ---
 
 ### <font color="orange"> 1.2.3 Verify the Istio-Ingress Gateway </font>
-
 check PODs:
 ```
 kubectl get pods
@@ -51,16 +41,9 @@ sudo nano /etc/hosts
 replace the 127.0.0.1 with IP address
 
 > check http://localhost/productpage
-
-view minikube dashboard:
-```
-minikube dashboard
-```
-
 ---
 
 ### <font color="orange"> 1.2.4 Port Forward Gateway </font>
-
 depending on your environment you may have to port forward requests. 
 
 port forward:
@@ -71,7 +54,6 @@ kubectl port-forward -n istio-system svc/istio-ingressgateway 6324:80
 ----
 
 ### <font color="orange"> 1.2.5 Kiali + Prometheus + Grafana </font>
-
 Lets have a look at the telementry between the services:
 
 install prometheus:  
@@ -116,5 +98,4 @@ istioctl dashboard kiali
 access grafana dashboard:
 
 > http://<IP>:3000/dashboard/db/istio-service-dashboard
-
 ---

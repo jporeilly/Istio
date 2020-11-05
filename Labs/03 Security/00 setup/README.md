@@ -35,7 +35,6 @@ check istio:
 ```
 kubectl -n istio-system get deploy
 ```
-
 ---
 
 ### <font color="orange"> Configure auto proxy injection </font>
@@ -76,7 +75,6 @@ sudo nano /etc/hosts
 replace the existing IP with current IP address:
 
 > check http://localhost/productpage
-
 ---
 
 ### <font color="orange"> Deploy Legacy App </font>

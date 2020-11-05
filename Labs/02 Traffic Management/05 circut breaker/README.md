@@ -18,7 +18,6 @@ check deployment:
 ```
 kubectl describe svc,vs,dr details
 ```
-
 > check http://localhost/productpage & refresh lots. Around 50% of details call fail.  
 
 check logs:
@@ -38,6 +37,5 @@ check deployment:
 ```
 kubectl describe dr details
 ```
-
 > check http://localhost/productpage & refresh lots. As pods return errors they get excluded - after a while there are no errors, requests only go to healthy pods.
 ---
