@@ -5,7 +5,7 @@ require end-user authentication with JWT and enforce access control based on the
 ---
 
 ### <font color='orange'> 3.3.1 Require JWT  </font>
-apply the JWT authentication policy for the product page:
+apply the JWT authentication policy for the productpage:
 ```
 kubectl apply -f 01_productpage-auth-jwt.yaml
 ```

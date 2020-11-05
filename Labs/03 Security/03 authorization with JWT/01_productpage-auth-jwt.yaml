@@ -1,12 +1,15 @@
 apiVersion: "security.istio.io/v1beta1"
 kind: "RequestAuthentication"
+kind: AuthorizationPolicy
 metadata:
-  name: jwt-example
+  name: require-jwt
   namespace: default
 spec:
   selector:
     matchLabels:
-      app: bookinfo
-  jwtRules:
-  - issuer: "testing@secure.istio.io"
-    jwksUri: "https://raw.githubusercontent.com/istio/istio/release-1.7/security/tools/jwt/samples/jwks.json"
+      app: productpage
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+       requestPrincipals: ["testing@secure.istio.io/testing@secure.istio.io"]
