@@ -32,7 +32,6 @@ kubectl apply -f 01_deny-all.yaml
 > check http://localhost/productpage  
 
 RBAC: access denied - not authorized.  
-
 ---
 
 ### <font color='orange'>3.2.2 ALLOW access to Productpage Service </font>
@@ -54,7 +53,6 @@ apply the updated authorization policy to allow access to ratings from reviews s
 kubectl apply -f 02_allow-reviews-ratings.yaml
 ```
 > check http://localhost/productpage  
-  
 ---
 
 ### <font color='orange'> 3.2.3 Try from Unauthorized Service </font>
@@ -77,6 +75,7 @@ curl http://productpage:9080/1
 ```
 curl http://ratings:9080/ratings/1
 ```
+---
 
 clean up:
 ```
@@ -94,3 +93,4 @@ kubectl delete authorizationpolicy.security.istio.io/reviews-viewer
 ```
 kubectl delete authorizationpolicy.security.istio.io/ratings-viewer
 ```
+---

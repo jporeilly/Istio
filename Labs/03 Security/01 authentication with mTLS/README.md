@@ -50,7 +50,6 @@ access kiali dashboard:
 ```
 istioctl dashboard kiali
 ````
-
 ---
 
 ### <font color="orange"> 3.1.2 Secure the Istio Mesh </font>
@@ -88,7 +87,6 @@ does not have the required istio cert:
 ```
 curl http://details.default.svc.cluster.local:9080/details/1
 ```
-
 > http://localhost/productpage  
 
 access kiali dashboard:
@@ -118,7 +116,6 @@ check policy:
 ```
 kubectl describe pa -n default
 ```
-
 > back to the sleep container session
 
 find the sleep app container:
@@ -139,7 +136,6 @@ accepts http requests &mTLS:
 ```
 curl http://details.default.svc.cluster.local:9080/details/1
 ```
-
 > http://localhost/productpage  
 
 access kiali dashboard:
@@ -152,7 +148,6 @@ remove namespace mTLS:
 ```
 kubectl delete pa -n default namespace-permissive-policy
 ```
-
 ---
 
 ### <font color='orange'> 3.1.4 Secure a Service </font>
@@ -213,5 +208,4 @@ access kiali dashboard:
 istioctl dashboard kiali
 ````
 > check http://localhost/productpage  
-
 ---

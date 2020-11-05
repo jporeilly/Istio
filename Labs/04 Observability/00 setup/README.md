@@ -25,7 +25,6 @@ check istio:
 ```
 kubectl -n istio-system get deploy
 ```
-
 ---
 
 ### <font color="orange"> Configure auto proxy injection </font>
@@ -64,9 +63,7 @@ notice the EXTERNAL-IP 10.x.x.x  this will have to be mapped to localhost in etc
 sudo nano /etc/hosts
 ```
 replace the existing IP with current IP address:
-
 > check http://localhost/productpage
-
 ---
 
 ### <font color="orange"> Deploy Kiali </font>
