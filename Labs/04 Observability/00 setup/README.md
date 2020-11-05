@@ -1,13 +1,31 @@
+## <font color="orange"> 4.1 Observability </font>
+in a terminal download istio: 
+```
+curl -L https://istio.io/downloadIstio | sh -
+```
+add the istioctl client to your path:
+```
+export PATH="$PATH:/home/foundry/Istio-1.7.4/bin"
+```
+check istio:
+```
+istioctl x precheck
+```
 
-### <font color="orange"> Deploy Istio </font>
 install istio demo configuration:
+list istio profiles:
 ```
-istioctl install --set profile=demo
+istioctl profile list
 ```
-clear the screen:
+deploy Istio 'default' profile:
 ```
-cls
+istioctl install --set profile=default
 ```
+check istio:
+```
+kubectl -n istio-system get deploy
+```
+
 ---
 
 ### <font color="orange"> Configure auto proxy injection </font>
@@ -15,36 +33,16 @@ anything that gets deployed to the default namespace will have Istio proxy - Env
 ```
 kubectl label namespace default istio-injection=enabled
 ```
-check label:
-```
-kubectl describe namespace default
-```
-clear the screen:
-```
-cls
-```
 ---
 
-### <font color="orange"> Deploy BookInfo + Istio Gateway </font>
-Deploy the bookinfo app:
+### <font color="orange"> Deploy BookInfo App </font>
+deploy the bookinfo app v1:
 ```
 kubectl apply -f 00_bookinfo.yaml
 ```
-clear the screen:
+check PODs & services:
 ```
-cls
-```
-check PODs:
-```
-kubectl get pods
-```
-check services:
-```
-kubectl get svc
-```
-clear the screen:
-```
-cls
+kubectl get pods,svc
 ```
 ---
 
@@ -53,17 +51,7 @@ deploy gateway:
 ```
 kubectl apply -f 00_bookinfo-gateway.yaml
 ```
-clear the screen:
-```
-cls
-````
----
 
-### <font color="orange"> Verify the Gateway </font>
-check PODs:
-```
-kubectl get pods
-```
 check gateway:
 ```
 kubectl get gateway
@@ -71,15 +59,43 @@ kubectl get gateway
 ```
 kubectl get svc istio-ingressgateway -n istio-system
 ```
-clear the screen:
+notice the EXTERNAL-IP 10.x.x.x  this will have to be mapped to localhost in etc/hosts
 ```
-cls
+sudo nano /etc/hosts
 ```
-> browse to http://localhost/productpage
+replace the existing IP with current IP address:
 
-port forward:  
+> check http://localhost/productpage
+
+---
+
+### <font color="orange"> Deploy Kiali </font>
+install prometheus:  
+````
+kubectl apply -f 00_prometheus.yaml
+````
+check prometheus service:
+````
+kubectl -n istio-system get svc prometheus
+````
+install kiali:
+````
+kubectl apply -f 00_kiali.yaml
+````
+check kiali service:
+````
+kubectl -n istio-system get svc kiali
+````
+install jaeger:  
+````
+kubectl apply -f 00_jaeger.yaml
+````
+check jaeger service:
+````
+kubectl -n istio-system get svc tracing
+````
+access kiali dashboard:
 ```
-kubectl port-forward -n istio-system svc/istio-ingressgateway 6324:80
-```
-> browse to http://localhost:6324/productpage
+istioctl dashboard kiali
+````
 ---
