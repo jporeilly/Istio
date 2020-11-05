@@ -1,7 +1,27 @@
 ## <font color="orange"> 1.1 Installing Istio </font>
 
-> Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/)
+> Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/)  
 
+ensure minikube is up and running:
+```
+minikube start
+```
+start the loadbalancer:
+```
+minikube tunnel
+```
+check everything:
+```
+minikube dashboard
+```
+
+to clean up:
+```
+minikube stop
+```
+```
+minikube delete
+```
 ---
 
 ### <font color="orange"> 1.1.1 Deploy Istio </font>
