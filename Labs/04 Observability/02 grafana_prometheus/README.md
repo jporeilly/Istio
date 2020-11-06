@@ -1,8 +1,7 @@
-# Demo 2 - Monitoring with Prometheus & Grafana
+## <font color="orange"> Monitoring with Prometheus & Grafana </font>
+Observe the metrics coming into Prometheus and the Istio dashboards in Grafana.
 
-See the metrics coming into [Prometheus](https://prometheus.io) and the Istio dashboards in [Grafana](https://grafana.com).
-
-## 2.0 Pre-reqs
+### <font color="orange"> Pre-reqs checklist
 
 Follow the steps from [Demo 1](../demo1/README.md).
 

@@ -8,9 +8,9 @@ Using Kiali to graph telementry bewteen the services.
 * IP address of gateway
 
 ### <font color="orange"> 4.1.1 Publish the Kiali UI </font>
-check Kiali service:
+access Kiali UI:
 
-> check http://localhost:20001/kiali/console/
+> browse to http://localhost:20001/kiali/console/
 
 - App graph in _Graph_
 - Check `productpage` in Kiali _Workloads_
