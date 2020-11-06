@@ -1,4 +1,4 @@
-## <font color="orange"> Monitoring with Prometheus & Grafana </font>
+## <font color="orange"> 4.2 Monitoring with Prometheus & Grafana </font>
 Observe the metrics coming into Prometheus and the Istio dashboards in Grafana.
 
 ---
@@ -15,7 +15,7 @@ istioctl dashboard prometheus
 
 ---
 
-### <font color="orange"> 4.2.2 Generate some load
+### <font color="orange"> 4.2.2 Generate some load </font>
 send requests for next 30 minutes:
 ```
 docker container run `
@@ -23,8 +23,9 @@ docker container run `
   fortio/fortio `
   load -c 32 -qps 25 -t 30m http://bookinfo.local/productpage
 ```
-
 - Back to _Graph_ view in Prometheus
+
+---
 
 ### <font color="orange"> 4.2.3 Publish the Grafana UI </font>
 > in a new terminal:
@@ -37,7 +38,7 @@ istioctl dashboard grafana
 
 ---
 
-### <font color="orange"> 4.2.4 Deploy a failing service
+### <font color="orange"> 4.2.4 Deploy a failing service </font>
 update the reviews-v2 service to add `503` faults:
 ```
 kubectl apply -f 04_reviews-v2-abort.yaml
