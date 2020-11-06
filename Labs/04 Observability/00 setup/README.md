@@ -83,6 +83,14 @@ check kiali service:
 ````
 kubectl -n istio-system get svc kiali
 ````
+install grafana:  
+````
+kubectl apply -f 00_grafana.yaml
+````
+check jaeger service:
+````
+kubectl -n istio-system get svc grafana
+````
 install jaeger:  
 ````
 kubectl apply -f 00_jaeger.yaml
