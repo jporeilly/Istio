@@ -11,8 +11,11 @@ Using Kiali to graph telementry bewteen the services.
 ---
 
 ### <font color="orange"> 4.1.1 Publish the Kiali UI </font>
+in a new terminal:
+```
+istioctl dashboard kiali
+```
 access Kiali UI:
-
 > browse to http://localhost:20001/kiali/console/
 
 - App graph in _Graph_
