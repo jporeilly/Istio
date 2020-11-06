@@ -87,9 +87,9 @@ install grafana:
 ````
 kubectl apply -f 00_grafana.yaml
 ````
-check jaeger service:
+install zipkin:
 ````
-kubectl -n istio-system get svc grafana
+kubectl apply -f 00_zipkin.yaml
 ````
 install jaeger:  
 ````

@@ -32,20 +32,19 @@ docker container run `
 
 ---
 
-### <font color="orange"> 4.4.3 Configure Istio to log to Fluentd </font>
+### <font color="orange"> 4.4.2 Configure Istio to log to Fluentd </font>
 deploy the Fluentd:
 ```
-kubectl apply -f fluentd-istio.yaml
+kubectl apply -f 02_fluentd-istio.yaml
 ```
 generate load - run a 30s burst of requests:
-
 ```
 docker container run `
   --add-host "bookinfo.local:192.168.2.119" `
   fortio/fortio `
   load -c 32 -qps 25 -t 30s http://bookinfo.local/productpage
 ```
-> Refresh Kibana at http://localhost:15033 
+> refresh Kibana at http://localhost:15033 
 
 - Filter on `kubernetes.container.name` _is_ `istio-proxy`
 - These are Envoy logs 
