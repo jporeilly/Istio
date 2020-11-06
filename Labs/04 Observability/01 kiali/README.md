@@ -41,9 +41,6 @@ kubectl apply -f 01_reviews-v2-canary.yaml
 ```
 explore the various Kiali options...!
 
----
-
-### <font color="orange"> 4.1.3 Generate some load </font>
 determine external IP:
 ```
 kubectl get svc istio-ingressgateway -n istio-system

@@ -13,10 +13,7 @@ istioctl dashboard prometheus
 - Switch to _Graph_
 - Check _Status_/_Targets_ - Kubernetes service discovery
 
----
-
-### <font color="orange"> 4.2.2 Generate some load </font>
-send requests for next 30 minutes:
+Generate some load- send requests for next 30 minutes:
 ```
 docker container run `
   --add-host "bookinfo.local:192.168.2.119" `
@@ -27,7 +24,7 @@ docker container run `
 
 ---
 
-### <font color="orange"> 4.2.3 Publish the Grafana UI </font>
+### <font color="orange"> 4.2.2 Publish the Grafana UI </font>
 > in a new terminal:
 ```
 istioctl dashboard grafana
@@ -38,10 +35,10 @@ istioctl dashboard grafana
 
 ---
 
-### <font color="orange"> 4.2.4 Deploy a failing service </font>
+### <font color="orange"> 4.2.3 Deploy a failing service </font>
 update the reviews-v2 service to add `503` faults:
 ```
-kubectl apply -f 04_reviews-v2-abort.yaml
+kubectl apply -f 03_reviews-v2-abort.yaml
 ```
 > check [Grafana](http://localhost:3000/dashboard/db/istio-mesh-dashboard?orgId=1&refresh=5s&from=now-5m&to=now&var-service=reviews.default.svc.cluster.local&var-srcns=All&var-srcwl=All&var-dstns=All&var-dstwl=All)
 
