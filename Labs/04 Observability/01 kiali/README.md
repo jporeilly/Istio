@@ -27,7 +27,7 @@ kubectl apply -f 01_productpage-v2-canary.yaml
 - Add _Requests percentage_ label
 - Check bookinfo virtual service in _Istio Config_ (editable!)
 
-## 4.1.3 Generate some load
+### <font color="orange"> 4.1.3 Generate some load </font>
 use Fortio to send a few hundred requests to the app:
 ```
 docker container run `
