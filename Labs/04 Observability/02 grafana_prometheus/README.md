@@ -1,11 +1,13 @@
 ## <font color="orange"> Monitoring with Prometheus & Grafana </font>
 Observe the metrics coming into Prometheus and the Istio dashboards in Grafana.
 
+---
+
 ### <font color="orange"> Pre-reqs checklist </font>
 
+---
 
 ### <font color="orange"> 4.2.1 Publish the Prometheus UI </font>
-
 
 > browse to http://localhost:15030
 
@@ -13,9 +15,10 @@ Observe the metrics coming into Prometheus and the Istio dashboards in Grafana.
 - Switch to _Graph_
 - Check _Status_/_Targets_ - Kubernetes service discovery
 
-## 2.2 Generate some load
+---
 
-Send requests for next 30 minutes:
+### <font color="orange"> 4.2.2 Generate some load
+send requests for next 30 minutes:
 
 ```
 docker container run `
@@ -27,10 +30,7 @@ docker container run `
 - Back to _Graph_ view in Prometheus
 
 ### <font color="orange"> 4.2.3 Publish the Grafana UI </font>
-
 > New terminal
-
-Deploy a [Gateway and VirtualService](grafana.yaml) for Grafana:
 
 ```
 istioctl dashboard grafana
@@ -39,6 +39,8 @@ istioctl dashboard grafana
 
  - _Istio Mesh Dashboard_ - overview
  - _Istio Service Dashboard_ - drill down into service 
+
+---
 
 ### <font color="orange"> 4.2.4 Deploy a failing service
 update the reviews-v2 service to add `503` faults:
@@ -50,3 +52,5 @@ kubectl apply -f 04_reviews-v2-abort.yaml
 > Check [Grafana](http://localhost:15031/d/LJ_uJAvmk/istio-service-dashboard?orgId=1&refresh=5s&from=now-5m&to=now&var-service=reviews.default.svc.cluster.local&var-srcns=All&var-srcwl=All&var-dstns=All&var-dstwl=All)
 
 > And [Kiali](http://localhost:15029/kiali/console/graph/namespaces/?edges=requestsPercentage&graphType=versionedApp&namespaces=default&unusedNodes=false&injectServiceNodes=true&pi=10000&duration=300&layout=dagre)
+
+---
