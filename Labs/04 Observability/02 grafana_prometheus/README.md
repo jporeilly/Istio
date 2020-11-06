@@ -1,19 +1,13 @@
 ## <font color="orange"> Monitoring with Prometheus & Grafana </font>
 Observe the metrics coming into Prometheus and the Istio dashboards in Grafana.
 
-### <font color="orange"> Pre-reqs checklist
+### <font color="orange"> Pre-reqs checklist </font>
 
-Follow the steps from [Demo 1](../demo1/README.md).
 
-## 2.1 Publish the Prometheus UI
+### <font color="orange"> 4.2.1 Publish the Prometheus UI </font>
 
-Deploy a [Gateway and VirtualService](prometheus.yaml) for Prometheus:
 
-```
-kubectl apply -f prometheus.yaml
-```
-
-> Browse to http://localhost:15030
+> browse to http://localhost:15030
 
 - Select `istio_requests_total`
 - Switch to _Graph_
@@ -32,27 +26,25 @@ docker container run `
 
 - Back to _Graph_ view in Prometheus
 
-## 2.3 Publish the Grafana UI
+### <font color="orange"> 4.2.3 Publish the Grafana UI </font>
 
 > New terminal
 
 Deploy a [Gateway and VirtualService](grafana.yaml) for Grafana:
 
 ```
-kubectl apply -f grafana.yaml
+istioctl dashboard grafana
 ```
-
-> Browse to http://localhost:15031
+> browse to http://localhost:3000/dashboard/db/istio-mesh-dashboard
 
  - _Istio Mesh Dashboard_ - overview
  - _Istio Service Dashboard_ - drill down into service 
 
-## 2.4 Deploy a failing service
-
-Update the [v2 reviews service](reviews-v2-abort.yaml) to add `503` faults:
+### <font color="orange"> 4.2.4 Deploy a failing service
+update the reviews-v2 service to add `503` faults:
 
 ```
-kubectl apply -f reviews-v2-abort.yaml
+kubectl apply -f 04_reviews-v2-abort.yaml
 ```
 
 > Check [Grafana](http://localhost:15031/d/LJ_uJAvmk/istio-service-dashboard?orgId=1&refresh=5s&from=now-5m&to=now&var-service=reviews.default.svc.cluster.local&var-srcns=All&var-srcwl=All&var-dstns=All&var-dstwl=All)

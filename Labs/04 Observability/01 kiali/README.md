@@ -1,6 +1,7 @@
 ## <font color="orange"> 4.1 Visualizing the Service Mesh </font>
 
 Using Kiali to graph telementry bewteen the services.
+---
 
 ### <font color="orange"> Pre-reqs checklist </font>
 * istio profile = default
@@ -42,3 +43,4 @@ use Fortio to send a few hundred requests to the app:
 docker run --add-host "bookinfo.local:192.168.145.53"  fortio/fortio load -c 32 -qps 25 -t 60s http://10.101.115.109/productpage
 ```
 - back to Kiali _Graph_
+---
