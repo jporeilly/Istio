@@ -37,7 +37,7 @@ kubectl label namespace default istio-injection=enabled
 ### <font color="orange"> Deploy BookInfo App </font>
 deploy the bookinfo app v1:
 ```
-kubectl apply -f 00_bookinfo.yaml
+kubectl apply -f 00_bookinfo-v1.yaml
 ```
 check PODs & services:
 ```
