@@ -2,9 +2,10 @@
 
 Using Kiali to graph telementry bewteen the services.
 
-### 1.0 Pre-reqs
-
-
+### <font color="orange"> Pre-reqs checklist </font>
+* istio profile = default
+* bookinfo-v1
+* IP address of gateway
 
 ### <font color="orange"> 4.1.1 Publish the Kiali UI </font>
 check Kiali service:
@@ -15,7 +16,6 @@ check Kiali service:
 - Check `productpage` in Kiali _Workloads_
 
 ### <font color="orange"> 4.1.2 Canary Deployment </font>
-
 deploy productpage-v2:
 ```
 kubectl apply -f 01_productpage-v2-canary.yaml
@@ -27,12 +27,18 @@ kubectl apply -f 01_productpage-v2-canary.yaml
 - Add _Requests percentage_ label
 - Check bookinfo virtual service in _Istio Config_ (editable!)
 
+deploy the other services:
+```
+kubectl apply -f 01_reviews-v2-canary.yaml
+```
+explore the various vKialio options...!
+
 ### <font color="orange"> 4.1.3 Generate some load </font>
+
+kubectl get svc istio-ingressgateway -n istio-system
+
 use Fortio to send a few hundred requests to the app:
 ```
-docker container run `
-  --add-host "bookinfo.local:192.168.2.119" `
-  fortio/fortio `
-  load -c 32 -qps 25 -t 30s http://bookinfo.local/productpage
+docker run --add-host "bookinfo.local:192.168.145.53"  fortio/fortio load -c 32 -qps 25 -t 60s http://10.101.115.109/productpage
 ```
-- Back to Kiali _Graph_
+- back to Kiali _Graph_
