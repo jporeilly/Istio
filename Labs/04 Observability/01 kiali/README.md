@@ -1,35 +1,25 @@
-## Visualizing the Service Mesh
+## <font color="orange"> 4.1 Visualizing the Service Mesh </font>
 
-Using [Kiali](https://kiali.io) to graph active services and see the traffic flow between them.
+Using Kiali to graph telementry bewteen the services.
 
-## 1.0 Pre-reqs
+### 1.0 Pre-reqs
 
-Deploy Istio & bookinfo app:
 
-```
-kubectl apply -f ../setup/
-```
 
-> There are some new ports in the [Istio ingress gateway](../setup/02_istio-demo.yaml).
+### <font color="orange"> 4.1.1 Publish the Kiali UI </font>
 
-#### 1.1 Publish the Kiali UI
+check Kiali service:
 
-deploy a Gateway and VirtualService:
-```
-kubectl apply -f kiali.yaml
-```
-
-> Browse to http://localhost:15029, sign in with `admin`/`admin`
+> check http://localhost:15029
 
 - App graph in _Graph_
 - Check `productpage` in Kiali _Workloads_
 
-## 1.2 Canary deployment for v2
+### <font color="orange"> 4.1.2 Canary Deployment </font>
 
-Deploy [v2 product page](./v2/productpage-v2-canary.yaml) and [v2 reviews API](./v2/reviews-v2-canary.yaml) updates:
-
+deploy productpage-v2:
 ```
-kubectl apply -f ./v2/
+kubectl apply -f 01_productpage-v2-canary.yaml
 ```
 
 > Browse to http://bookinfo.local/productpage and refresh 

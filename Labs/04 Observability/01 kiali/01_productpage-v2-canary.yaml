@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reviews-v2
+  name: productpage-v2
   labels:
-    app: reviews
+    app: productpage
     version: v2
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: reviews
+      app: productpage
       version: v2
   template:
     metadata:
       labels:
-        app: reviews
+        app: productpage
         version: v2
     spec:
-      serviceAccountName: bookinfo-reviews
+      serviceAccountName: bookinfo-productpage
       containers:
-        - name: reviews
-          image: docker.io/istio/examples-bookinfo-reviews-v2:1.15.0
+        - name: productpage
+          image: docker.io/jporeilly/bookinfo-productpage:v2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9080
@@ -28,34 +28,40 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: reviews
+  name: productpage
 spec:
-  host: reviews
+  host: productpage
   trafficPolicy:
     tls:
       mode: ISTIO_MUTUAL
   subsets:
-  - name: v1
-    labels:
-      version: v1
-  - name: v2
-    labels:
-      version: v2
+    - name: v1
+      labels:
+        version: v1
+    - name: v2
+      labels:
+        version: v2
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: reviews
+  name: bookinfo
 spec:
   hosts:
-  - reviews
+    - bookinfo.local
+  gateways:
+    - bookinfo-gateway
   http:
   - route:
     - destination:
-        host: reviews
+        host: productpage
         subset: v1
+        port:
+          number: 9080
       weight: 70
     - destination:
-        host: reviews
+        host: productpage
         subset: v2
+        port:
+          number: 9080
       weight: 30
