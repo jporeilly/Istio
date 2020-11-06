@@ -37,7 +37,7 @@ kubectl apply -f 01_productpage-v2-canary.yaml
 
 deploy the other services:
 ```
-kubectl apply -f 01_reviews-v2-canary.yaml
+kubectl apply -f 02_reviews-v2-canary.yaml
 ```
 explore the various Kiali options...!
 

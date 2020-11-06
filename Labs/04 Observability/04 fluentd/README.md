@@ -3,12 +3,16 @@ Use the EFK stack - Elasticsearch, Fluentd and Kibana to record and search logs.
 
 ---
 
-### <font color="orange"> 4.1 Deploy the logging stack </font>
-Deployments, services etc. in [elasticsearch.yaml](./logging/01_elasticsearch.yaml), [kibana.yaml](./logging/02_kibana.yaml) and [fluentd.yaml](./logging/03_fluentd.yaml):
-
+### <font color="orange"> 4.4.1 Deploy the logging stack </font>
+Deployments, services etc. in Elasticsearch, Kibana and Fluentd:
 ```
-kubectl apply -f ./logging/
-
+kubectl apply -f 01_elasticsearch.yaml
+```
+```
+kubectl apply -f 01_kibana.yaml
+```
+check Pods in namespace logging:
+```
 kubectl get pods -n logging
 ```
 > browse to Kibana at http://localhost:15033
@@ -26,17 +30,14 @@ docker container run `
 - Back to Kibana
 - Filter on `kubernetes.labels.app` _is_ `productpage`
 
-### 4.3 Configure Istio to log to Fluentd
+---
 
-Deploy the [Fluentd setup](fluentd-istio.yaml):
-
+### <font color="orange"> 4.4.3 Configure Istio to log to Fluentd </font>
+deploy the Fluentd:
 ```
 kubectl apply -f fluentd-istio.yaml
 ```
-   
-### 4.4 Generate load
-
-Run a 30s burst of requests:
+generate load - run a 30s burst of requests:
 
 ```
 docker container run `
@@ -44,8 +45,9 @@ docker container run `
   fortio/fortio `
   load -c 32 -qps 25 -t 30s http://bookinfo.local/productpage
 ```
-
 > Refresh Kibana at http://localhost:15033 
 
 - Filter on `kubernetes.container.name` _is_ `istio-proxy`
 - These are Envoy logs 
+
+---
