@@ -8,6 +8,8 @@ Using Kiali to graph telementry bewteen the services.
 * bookinfo-v1
 * IP address of gateway
 
+---
+
 ### <font color="orange"> 4.1.1 Publish the Kiali UI </font>
 access Kiali UI:
 
@@ -34,17 +36,19 @@ deploy the other services:
 ```
 kubectl apply -f 01_reviews-v2-canary.yaml
 ```
-explore the various vKialio options...!
+explore the various Kiali options...!
 
 ---
 
 ### <font color="orange"> 4.1.3 Generate some load </font>
-
+determine external IP:
+```
 kubectl get svc istio-ingressgateway -n istio-system
-
+```
 use Fortio to send a few hundred requests to the app:
 ```
 docker run --add-host "bookinfo.local:192.168.145.53"  fortio/fortio load -c 32 -qps 25 -t 60s http://10.101.115.109/productpage
 ```
 - back to Kiali _Graph_
+
 ---

@@ -8,6 +8,7 @@ Observe the metrics coming into Prometheus and the Istio dashboards in Grafana.
 ---
 
 ### <font color="orange"> 4.2.1 Publish the Prometheus UI </font>
+in a new terminal:
 
 > browse to http://localhost:15030
 
