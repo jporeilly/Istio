@@ -6,22 +6,24 @@ ensure minikube is up and running:
 ```
 minikube start
 ```
+
 start the loadbalancer:
 ```
 minikube tunnel
 ```
-check everything:
+check minikube status:
+```
+minikube status
+```
+view addons:
+```
+minikube addons list
+```
+access dashboard:
 ```
 minikube dashboard
 ```
 
-to clean up:
-```
-minikube stop
-```
-```
-minikube delete
-```
 ---
 
 ### <font color="orange"> 1.1.1 Deploy Istio </font>
@@ -42,14 +44,14 @@ check istio:
 istioctl x precheck
 ```
 
-install istio demo configuration:
+install istio default configuration:
 list istio profiles:
 ```
 istioctl profile list
 ```
 deploy Istio 'demo' profile:
 ```
-istioctl install --set profile=demo
+istioctl install --set profile=default
 ```
 check istio:
 ```
@@ -105,9 +107,20 @@ docker info
 ---
 
 ### <font color="orange"> Troubleshooting </font>
+
 ```
 istioctl verify-install
 ```
 ```
 istioctl upgrade
+```
+to delete istio:
+
+
+to clean up minikube:
+```
+minikube stop
+```
+```
+minikube delete
 ```
