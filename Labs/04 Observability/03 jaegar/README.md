@@ -8,7 +8,7 @@ in a new terminal:
 ```
 istioctl jaegar dashboard
 ```
-> Bbowse to http://localhost:15032 
+> browse to: http://localhost:15032 
 
 - Select service `productpage.default`
 - Follow traces - OK & failing
