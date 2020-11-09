@@ -115,7 +115,9 @@ istioctl verify-install
 istioctl upgrade
 ```
 to delete istio:
-
+```
+kubectl delete namespace istio-system
+```
 
 to clean up minikube:
 ```
