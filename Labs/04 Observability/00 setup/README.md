@@ -19,7 +19,7 @@ istioctl profile list
 ```
 deploy Istio 'default' profile:
 ```
-istioctl install --set profile=default
+istioctl install --set profile=demo
 ```
 check istio:
 ```
