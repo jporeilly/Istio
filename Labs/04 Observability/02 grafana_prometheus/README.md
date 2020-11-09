@@ -3,7 +3,7 @@ Observe the metrics coming into Prometheus and the Istio dashboards in Grafana.
 
 ---
 
-### <font color="orange"> 4.2.1 Publish the Prometheus UI </font>
+### <font color="orange"> 4.2.2 Publish the Prometheus UI </font>
 check prometheus service:
 ````
 kubectl -n istio-system get svc prometheus
@@ -30,6 +30,10 @@ docker container run `
 ---
 
 ### <font color="orange"> 4.2.2 Publish the Grafana UI </font>
+check grafana service:
+````
+kubectl -n istio-system get svc grafana
+````
 > in a new terminal:
 ```
 istioctl dashboard grafana
