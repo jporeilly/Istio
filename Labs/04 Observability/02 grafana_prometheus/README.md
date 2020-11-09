@@ -4,11 +4,16 @@ Observe the metrics coming into Prometheus and the Istio dashboards in Grafana.
 ---
 
 ### <font color="orange"> 4.2.1 Publish the Prometheus UI </font>
+check prometheus service:
+````
+kubectl -n istio-system get svc prometheus
+````
+
 in a new terminal:
 ```
 istioctl dashboard prometheus
 ```
-> browse to http://localhost:15030
+> browse to http://localhost:9090
 - Select `istio_requests_total`
 - Switch to _Graph_
 - Check _Status_/_Targets_ - Kubernetes service discovery

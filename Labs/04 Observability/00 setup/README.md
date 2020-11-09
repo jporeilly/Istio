@@ -12,6 +12,15 @@ check istio:
 istioctl x precheck
 ```
 
+troubleshooting:
+```
+istioctl upgrade
+```
+restart istio services:
+```
+kubectl rollout restart deployment
+```
+
 install istio demo configuration:
 list istio profiles:
 ```
