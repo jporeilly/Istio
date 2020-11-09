@@ -47,7 +47,7 @@ kubectl get svc istio-ingressgateway -n istio-system
 ```
 use Fortio to send a few hundred requests to the app:
 ```
-docker run --add-host "bookinfo.local:192.168.145.53"  fortio/fortio load -c 32 -qps 25 -t 60s http://10.101.115.109/productpage
+docker run --add-host "bookinfo.local:192.168.x.x"  fortio/fortio load -c 32 -qps 25 -t 60s http://10.104.22.230/productpage
 ```
 - back to Kiali _Graph_
 
