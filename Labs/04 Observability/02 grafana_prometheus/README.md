@@ -38,19 +38,19 @@ kubectl -n istio-system get svc grafana
 ```
 istioctl dashboard grafana
 ```
-> browse to http://localhost:3000/dashboard/db/istio-mesh-dashboard
+> browse to http://localhost:3000
  - _Istio Mesh Dashboard_ - overview
  - _Istio Service Dashboard_ - drill down into service 
 
 ---
 
 ### <font color="orange"> 4.2.3 Deploy a failing service </font>
+it may be worth deleting everything and starting with a clean deployment:
+
 update the reviews-v2 service to add `503` faults:
 ```
 kubectl apply -f 03_reviews-v2-abort.yaml
 ```
-> check [Grafana](http://localhost:3000/dashboard/db/istio-mesh-dashboard?orgId=1&refresh=5s&from=now-5m&to=now&var-service=reviews.default.svc.cluster.local&var-srcns=All&var-srcwl=All&var-dstns=All&var-dstwl=All)
+> check Grafana - Istio Service Dashboard > reviews.default.svc.cluster.local
 
-> check [Kiali](http://localhost:20001/kiali/console/graph/namespaces/?edges=requestsPercentage&graphType=versionedApp&namespaces=default&unusedNodes=false&injectServiceNodes=true&pi=10000&duration=300&layout=dagre)
-
----
+> check Kiali - notice the traffic between productpage-v1 & v2 and reviews
