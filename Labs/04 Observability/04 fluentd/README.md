@@ -6,10 +6,7 @@ Use the EFK stack - Elasticsearch, Fluentd and Kibana to record and search logs.
 ### <font color="orange"> 4.4.1 Deploy the logging stack </font>
 Deployments, services etc. in Elasticsearch, Kibana and Fluentd:
 ```
-kubectl apply -f 01_elasticsearch.yaml
-```
-```
-kubectl apply -f 01_kibana.yaml
+kubectl apply -f 01_logging_stack.yaml
 ```
 check Pods in namespace logging:
 ```

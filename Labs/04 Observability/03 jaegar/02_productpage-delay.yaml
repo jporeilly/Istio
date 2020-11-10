@@ -27,5 +27,5 @@ spec:
     fault:
       delay:
         percentage:
-          value: 5
-        fixedDelay: 10s
+          value: 30
+        fixedDelay: 5s

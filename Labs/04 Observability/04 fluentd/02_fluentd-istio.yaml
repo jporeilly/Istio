@@ -27,7 +27,7 @@ metadata:
 spec:
   compiledAdapter: fluentd
   params:
-    address: "fluentd-es.kube-system:24224"
+    address: "fluentd-es.logging:24224"
 ---
 # Rule to send logentry instances to the Fluentd handler
 apiVersion: config.istio.io/v1alpha2
