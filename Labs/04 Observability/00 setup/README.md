@@ -1,9 +1,9 @@
 ## <font color="orange"> 4.1 Observability </font>
-in a terminal download istio: 
+in a new terminal download istio: 
 ```
 curl -L https://istio.io/downloadIstio | sh -
 ```
-add the istioctl client to your path:
+add the istioctl client to your path:demo
 ```
 export PATH="$PATH:/home/foundry/Istio-1.7.4/bin"
 ```
@@ -38,6 +38,10 @@ kubectl -n istio-system get deploy
 
 ### <font color="orange"> Configure auto proxy injection </font>
 anything that gets deployed to the default namespace will have Istio proxy - Envoy - automatically injected: 
+in a terminal check namespaces:
+```
+istioctl analyze --all-namespaces
+```
 ```
 kubectl label namespace default istio-injection=enabled
 ```

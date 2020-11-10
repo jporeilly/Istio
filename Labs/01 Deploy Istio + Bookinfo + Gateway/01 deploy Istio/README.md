@@ -31,7 +31,7 @@ check whats running on Kubernetes:
 ```
 kubectl get all
 ```
-in a terminal download istio: 
+in a new terminal download istio: 
 ```
 curl -L https://istio.io/downloadIstio | sh -
 ```
