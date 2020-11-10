@@ -8,11 +8,16 @@ Deployments, services etc. in Elasticsearch, Kibana and Fluentd:
 ```
 kubectl apply -f 01_logging_stack.yaml
 ```
+```
+kubectl apply -f 01_fluentd-istio.yaml
+```
 check Pods in namespace logging:
 ```
-kubectl get pods -n logging
+kubectl get pods,svc -n logging
 ```
-> browse to Kibana at http://localhost:5601
+enter Cluster-IP address for Kibana service:  
+
+> browse to Kibana at http://10.x.x.x:5601
 
 - In _Discover_ create index pattern for `logstash*`
 
