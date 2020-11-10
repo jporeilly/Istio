@@ -112,11 +112,20 @@ check jaeger service:
 ````
 kubectl -n istio-system get svc tracing
 ````
+in the istioctl terminal:
 access kiali dashboard:
 ```
 istioctl dashboard kiali
 ````
 ````
 > check: http://localhost:20001/kiali/console/istio
+````
+in the istioctl terminal:
+access grafana dashboard:
+```
+istioctl dashboard grafana
+````
+````
+> check: http://localhost:3000/
 ````
 ---

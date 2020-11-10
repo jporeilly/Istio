@@ -90,7 +90,7 @@ make a note of the IP:
 ````
 kubectl -n istio-system get svc grafana
 ````
-
+in the istioctl terminal:
 access kiali dashboard:
 ```
 istioctl dashboard kiali
