@@ -19,6 +19,11 @@ enter Cluster-IP address for Kibana service:
 
 > browse to Kibana at http://10.x.x.x:5601
 
+or port forward:
+```
+kubectl -n logging port-forward $(kubectl -n logging get pod -l app=kibana -o jsonpath='{.items[0].metadata.name}') 5601:5601 &amp;
+```
+
 - In _Discover_ create index pattern for `logstash*`
 
 generate some load unning for 30 seconds:
