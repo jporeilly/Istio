@@ -12,7 +12,7 @@ check Pods in namespace logging:
 ```
 kubectl get pods -n logging
 ```
-> browse to Kibana at http://localhost:15033
+> browse to Kibana at http://localhost:5601
 
 - In _Discover_ create index pattern for `logstash*`
 
@@ -41,7 +41,7 @@ docker container run `
   fortio/fortio `
   load -c 32 -qps 25 -t 30s http://bookinfo.local/productpage
 ```
-> refresh Kibana at http://localhost:15033 
+> refresh Kibana at http://localhost:5601 
 
 - Filter on `kubernetes.container.name` _is_ `istio-proxy`
 - These are Envoy logs 
