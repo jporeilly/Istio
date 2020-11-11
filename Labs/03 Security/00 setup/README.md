@@ -11,7 +11,7 @@ With a root certificate authority (CA) in place, Access only allows requests fro
 
 <font color="red"> You will need to delete Istio and Minikube and deploy Istio with profile=default. </font>
 
-install istio default configuration (no mTLS):
+install istio default configuration (no mTLS):  
 check whats running on Kubernetes:
 ```
 kubectl get all
@@ -31,7 +31,7 @@ istioctl x precheck
 ```
 
 install istio demo configuration:
-list istio profiles:
+in a new terminal list istio profiles:
 ```
 istioctl profile list
 ```
@@ -46,6 +46,10 @@ kubectl -n istio-system get deploy
 ---
 
 ### <font color="orange"> Configure auto proxy injection </font>
+in a terminal check namespaces:
+```
+istioctl analyze --all-namespaces
+```
 anything that gets deployed to the default namespace will have Istio proxy - Envoy - automatically injected: 
 ```
 kubectl label namespace default istio-injection=enabled
@@ -87,7 +91,7 @@ replace the existing IP with current IP address:
 
 ### <font color="orange"> Deploy Legacy App </font>
 deploy legacy app:  
-this app doesn't run through Istio (injection disabled):
+this app runs in 'sleep' namespace (injection disabled):
 ```
 kubectl apply -f 00_sleep.yaml
 ```
