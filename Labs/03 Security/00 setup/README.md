@@ -3,6 +3,14 @@ Mutual TLS (mTLS) authentication ensures that traffic is both secure and trusted
 
 With a root certificate authority (CA) in place, Access only allows requests from devices with a corresponding client certificate. When a request reaches the application, Access responds with a request for the client to present a certificate. If the device fails to present the certificate, the request is not allowed to proceed. If the client does have a certificate, Access completes a key exchange to verify.
 
+---
+
+## <font color="orange"> Delete Istio & Reset Minikube </font>
+
+> Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/) 
+
+<font color="red"> You will need to delete Istio and Minikube and deploy Istio with profile=default. </font>
+
 install istio default configuration (no mTLS):
 check whats running on Kubernetes:
 ```
