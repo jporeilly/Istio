@@ -108,13 +108,15 @@ docker info
 ---
 
 ### <font color="orange"> Troubleshooting </font>
-
+check istio deployment:
 ```
 istioctl verify-install
 ```
+to upgrade deployment:
 ```
 istioctl upgrade
 ```
+
 to delete istio:
 ```
 kubectl delete namespace istio-system

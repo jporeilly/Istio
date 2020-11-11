@@ -12,17 +12,17 @@ first delete the Istio namespace
 ```
 kubectl delete ns istio-system
 ```
-the namesapce can also be deleted using K8s in VS..
+the namesapce can also be deleted using K8s ext. in VS..
 
 ensure minikube is up and running:
 ```
 minikube start
 ```
-start the loadbalancer:
+in anew terminal start the loadbalancer:
 ```
 minikube tunnel
 ```
-check everything:
+in a new terminal check everything:
 ```
 minikube dashboard
 ```

@@ -13,6 +13,12 @@ check PODs & services:
 ```
 kubectl get pods,svc
 ```
+
+if you need to redeploy app:
+```
+kubectl roolout restart deployment --namespace default
+```
+
 ---
 
 ### <font color="orange"> 1.2.2 Deploy Ingress Gateway </font>
