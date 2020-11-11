@@ -8,7 +8,7 @@ apply the JWT authentication policy for the productpage:
 ```
 kubectl apply -f 01_productpage-auth-jwt.yaml
 ```
-> check http://localhost/productpage -> `401`  
+> check http://localhost/productpage -> `403`  
 you need to add an authentication header. In Firefox's network tab:
 - Refresh
 - Edit & resend 
@@ -25,7 +25,17 @@ apply a deny-all authorization policy for the product page:
 ```
 kubectl apply -f productpage-authz-deny-all.yaml
 ```
-> Repeat edit & send request -> `403`
+> check http://localhost/productpage -> `403`  
+you need to add an authentication header. In Firefox's network tab:
+- Refresh
+- Edit & resend 
+- Add header
+
+```
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRIRmJwb0lVcXJZOHQyenBBMnFYZkNtcjVWTzVaRXI0UnpIVV8tZW52dlEiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjQ2ODU5ODk3MDAsImZvbyI6ImJhciIsImlhdCI6MTUzMjM4OTcwMCwiaXNzIjoidGVzdGluZ0BzZWN1cmUuaXN0aW8uaW8iLCJzdWIiOiJ0ZXN0aW5nQHNlY3VyZS5pc3Rpby5pbyJ9.CfNnxWP2tcnR9q0vxyxweaF3ovQYHYZl82hAUsn21bwQd9zP7c-LS9qd_vpdLG4Tn1A15NxfCjp5f7QNBUo-KC9PJqYpgGbaXhaGx7bEdFWjcwv3nZzvc7M__ZpaCERdwU7igUmJqYGBYQ51vr2njU9ZimyKkfDe3axcyiBZde7G6dabliUosJvvKOPcKIWPccCgefSj_GNfwIip3-SsFdlR7BtbVUcqR-yv-XOxJ3Uc1MI0tz3uMiiZcyPV7sNCU4KRnemRIMHVOfuvHsU60_GhGbiSFzgPTAa9WTltbnarTbxudb_YEOx12JiwYToeX0DCPb43W1tzIBxgm8NxUg
+```
+> check http://localhost/productpage -> `200`  
+---
 ---
 
 ### <font color='orange'> 3.3.3 Decode the JWT </font>
