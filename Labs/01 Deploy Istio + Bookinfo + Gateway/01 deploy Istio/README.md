@@ -116,6 +116,19 @@ to upgrade deployment:
 ```
 istioctl upgrade
 ```
+add the istioctl client to your path:
+```
+export PATH="$PATH:/home/foundry/Istio-1.7.4/bin"
+```
+reload variables:
+```
+source ~/.bash_profile
+```
+check istio:
+```
+istioctl x precheck
+```
+
 
 to delete istio:
 ```
