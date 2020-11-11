@@ -3,16 +3,16 @@ Istio’s traffic routing rules let you easily control the flow of traffic and A
 
 Istio’s traffic management model relies on the Envoy proxies that are deployed along with your services. All traffic that your mesh services send and receive (data plane traffic) is proxied through Envoy, making it easy to direct and control traffic around your mesh without making any changes to your services.
 
-
-
 ---
 ## <font color="orange"> Minikube </font>
 
 > Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/)  
+
 first delete the Istio namespace
 ```
 kubectl delete ns istio-system
 ```
+the namesapce can also be deleted using K8s in VS..
 
 ensure minikube is up and running:
 ```

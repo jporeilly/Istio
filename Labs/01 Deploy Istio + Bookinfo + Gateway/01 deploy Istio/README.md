@@ -7,10 +7,6 @@ ensure minikube is up and running:
 minikube start
 ```
 
-start the loadbalancer:
-```
-minikube tunnel
-```
 check minikube status:
 ```
 minikube status
@@ -19,11 +15,16 @@ view addons:
 ```
 minikube addons list
 ```
-access dashboard:
+
+in a new terminal access dashboard:
 ```
 minikube dashboard
 ```
 
+in anew terminal start the loadbalancer:
+```
+minikube tunnel
+```
 ---
 
 ### <font color="orange"> 1.1.1 Deploy Istio </font>
