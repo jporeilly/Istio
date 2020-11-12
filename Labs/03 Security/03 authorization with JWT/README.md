@@ -66,28 +66,26 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRIRmJwb0lVcXJZOHQyenBBMnFYZk
 
 ---
 
-
-
 ### <font color='orange'> 3.3.4 Allow access by issuer </font>
 apply an authorization policy which allows access by issuer:
 ```
-kubectl apply -f productpage-authz-allow-issuer.yaml
+kubectl apply -f 04_productpage-authz-allow-issuer.yaml
 ```
 > Repeat edit & send request -> `200`
 ---
 
-### <font color='orange'> 3.5 Allow access by subject </font>
+### <font color='orange'> 3.3.4 Allow access by subject </font>
 apply an authorization policy which allows access by subject:
 ```
-kubectl apply -f productpage-authz-allow-subject.yaml
+kubectl apply -f 04_productpage-authz-allow-subject.yaml
 ```
 > Repeat edit & send request -> `403`
 ---
 
-### <font color='orange'> 3.6 Allow access by custom claim </font>
+### <font color='orange'> 3..3.4 Allow access by custom claim </font>
 apply an authorization policy which allows access by claim:
 ```
-kubectl apply -f productpage-authz-allow-claim.yaml
+kubectl apply -f 04_productpage-authz-allow-claim.yaml
 ```
 > Repeat edit & send request -> `200`
 ---
