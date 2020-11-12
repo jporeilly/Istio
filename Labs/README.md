@@ -93,18 +93,20 @@ Deploy Istio with auto sidecar injection.
 Discover the various features of Kiali. 
 
 ### <font color="teal"> Lab: 02 Grafana & Prometheus </font>
-In conjunction with Grafana, Jaegar will help trace 
+In conjunction with Grafana, Jaegar will help trace requests.
 
 ### <font color="teal"> Lab: 03 Jaegar </font>
-Deploy Productpage:v2
+Debug the app by tracing requests / responses.
 
 ### <font color="teal"> Lab: 04 FluentD </font>
-Deploy Productpage:v2
+Collects the Logs across the depoloyment.
 
 ---
 
 ### <font color='red'> Module 05 - Istio and Foundry </font>
-
+Outlines the part Istio plays in Foundry
+- Best Practices
+- 
 
 
 ---
