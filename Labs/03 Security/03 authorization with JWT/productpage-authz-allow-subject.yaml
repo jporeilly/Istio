@@ -13,4 +13,4 @@ spec:
         methods: ["GET"]
     when:
     - key: request.auth.claims[sub]
-      values: ["elton@secure.istio.io"]
+      values: ["james@secure.istio.io"]
