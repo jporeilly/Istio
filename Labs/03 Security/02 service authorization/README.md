@@ -32,6 +32,7 @@ kubectl apply -f 01_deny-all.yaml
 > check http://localhost/productpage  
 
 RBAC: access denied - not authorized.  
+
 ---
 
 ### <font color='red'>3.2.2 ALLOW access to Productpage Service </font>
@@ -78,6 +79,8 @@ curl http://ratings:9080/ratings/1
 ---
 
 clean up:
+you can also delete the policies from the K8s extension in VS.
+
 ```
 kubectl delete authorizationpolicy.security.istio.io/deny-all
 ```
