@@ -21,7 +21,7 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6IkRIRmJwb0lVcXJZOHQyenBBMnFYZkNtcjVWTzVaRXI0UnpIVV8t
 
 apply the JWT authtentication policy for the productpage:
 ```
-kubectl apply -f 01_productpage-authn-jwt.yaml
+kubectl apply -f 02_productpage-authn-jwt.yaml
 ```
 > check http://localhost/productpage -> `200`  
 
