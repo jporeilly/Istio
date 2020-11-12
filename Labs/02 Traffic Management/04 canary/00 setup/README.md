@@ -1,4 +1,4 @@
-## <font color="orange"> 2.4 Canary Deployment </font>
+## <font color='red'> 2.4 Canary Deployment </font>
 Canary deployment is like blue-green, except it’s more risk-averse. Instead of switching from blue to green in one step, you use a phased approach.
 
 ---

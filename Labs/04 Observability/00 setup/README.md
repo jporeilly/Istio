@@ -1,4 +1,4 @@
-## <font color="orange"> 4.1 Observability </font>
+## <font color='red'> 4.1 Observability </font>
 in a new terminal download istio: 
 ```
 curl -L https://istio.io/downloadIstio | sh -
@@ -36,7 +36,7 @@ kubectl -n istio-system get deploy
 ```
 ---
 
-### <font color="orange"> Configure auto proxy injection </font>
+### <font color='red'> Configure auto proxy injection </font>
 anything that gets deployed to the default namespace will have Istio proxy - Envoy - automatically injected: 
 in a terminal check namespaces:
 ```
@@ -47,7 +47,7 @@ kubectl label namespace default istio-injection=enabled
 ```
 ---
 
-### <font color="orange"> Deploy BookInfo App </font>
+### <font color='red'> Deploy BookInfo App </font>
 deploy the bookinfo app v1:
 ```
 kubectl apply -f 00_bookinfo-v1.yaml
@@ -58,7 +58,7 @@ kubectl get pods,svc
 ```
 ---
 
-### <font color="orange"> Deploy Gateway </font>
+### <font color='red'> Deploy Gateway </font>
 deploy gateway:
 ```
 kubectl apply -f 00_bookinfo-gateway.yaml
@@ -79,7 +79,7 @@ replace the existing IP with current IP address:
 > check http://localhost/productpage
 ---
 
-### <font color="orange"> Deploy Kiali </font>
+### <font color='red'> Deploy Kiali </font>
 install prometheus:  
 ````
 kubectl apply -f 00_prometheus.yaml

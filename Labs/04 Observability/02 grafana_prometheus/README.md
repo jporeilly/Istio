@@ -1,9 +1,9 @@
-## <font color="orange"> 4.2 Monitoring with Prometheus & Grafana </font>
+## <font color='red'> 4.2 Monitoring with Prometheus & Grafana </font>
 Observe the metrics coming into Prometheus and the Istio dashboards in Grafana.
 
 ---
 
-### <font color="orange"> 4.2.2 Publish the Prometheus UI </font>
+### <font color='red'> 4.2.2 Publish the Prometheus UI </font>
 check prometheus service:
 ````
 kubectl -n istio-system get svc prometheus
@@ -29,7 +29,7 @@ docker container run `
 
 ---
 
-### <font color="orange"> 4.2.2 Publish the Grafana UI </font>
+### <font color='red'> 4.2.2 Publish the Grafana UI </font>
 check grafana service:
 ````
 kubectl -n istio-system get svc grafana
@@ -44,7 +44,7 @@ istioctl dashboard grafana
 
 ---
 
-### <font color="orange"> 4.2.3 Deploy a failing service </font>
+### <font color='red'> 4.2.3 Deploy a failing service </font>
 it may be worth deleting everything and starting with a clean deployment:
 
 update the reviews-v2 service to add `503` faults:

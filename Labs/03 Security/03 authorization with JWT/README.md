@@ -1,9 +1,9 @@
-## <font color='orange'> 3.3 End-user Authorization </font>  
+## <font color='red'> 3.3 End-user Authorization </font>  
 require end-user authentication with JWT and enforce access control based on the JWT claims.
 
 ---
 
-### <font color='orange'> 3.3.1 Decode the JWT </font>
+### <font color='red'> 3.3.1 Decode the JWT </font>
 
 The JWT is a base64 encoded string. 
 Read the claims - select demo.jwt
@@ -13,7 +13,7 @@ Read the claims - select demo.jwt
 - Custom: `foo=bar`
 ---
 
-### <font color='orange'> 3.3.2 Require JWT  </font>
+### <font color='red'> 3.3.2 Require JWT  </font>
 view the JWT:
 ```
 eyJhbGciOiJSUzI1NiIsImtpZCI6IkRIRmJwb0lVcXJZOHQyenBBMnFYZkNtcjVWTzVaRXI0UnpIVV8tZW52dlEiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjQ2ODU5ODk3MDAsImZvbyI6ImJhciIsImlhdCI6MTUzMjM4OTcwMCwiaXNzIjoidGVzdGluZ0BzZWN1cmUuaXN0aW8uaW8iLCJzdWIiOiJ0ZXN0aW5nQHNlY3VyZS5pc3Rpby5pbyJ9.CfNnxWP2tcnR9q0vxyxweaF3ovQYHYZl82hAUsn21bwQd9zP7c-LS9qd_vpdLG4Tn1A15NxfCjp5f7QNBUo-KC9PJqYpgGbaXhaGx7bEdFWjcwv3nZzvc7M__ZpaCERdwU7igUmJqYGBYQ51vr2njU9ZimyKkfDe3axcyiBZde7G6dabliUosJvvKOPcKIWPccCgefSj_GNfwIip3-SsFdlR7BtbVUcqR-yv-XOxJ3Uc1MI0tz3uMiiZcyPV7sNCU4KRnemRIMHVOfuvHsU60_GhGbiSFzgPTAa9WTltbnarTbxudb_YEOx12JiwYToeX0DCPb43W1tzIBxgm8NxUg
@@ -48,7 +48,7 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRIRmJwb0lVcXJZOHQyenBBMnFYZk
 > check http://localhost/productpage -> `200`  
 ---
 
-### <font color='orange'> 3.3.3 Restrict access to productpage </font>
+### <font color='red'> 3.3.3 Restrict access to productpage </font>
 apply a deny-all authorization policy for the product page:
 ```
 kubectl apply -f 02_productpage-authz-deny-all.yaml
@@ -66,7 +66,7 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRIRmJwb0lVcXJZOHQyenBBMnFYZk
 
 ---
 
-### <font color='orange'> 3.3.4 Allow access by issuer </font>
+### <font color='red'> 3.3.4 Allow access by issuer </font>
 apply an authorization policy which allows access by issuer:
 ```
 kubectl apply -f 04_productpage-authz-allow-issuer.yaml
@@ -74,7 +74,7 @@ kubectl apply -f 04_productpage-authz-allow-issuer.yaml
 > Repeat edit & send request -> `200`
 ---
 
-### <font color='orange'> 3.3.4 Allow access by subject </font>
+### <font color='red'> 3.3.4 Allow access by subject </font>
 apply an authorization policy which allows access by subject:
 ```
 kubectl apply -f 04_productpage-authz-allow-subject.yaml
@@ -82,7 +82,7 @@ kubectl apply -f 04_productpage-authz-allow-subject.yaml
 > Repeat edit & send request -> `403`
 ---
 
-### <font color='orange'> 3..3.4 Allow access by custom claim </font>
+### <font color='red'> 3..3.4 Allow access by custom claim </font>
 apply an authorization policy which allows access by claim:
 ```
 kubectl apply -f 04_productpage-authz-allow-claim.yaml

@@ -1,9 +1,9 @@
-## <font color="orange"> 2.4 Canary Deployment </font>
+## <font color='red'> 2.4 Canary Deployment </font>
 Canary deployment is like blue-green, except it’s more risk-averse. Instead of switching from blue to green in one step, you use a phased approach.
 
 ---
 
-### <font color="orange"> 2.4.1 Canary with 30% traffic to v2 </font>
+### <font color='red'> 2.4.1 Canary with 30% traffic to v2 </font>
 deploy canary rules with 70/30 split:  
 > productpage:v1 → bookinfo.local 70%  
 > productpage:v2 → bookinfo.local 30%  
@@ -31,7 +31,7 @@ kubectl describe vs bookinfo-test
 > check http://test.bookinfo.local/productpage & refresh, just v2  
 ---
 
-### <font color="orange"> 2.4.2 Canary Rollout </font>
+### <font color='red'> 2.4.2 Canary Rollout </font>
 shift traffic to v2:
 
 - 55/45 split: kubectl apply -f 02_productpage-canary-55-45.yaml  
@@ -41,7 +41,7 @@ shift traffic to v2:
 > check http://bookinfo.local/productpage & refresh  
 ---
 
-### <font color="orange"> 2.4.3 Canary with Sticky Session </font>
+### <font color='red'> 2.4.3 Canary with Sticky Session </font>
 deploy canary rules with 70/30 split: 
 ```
 kubectl apply -f 01_productpage-canary-70-30.yaml

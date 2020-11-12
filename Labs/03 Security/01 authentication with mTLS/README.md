@@ -1,4 +1,4 @@
-### <font color='orange'> 3.1.1 Hack the details API </font>
+### <font color='red'> 3.1.1 Hack the details API </font>
 Mutual TLS (mTLS) authentication ensures that traffic is both secure and trusted in both directions between a client and server. It allows requests that do not log in with an identity provider (like IoT devices) to demonstrate that they can reach a given resource. Client certificate authentication is also a second layer of security for team members who both log in with an identity provider (IdP) and present a valid client certificate.  
 
 With a root certificate authority (CA) in place, Access only allows requests from devices with a corresponding client certificate. When a request reaches the application, Access responds with a request for the client to present a certificate. If the device fails to present the certificate, the request is not allowed to proceed. If the client does have a certificate, Access completes a key exchange to verify.
@@ -52,7 +52,7 @@ istioctl dashboard kiali
 ````
 ---
 
-### <font color="orange"> 3.1.2 Secure the Istio Mesh </font>
+### <font color='red'> 3.1.2 Secure the Istio Mesh </font>
 in a new terminal session:  
 enforce mTLS for all services in the istio mesh:  
 <font color="teal"> STRICT </font>- only mTLS:  
@@ -101,7 +101,7 @@ kubectl delete pa -n istio-system mesh-strict-policy
 ```
 ---
 
-### <font color="orange"> 3.1.3 Secure the default Namespace </font>
+### <font color='red'> 3.1.3 Secure the default Namespace </font>
 Let’s ensure that all services in the default namespace should be secure. 
 
 check peer athentication:
@@ -150,7 +150,7 @@ kubectl delete pa -n default namespace-permissive-policy
 ```
 ---
 
-### <font color='orange'> 3.1.4 Secure a Service </font>
+### <font color='red'> 3.1.4 Secure a Service </font>
 To set a peer authentication policy for a specific workload (service), you must configure the selector section and specify  
 the labels that match the desired workload. However, Istio cannot aggregate workload-level policies for outbound mutual TLS traffic to a service. 
 Configure a destination rule to manage that behavior.  

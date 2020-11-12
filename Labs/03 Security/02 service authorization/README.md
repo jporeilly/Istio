@@ -1,4 +1,4 @@
-## <font color='orange'> 3.2 Service Authorization </font>
+## <font color='red'> 3.2 Service Authorization </font>
 Kubernetes authorizes API requests using the API server. It evaluates all of the request attributes against all policies and allows or denies the request.  
 
 All parts of an API request must be allowed by some policy in order to proceed. This means that permissions are denied by default.
@@ -23,7 +23,7 @@ kubectl delete pa -n <namespace> <peerathentication>
 ```
 ---
 
-### <font color='orange'> 3.2.1 DENY authorization to all Services </font>
+### <font color='red'> 3.2.1 DENY authorization to all Services </font>
 
 apply a deny-all authorization policy for all services:
 ```
@@ -34,7 +34,7 @@ kubectl apply -f 01_deny-all.yaml
 RBAC: access denied - not authorized.  
 ---
 
-### <font color='orange'>3.2.2 ALLOW access to Productpage Service </font>
+### <font color='red'>3.2.2 ALLOW access to Productpage Service </font>
 
 apply the updated authorization policy to allow access to productpage service:
 ```
@@ -55,7 +55,7 @@ kubectl apply -f 02_allow-reviews-ratings.yaml
 > check http://localhost/productpage  
 ---
 
-### <font color='orange'> 3.2.3 Try from Unauthorized Service </font>
+### <font color='red'> 3.2.3 Try from Unauthorized Service </font>
 ```
 kubectl exec -it $(kubectl get pod -l app=ratings -o jsonpath=’{.items[0].metadata.name}’) -c ratings -- curl productpage:9080/productpage
 ```

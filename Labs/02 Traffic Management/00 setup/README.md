@@ -1,10 +1,10 @@
-## <font color="orange"> 2.1 Traffic Management </font>
+## <font color='red'> 2.1 Traffic Management </font>
 Istio’s traffic routing rules let you easily control the flow of traffic and API calls between services. Istio simplifies configuration of service-level properties like circuit breakers, timeouts, and retries, and makes it easy to set up important tasks like A/B testing, canary rollouts, and staged rollouts with percentage-based traffic splits. It also provides out-of-box failure recovery features that help make your application more robust against failures of dependent services or the network.
 
 Istio’s traffic management model relies on the Envoy proxies that are deployed along with your services. All traffic that your mesh services send and receive (data plane traffic) is proxied through Envoy, making it easy to direct and control traffic around your mesh without making any changes to your services.
 
 ---
-## <font color="orange"> Delete Istio & Reset Minikube </font>
+## <font color='red'> Delete Istio & Reset Minikube </font>
 
 > Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/) 
 
@@ -38,7 +38,7 @@ minikube delete
 ```
 ---
 
-### <font color="orange"> Deploy Istio </font>
+### <font color='red'> Deploy Istio </font>
 check whats running on Kubernetes:
 ```
 kubectl get all
@@ -72,7 +72,7 @@ kubectl -n istio-system get deploy
 ```
 ---
 
-### <font color="orange"> Verify Istio </font>
+### <font color='red'> Verify Istio </font>
 check running objects:
 ```
 kubectl get pods,svc
@@ -83,7 +83,7 @@ kubectl get pods -n istio-system
 ```
 ---
 
-### <font color="orange"> Configure auto proxy injection </font>
+### <font color='red'> Configure auto proxy injection </font>
 in a terminal check namespaces:
 ```
 istioctl analyze --all-namespaces
@@ -98,7 +98,7 @@ kubectl describe ns default
 ```
 ---
 
-### <font color="orange"> Check what's running </font>
+### <font color='red'> Check what's running </font>
 check everything:
 kubectl - no app installed / running:
 ```
@@ -106,7 +106,7 @@ kubectl get pods,svc
 ```
 ---
 
-### <font color="orange"> Deploy BookInfo</font>
+### <font color='red'> Deploy BookInfo</font>
 deploy the bookinfo app:
 ```
 kubectl apply -f 00_bookinfo.yaml
@@ -118,14 +118,14 @@ kubectl get pods,svc
 ```
 ---
 
-### <font color="orange"> Deploy Ingress Gateway </font>
+### <font color='red'> Deploy Ingress Gateway </font>
 deploy gateway:
 ```
 kubectl apply -f 00_bookinfo-istio-gateway.yaml
 ```
 ---
 
-### <font color="orange"> 1.2.3 Verify the Istio-Ingress Gateway </font>
+### <font color='red'> 1.2.3 Verify the Istio-Ingress Gateway </font>
 check PODs:
 ```
 kubectl get pods

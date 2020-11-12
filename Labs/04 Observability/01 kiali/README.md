@@ -1,16 +1,16 @@
-## <font color="orange"> 4.1 Visualizing the Service Mesh </font>
+## <font color='red'> 4.1 Visualizing the Service Mesh </font>
 Using Kiali to graph telementry bewteen the services.
 
 ---
 
-### <font color="orange"> Pre-reqs checklist </font>
+### <font color='red'> Pre-reqs checklist </font>
 * istio profile = default
 * bookinfo-v1
 * IP address of gateway
 
 ---
 
-### <font color="orange"> 4.1.1 Publish the Kiali UI </font>
+### <font color='red'> 4.1.1 Publish the Kiali UI </font>
 in a new terminal:
 ```
 istioctl dashboard kiali
@@ -23,7 +23,7 @@ access Kiali UI:
 
 ---
 
-### <font color="orange"> 4.1.2 Canary Deployment </font>
+### <font color='red'> 4.1.2 Canary Deployment </font>
 deploy productpage-v2:
 ```
 kubectl apply -f 01_productpage-v2-canary.yaml

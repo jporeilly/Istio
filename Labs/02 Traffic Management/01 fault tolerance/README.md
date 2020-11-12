@@ -1,11 +1,11 @@
-## <font color="orange">  2.1 Istio and Fault-Tolerance </font>
+## <font color='red'>  2.1 Istio and Fault-Tolerance </font>
 
 Traffic management in Istio is governed by 2 important concepts:
 - virtualservice
 - destination rules
 ---
 
-### <font color="orange"> 2.1.1 Route traffic through Istio </font>
+### <font color='red'> 2.1.1 Route traffic through Istio </font>
 deploy a v1-virtualservice for each service:  
 configured Istio to route to the v1 version of the Bookinfo microservices, most importantly the reviews service v1:
 ```
@@ -22,7 +22,7 @@ kubectl get destinationrules -o yaml
 > check http://localhost/productpage (same functionality - just v1)  
 ---
 
-### <font color="orange"> 2.1.2 Reviews Service - Timeout </font>
+### <font color='red'> 2.1.2 Reviews Service - Timeout </font>
 deploy reviews v2 virtualservice:  
 
  > productpage → reviews:v2 → ratings:v1  

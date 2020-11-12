@@ -1,4 +1,4 @@
-## <font color="orange"> 1.1 Installing Istio </font>
+## <font color='red'> 1.1 Installing Istio </font>
 
 > Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/)  
 
@@ -27,7 +27,7 @@ minikube tunnel
 ```
 ---
 
-### <font color="orange"> 1.1.1 Deploy Istio </font>
+### <font color='red'> 1.1.1 Deploy Istio </font>
 check whats running on Kubernetes:
 ```
 kubectl get all
@@ -60,7 +60,7 @@ kubectl -n istio-system get deploy
 ```
 ---
 
-### <font color="orange"> 1.1.2 Verify Istio </font>
+### <font color='red'> 1.1.2 Verify Istio </font>
 check docker is up and running:
 ```
 systemctl status docker
@@ -77,7 +77,7 @@ kubectl get pods -n istio-system
 > all components have memory requests
 ---
 
-### <font color="orange"> 1.1.3 Configure auto proxy injection </font>
+### <font color='red'> 1.1.3 Configure auto proxy injection </font>
 in a terminal check namespaces:
 ```
 istioctl analyze --all-namespaces
@@ -93,7 +93,7 @@ kubectl describe ns default
 
 ---
 
-### <font color="orange"> 1.1.4 Check what's running </font>
+### <font color='red'> 1.1.4 Check what's running </font>
 check everything:
 kubectl - no app installed / running:
 docker info - look at the number of istio containers running:
@@ -107,7 +107,7 @@ docker info
 ```
 ---
 
-### <font color="orange"> Troubleshooting </font>
+### <font color='red'> Troubleshooting </font>
 check istio deployment:
 ```
 istioctl verify-install

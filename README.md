@@ -22,7 +22,7 @@ In addition, here are some other documents you may wish to read:
 
 You'll find many other useful documents on our [Wiki](https://github.com/istio/istio/wiki).
 
-## <font color="orange"> Introduction </font>
+## <font color='red'> Introduction </font>
 
 Istio is an open platform for providing a uniform way to integrate
 microservices, manage traffic flow across microservices, enforce policies
@@ -52,7 +52,7 @@ Istio is composed of these components:
 
 - **Operator** - The component provides user friendly options to operate the Istio service mesh.
 
-## <font color="orange"> Repositories </font>
+## <font color='red'> Repositories </font>
 
 The Istio project is divided across a few GitHub repositories:
 

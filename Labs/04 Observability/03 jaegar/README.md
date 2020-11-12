@@ -1,9 +1,9 @@
-## <font color="orange"> 4.3 Distributed Tracing </font>
+## <font color='red'> 4.3 Distributed Tracing </font>
 Using Jaegar to visualize trace spans and investigate outliers.
 
 ---
 
-### <font color="orange"> 4.3.1 Publish the Jaegar UI </font>
+### <font color='red'> 4.3.1 Publish the Jaegar UI </font>
 in a new terminal:
 ```
 istioctl jaegar dashboard
@@ -16,7 +16,7 @@ istioctl jaegar dashboard
 
 ---
 
-### <font color="orange"> 4.3.2 Add service latency </font>
+### <font color='red'> 4.3.2 Add service latency </font>
 update the productpage to add 10s delays:
 ```
 kubectl apply -f 02_productpage-delay.yaml

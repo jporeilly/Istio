@@ -1,4 +1,4 @@
-## <font color="orange"> Istio Labs </font>
+## <font color='red'> Istio Labs </font>
 
 > Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/)
 
@@ -21,7 +21,7 @@ The course is composed of 5 Modules:
 
 ---
 
-### <font color="orange"> Module 01 - Deploy Istio + Bookinfo App </font>
+### <font color='red'> Module 01 - Deploy Istio + Bookinfo App </font>
 Get up and running with Istio & Bookinfo app.
 
 ### <font color="teal"> Lab: 01 Deploy Istio </font>
@@ -34,7 +34,7 @@ Deploy Ingress Gateway.
 
 ---
 
-### <font color="orange"> Module 02 - Traffic Management </font>
+### <font color='red'> Module 02 - Traffic Management </font>
 Traffic shaping using VirtualServices & Destination Rules.
 
 ### <font color="teal"> Lab: 00 Deploy Istio </font> 
@@ -64,7 +64,7 @@ Outlier detection enables unhealthy PODs to be terminated.
 
 ---
 
-### <font color="orange"> Module 03 - Secure with mTLS </font>
+### <font color='red'> Module 03 - Secure with mTLS </font>
 Apply mTLS authentication with authorization policies>
 
 ### <font color="teal"> Lab: 00 Deploy Default Istio </font>
@@ -84,7 +84,7 @@ Authorization with JWT.
 
 ---
 
-### <font color="orange"> Module 04 - Observability </font>
+### <font color='red'> Module 04 - Observability </font>
 
 ### <font color="teal"> Lab: 00 Deploy Istio </font>
 Deploy Istio with auto sidecar injection. 
@@ -103,7 +103,7 @@ Deploy Productpage:v2
 
 ---
 
-### <font color="orange"> Module 05 - Istio and Foundry </font>
+### <font color='red'> Module 05 - Istio and Foundry </font>
 
 
 

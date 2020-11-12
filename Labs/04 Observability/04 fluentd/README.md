@@ -1,9 +1,9 @@
-## <font color="orange"> 4.4 Logging from Istio and Envoy </font>
+## <font color='red'> 4.4 Logging from Istio and Envoy </font>
 Use the EFK stack - Elasticsearch, Fluentd and Kibana to record and search logs.
 
 ---
 
-### <font color="orange"> 4.4.1 Deploy the logging stack </font>
+### <font color='red'> 4.4.1 Deploy the logging stack </font>
 Deployments, services etc. in Elasticsearch, Kibana and Fluentd:
 ```
 kubectl apply -f 01_logging_stack.yaml
@@ -39,7 +39,7 @@ docker container run `
 
 ---
 
-### <font color="orange"> 4.4.2 Configure Istio to log to Fluentd </font>
+### <font color='red'> 4.4.2 Configure Istio to log to Fluentd </font>
 deploy the Fluentd:
 ```
 kubectl apply -f 02_fluentd-istio.yaml

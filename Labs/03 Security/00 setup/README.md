@@ -1,11 +1,11 @@
-## <font color="orange"> 3.1 Secure with mTLS </font>
+## <font color='red'> 3.1 Secure with mTLS </font>
 Mutual TLS (mTLS) authentication ensures that traffic is both secure and trusted in both directions between a client and server. It allows requests that do not log in with an identity provider (like IoT devices) to demonstrate that they can reach a given resource. Client certificate authentication is also a second layer of security for team members who both log in with an identity provider (IdP) and present a valid client certificate.  
 
 With a root certificate authority (CA) in place, Access only allows requests from devices with a corresponding client certificate. When a request reaches the application, Access responds with a request for the client to present a certificate. If the device fails to present the certificate, the request is not allowed to proceed. If the client does have a certificate, Access completes a key exchange to verify.
 
 ---
 
-## <font color="orange"> Delete Istio & Reset Minikube </font>
+## <font color='red'> Delete Istio & Reset Minikube </font>
 
 > Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/) 
 
@@ -45,7 +45,7 @@ kubectl -n istio-system get deploy
 ```
 ---
 
-### <font color="orange"> Configure auto proxy injection </font>
+### <font color='red'> Configure auto proxy injection </font>
 in a terminal check namespaces:
 ```
 istioctl analyze --all-namespaces
@@ -56,7 +56,7 @@ kubectl label namespace default istio-injection=enabled
 ```
 ---
 
-### <font color="orange"> Deploy BookInfo App </font>
+### <font color='red'> Deploy BookInfo App </font>
 deploy the bookinfo app v1:
 ```
 kubectl apply -f 00_bookinfo.yaml
@@ -67,7 +67,7 @@ kubectl get pods,svc
 ```
 ---
 
-### <font color="orange"> Deploy Gateway </font>
+### <font color='red'> Deploy Gateway </font>
 deploy gateway:
 ```
 kubectl apply -f 00_bookinfo-gateway.yaml
@@ -89,7 +89,7 @@ replace the existing IP with current IP address:
 > check http://localhost/productpage
 ---
 
-### <font color="orange"> Deploy Legacy App </font>
+### <font color='red'> Deploy Legacy App </font>
 deploy legacy app:  
 this app runs in 'sleep' namespace (injection disabled):
 ```
@@ -101,7 +101,7 @@ kubectl get pods -n sleep
 ```
 ---
 
-### <font color="orange"> Deploy Kiali </font>
+### <font color='red'> Deploy Kiali </font>
 install prometheus:  
 ````
 kubectl apply -f 00_prometheus.yaml
