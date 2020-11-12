@@ -106,5 +106,5 @@ istioctl dashboard kiali
 > check: http://localhost:20001/kiali/console
 ````
 access grafana dashboard:
-> http://<IP>:3000/dashboard/db/istio-service-dashboard
+> http://10.x.x.x:3000/dashboard/db/istio-service-dashboard
 ---

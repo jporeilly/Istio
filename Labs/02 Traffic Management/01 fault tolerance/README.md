@@ -1,8 +1,12 @@
 ## <font color='red'>  2.1 Istio and Fault-Tolerance </font>
 
 Traffic management in Istio is governed by 2 important concepts:
-- virtualservice
-- destination rules
+- virtualservice  
+defines a set of traffic routing rules to apply when a host is addressed. Each routing rule defines matching criteria for traffic of a specific protocol. If the traffic is matched, then it is sent to a named destination service (or subset/version of it) defined in the registry.
+
+- destination rules  
+defines policies that apply to traffic intended for a service after routing has occurred. These rules specify configuration for load balancing, connection pool size from the sidecar, and outlier detection settings to detect and evict unhealthy hosts from the load balancing pool.
+
 ---
 
 ### <font color='red'> 2.1.1 Route traffic through Istio </font>
