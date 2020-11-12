@@ -5,7 +5,7 @@ With a root certificate authority (CA) in place, Access only allows requests fro
 
 ---
 
-## <font color='red'> Delete Istio & Reset Minikube </font>
+### <font color='red'> Delete Istio & Reset Minikube </font>
 
 > Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/) 
 
