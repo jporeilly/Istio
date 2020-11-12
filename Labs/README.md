@@ -80,7 +80,7 @@ Authentication with mTLS.
 Http service Authorization.
 
 ### <font color="teal"> Lab: 04 JWT Auth </font>
-Authorization with JWT.
+Authentication & Authorization with JWT.
 
 ---
 
@@ -90,10 +90,10 @@ Authorization with JWT.
 Deploy Istio with auto sidecar injection. 
 
 ### <font color="teal"> Lab: 01 Kiali </font>
-Authentication with mTLS. 
+Discover the various features of Kiali. 
 
 ### <font color="teal"> Lab: 02 Grafana & Prometheus </font>
-Deploy Productpage:v2
+In conjunction with Grafana, Jaegar will help trace 
 
 ### <font color="teal"> Lab: 03 Jaegar </font>
 Deploy Productpage:v2
