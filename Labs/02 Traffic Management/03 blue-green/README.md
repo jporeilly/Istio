@@ -10,7 +10,7 @@ $ sudo nano /etc/hosts
 ```
 ---
 
-### <font color='red'> 2.3.1 deploy Productpage-v2 </font>  
+### <font color='red'> 2.3.1 Deploy Productpage-v2 </font>  
 use existing gateway:
 ```
 kubectl describe gateway bookinfo-gateway

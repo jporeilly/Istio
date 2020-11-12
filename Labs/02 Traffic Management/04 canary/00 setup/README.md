@@ -22,10 +22,6 @@ deploy bookinfo bookinfo-gateway:
 ```
 kubectl apply -f 00_bookinfo-gateway.yaml
 ```
-port forward:  
-```
-kubectl port-forward -n istio-system svc/istio-ingressgateway 6324:80 
-```
  > check http://bookinfo.local/productpage  
 
 deploy virtualservices:
