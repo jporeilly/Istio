@@ -141,7 +141,7 @@ notice the EXTERNAL-IP 10.x.x.x  this will have to be mapped to localhost in etc
 ```
 sudo nano /etc/hosts
 ```
-replace the 127.0.0.1 with IP address
+10.x.x.x with IP address
 
 > check http://localhost/productpage
 ---

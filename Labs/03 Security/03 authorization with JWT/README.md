@@ -3,28 +3,55 @@ require end-user authentication with JWT and enforce access control based on the
 
 ---
 
-### <font color='orange'> 3.3.1 Require JWT  </font>
-apply the JWT authorization policy for the productpage:
+### <font color='orange'> 3.3.1 Decode the JWT </font>
+
+The JWT is a base64 encoded string. 
+Read the claims - select demo.jwt
+
+- Issuer: `testing@secure.istio.io`
+- Subject: `testing@secure.istio.io`
+- Custom: `foo=bar`
+---
+
+### <font color='orange'> 3.3.2 Require JWT  </font>
+view the JWT:
 ```
-kubectl apply -f 01_productpage-auth-jwt.yaml
+eyJhbGciOiJSUzI1NiIsImtpZCI6IkRIRmJwb0lVcXJZOHQyenBBMnFYZkNtcjVWTzVaRXI0UnpIVV8tZW52dlEiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjQ2ODU5ODk3MDAsImZvbyI6ImJhciIsImlhdCI6MTUzMjM4OTcwMCwiaXNzIjoidGVzdGluZ0BzZWN1cmUuaXN0aW8uaW8iLCJzdWIiOiJ0ZXN0aW5nQHNlY3VyZS5pc3Rpby5pbyJ9.CfNnxWP2tcnR9q0vxyxweaF3ovQYHYZl82hAUsn21bwQd9zP7c-LS9qd_vpdLG4Tn1A15NxfCjp5f7QNBUo-KC9PJqYpgGbaXhaGx7bEdFWjcwv3nZzvc7M__ZpaCERdwU7igUmJqYGBYQ51vr2njU9ZimyKkfDe3axcyiBZde7G6dabliUosJvvKOPcKIWPccCgefSj_GNfwIip3-SsFdlR7BtbVUcqR-yv-XOxJ3Uc1MI0tz3uMiiZcyPV7sNCU4KRnemRIMHVOfuvHsU60_GhGbiSFzgPTAa9WTltbnarTbxudb_YEOx12JiwYToeX0DCPb43W1tzIBxgm8NxUg
 ```
-> check http://localhost/productpage -> `403`  
+
+apply the JWT authtentication policy for the productpage:
+```
+kubectl apply -f 01_productpage-authn-jwt.yaml
+```
+> check http://localhost/productpage -> `200`  
+
+no JWT is passed in the request.  
+
+verify that a request with an invalid JWT is denied:
+```
+Authorization: Bearer invalidToken  
+```
 you need to add an JWT token to the header  
 in Firefox's network tab:
 - Refresh
 - Edit & resend 
 - Add header
 
+> check http://localhost/productpage -> `401`  
+
+check the response header:
+
+repeat with valid token:
 ```
 Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRIRmJwb0lVcXJZOHQyenBBMnFYZkNtcjVWTzVaRXI0UnpIVV8tZW52dlEiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjQ2ODU5ODk3MDAsImZvbyI6ImJhciIsImlhdCI6MTUzMjM4OTcwMCwiaXNzIjoidGVzdGluZ0BzZWN1cmUuaXN0aW8uaW8iLCJzdWIiOiJ0ZXN0aW5nQHNlY3VyZS5pc3Rpby5pbyJ9.CfNnxWP2tcnR9q0vxyxweaF3ovQYHYZl82hAUsn21bwQd9zP7c-LS9qd_vpdLG4Tn1A15NxfCjp5f7QNBUo-KC9PJqYpgGbaXhaGx7bEdFWjcwv3nZzvc7M__ZpaCERdwU7igUmJqYGBYQ51vr2njU9ZimyKkfDe3axcyiBZde7G6dabliUosJvvKOPcKIWPccCgefSj_GNfwIip3-SsFdlR7BtbVUcqR-yv-XOxJ3Uc1MI0tz3uMiiZcyPV7sNCU4KRnemRIMHVOfuvHsU60_GhGbiSFzgPTAa9WTltbnarTbxudb_YEOx12JiwYToeX0DCPb43W1tzIBxgm8NxUg
 ```
 > check http://localhost/productpage -> `200`  
 ---
 
-### <font color='orange'> 3.3.2 Restrict access to productpage </font>
+### <font color='orange'> 3.3.3 Restrict access to productpage </font>
 apply a deny-all authorization policy for the product page:
 ```
-kubectl apply -f productpage-authz-deny-all.yaml
+kubectl apply -f 02_productpage-authz-deny-all.yaml
 ```
 > check http://localhost/productpage -> `403`  
 you need to add an authentication header. In Firefox's network tab:
@@ -36,18 +63,10 @@ you need to add an authentication header. In Firefox's network tab:
 Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRIRmJwb0lVcXJZOHQyenBBMnFYZkNtcjVWTzVaRXI0UnpIVV8tZW52dlEiLCJ0eXAiOiJKV1QifQ.eyJleHAiOjQ2ODU5ODk3MDAsImZvbyI6ImJhciIsImlhdCI6MTUzMjM4OTcwMCwiaXNzIjoidGVzdGluZ0BzZWN1cmUuaXN0aW8uaW8iLCJzdWIiOiJ0ZXN0aW5nQHNlY3VyZS5pc3Rpby5pbyJ9.CfNnxWP2tcnR9q0vxyxweaF3ovQYHYZl82hAUsn21bwQd9zP7c-LS9qd_vpdLG4Tn1A15NxfCjp5f7QNBUo-KC9PJqYpgGbaXhaGx7bEdFWjcwv3nZzvc7M__ZpaCERdwU7igUmJqYGBYQ51vr2njU9ZimyKkfDe3axcyiBZde7G6dabliUosJvvKOPcKIWPccCgefSj_GNfwIip3-SsFdlR7BtbVUcqR-yv-XOxJ3Uc1MI0tz3uMiiZcyPV7sNCU4KRnemRIMHVOfuvHsU60_GhGbiSFzgPTAa9WTltbnarTbxudb_YEOx12JiwYToeX0DCPb43W1tzIBxgm8NxUg
 ```
 > check http://localhost/productpage -> `200`  
----
+
 ---
 
-### <font color='orange'> 3.3.3 Decode the JWT </font>
 
-The JWT is a base64 encoded string. 
-Read the claims - select demo.jwt
-
-- Issuer: `testing@secure.istio.io`
-- Subject: `testing@secure.istio.io`
-- Custom: `foo=bar`
----
 
 ### <font color='orange'> 3.3.4 Allow access by issuer </font>
 apply an authorization policy which allows access by issuer:

@@ -1,8 +1,7 @@
 apiVersion: "security.istio.io/v1beta1"
-kind: "RequestAuthentication"
 kind: AuthorizationPolicy
 metadata:
-  name: require-jwt
+  name: jwt-deny
   namespace: default
 spec:
   selector:
