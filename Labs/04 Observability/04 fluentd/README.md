@@ -8,11 +8,15 @@ Deployments, services etc. in Elasticsearch, Kibana and Fluentd:
 
 deploy efk on minikube
 ```
-minikube -p efk start
+minikube -p addons enable efk
 ```
 check Pods in namespace kube-system:
 ```
 kubectl get pods,svc -n kube-system
+```
+ensure the logs are forwarded to elasticsearch:
+```
+kubectl logs 
 ```
 enter Cluster-IP address for Kibana service:  
 
@@ -24,16 +28,5 @@ kubectl -n kube-system port-forward $(kubectl -n kube-system get pod -l app=kiba
 ```
 
 - In _Discover_ create index pattern for `logstash*`
-
-generate some load unning for 30 seconds:
-```
-docker container run `
-  --add-host "bookinfo.local:192.168.2.119" `
-  fortio/fortio `
-  load -c 32 -qps 25 -t 30s http://bookinfo.local/productpage
-```
-
-- Back to Kibana
-- Filter on `kubernetes.labels.app` _is_ `productpage`
 
 ---
