@@ -5,15 +5,14 @@ Use the EFK stack - Elasticsearch, Fluentd and Kibana to record and search logs.
 
 ### <font color='red'> 4.4.1 Deploy the logging stack </font>
 Deployments, services etc. in Elasticsearch, Kibana and Fluentd:
+
+deploy efk on minikube
 ```
-kubectl apply -f 01_logging_stack.yaml
+minikube -p efk start
 ```
+check Pods in namespace kube-system:
 ```
-kubectl apply -f 01_fluentd-istio.yaml
-```
-check Pods in namespace logging:
-```
-kubectl get pods,svc -n logging
+kubectl get pods,svc -n kube-system
 ```
 enter Cluster-IP address for Kibana service:  
 
@@ -21,7 +20,7 @@ enter Cluster-IP address for Kibana service:
 
 or port forward:
 ```
-kubectl -n logging port-forward $(kubectl -n logging get pod -l app=kibana -o jsonpath='{.items[0].metadata.name}') 5601:5601 &amp;
+kubectl -n kube-system port-forward $(kubectl -n kube-system get pod -l app=kibana -o jsonpath='{.items[0].metadata.name}') 5601:5601 &amp;
 ```
 
 - In _Discover_ create index pattern for `logstash*`
