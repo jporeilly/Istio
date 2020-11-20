@@ -66,9 +66,9 @@ list istio profiles:
 ```
 istioctl profile list
 ```
-deploy Istio 'demo' profile:
+deploy Istio 'default' profile:
 ```
-istioctl install --set profile=demo
+istioctl install --set profile=default
 ```
 check istio:
 ```
@@ -125,7 +125,7 @@ kubectl get pods,svc
 ### <font color='red'> Deploy Ingress Gateway </font>
 deploy gateway:
 ```
-kubectl apply -f 00_bookinfo-gateway.yaml
+kubectl apply -f 00_bookinfo-istio-gateway.yaml
 ```
 ---
 
