@@ -121,7 +121,7 @@ kubectl get pods,svc
 ### <font color='red'> Deploy Ingress Gateway </font>
 deploy gateway:
 ```
-kubectl apply -f 00_bookinfo-istio-gateway.yaml
+kubectl apply -f 00_bookinfo-gateway.yaml
 ```
 ---
 
