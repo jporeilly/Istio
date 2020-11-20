@@ -32,9 +32,13 @@ check whats running on Kubernetes:
 ```
 kubectl get all
 ```
-in a new terminal download istio: 
+in a new terminal download istio (latest): 
 ```
 curl -L https://istio.io/downloadIstio | sh -
+```
+in a new terminal download istio (version 1.7.4):
+```
+curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.7.4 TARGET_ARCH=x86_64 sh -
 ```
 add the istioctl client to your path:
 ```
