@@ -16,7 +16,7 @@ kubectl get pods,svc
 
 if you need to redeploy app:
 ```
-kubectl roolout restart deployment --namespace default
+kubectl rollout restart deployment --namespace default
 ```
 
 ---
