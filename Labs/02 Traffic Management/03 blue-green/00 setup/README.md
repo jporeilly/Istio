@@ -24,11 +24,28 @@ deploy bookinfo bookinfo-gateway:
 ```
 kubectl apply -f 00_bookinfo-gateway.yaml
 ```
-port forward:  
+---
+
+
+check PODs:
 ```
-kubectl port-forward -n istio-system svc/istio-ingressgateway 6324:80 
+kubectl get pods
 ```
- > check http://localhost/productpage  
+check gateway:
+```
+kubectl get gateway
+```
+```
+kubectl get svc istio-ingressgateway -n istio-system
+```
+notice the EXTERNAL-IP 10.x.x.x  this will have to be mapped to localhost in etc/hosts
+```
+sudo nano /etc/hosts
+```
+replace the 127.0.0.1 with IP address
+
+> check http://localhost/productpage
+---
 
 deploy virtualservices:
 ```

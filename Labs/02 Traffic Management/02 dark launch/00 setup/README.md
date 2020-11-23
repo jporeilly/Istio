@@ -8,7 +8,7 @@ Just reviews-v1 service.
 
 install istio:
 ```
-istioctl install --set profile=demo
+istioctl install --set profile=default
 ```
 enable auto proxy injection:
 ```
@@ -22,8 +22,27 @@ deploy bookinfo bookinfo-gateway:
 ```
 kubectl apply -f 00_bookinfo-gateway.yaml
 ```
- > check http://localhost/productpage  
- 
+---
+
+check PODs:
+```
+kubectl get pods
+```
+check gateway:
+```
+kubectl get gateway
+```
+```
+kubectl get svc istio-ingressgateway -n istio-system
+```
+notice the EXTERNAL-IP 10.x.x.x  this will have to be mapped to localhost in etc/hosts
+```
+sudo nano /etc/hosts
+```
+replace the 127.0.0.1 with IP address
+
+> check http://localhost/productpage
+---
 
 deploy virtualservices:
 ```
