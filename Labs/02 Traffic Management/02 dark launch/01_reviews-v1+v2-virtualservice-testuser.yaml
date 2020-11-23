@@ -23,7 +23,7 @@ spec:
     - headers:
         end-user:
           exact: testuser
-  - route:
+    route:
     - destination:
         host: reviews
         subset: v2
