@@ -1,4 +1,4 @@
-## <font color="orange"> 2.3 Blue / Green Deployment </font>
+## <font color='red'> 2.3 Blue / Green Deployment </font>
 The blue-green deployment approach does this by ensuring you have two production environments, as identical as possible. At any time one of them, let's say blue for the example, is live. As you prepare a new release of your software you do your final stage of testing in the green environment.  
 
 Once the software is working in the green environment, you switch the router so that all incoming requests go to the green environment - the blue one is now idle.
