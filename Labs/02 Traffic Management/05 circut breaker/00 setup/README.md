@@ -7,7 +7,7 @@ Ensure you have reset the virtualservices + destination rules.
 
 install istio:
 ```
-istioctl install --set profile=demo
+istioctl install --set profile=default
 ```
 enable auto proxy injection:
 ```
