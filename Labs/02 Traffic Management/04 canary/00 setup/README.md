@@ -8,7 +8,7 @@ Just reviews-v1 service.
 
 install istio:
 ```
-istioctl install --set profile=demo
+istioctl install --set profile=default
 ```
 enable auto proxy injection:
 ```
