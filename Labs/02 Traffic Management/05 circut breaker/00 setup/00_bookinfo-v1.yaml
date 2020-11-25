@@ -249,31 +249,5 @@ spec:
       volumes:
       - name: tmp
         emptyDir: {}
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: productpage-v2
-  labels:
-    app: productpage
-    version: v2
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: productpage
-      version: v2
-  template:
-    metadata:
-      labels:
-        app: productpage
-        version: v2
-    spec:
-      serviceAccountName: bookinfo-productpage
-      containers:
-        - name: productpage
-          image: docker.io/jporeilly/bookinfo-productpage:v2
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 9080
+
 ---
