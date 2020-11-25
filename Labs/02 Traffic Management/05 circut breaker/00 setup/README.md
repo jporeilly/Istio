@@ -5,7 +5,11 @@ Once the failures reach a certain threshold, the circuit breaker trips, and all 
 ---
 Ensure you have reset the virtualservices + destination rules.
 
-install istio:
+in a new terminal download istio (latest): 
+```
+curl -L https://istio.io/downloadIstio | sh -
+```
+install istio - default profile:
 ```
 istioctl install --set profile=default
 ```
