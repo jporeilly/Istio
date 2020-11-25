@@ -25,7 +25,7 @@ spec:
           ports:
             - containerPort: 9080
 ---
-apiVersion: networking.istio.io/v1alpha3
+apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   name: bookinfo
@@ -48,6 +48,7 @@ spec:
             port:
               number: 9080
 ---
+apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
 metadata:
   name: bookinfo-test
@@ -64,7 +65,7 @@ spec:
             port:
               number: 9080
 ---
-apiVersion: networking.istio.io/v1alpha3
+apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
 metadata:
   name: productpage
@@ -79,7 +80,7 @@ spec:
         version: v2
 ---
 ---
-apiVersion: networking.istio.io/v1alpha3
+apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
 metadata:
   name: reviews
@@ -96,7 +97,7 @@ spec:
     labels:
       version: v3
 ---
-apiVersion: networking.istio.io/v1alpha3
+apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
 metadata:
   name: ratings
@@ -107,7 +108,7 @@ spec:
     labels:
       version: v1
 ---
-apiVersion: networking.istio.io/v1alpha3
+apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
 metadata:
   name: details
