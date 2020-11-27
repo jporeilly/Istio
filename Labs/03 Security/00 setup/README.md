@@ -23,11 +23,11 @@ curl -L https://istio.io/downloadIstio | sh -
 ```
 in a new terminal download istio (version 1.7.4):
 ```
-curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.7.4 TARGET_ARCH=x86_64 sh -
+curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.X.X TARGET_ARCH=x86_64 sh -
 ```
 add the istioctl client to your path:
 ```
-export PATH="$PATH:/home/foundry/Istio-1.7.4/bin"
+export PATH="$PATH:/home/foundry/Istio-1.X.X/bin"
 ```
 check istio:
 ```
@@ -134,4 +134,8 @@ access kiali dashboard:
 ```
 istioctl dashboard kiali
 ````
+````
+> check: http://localhost:20001/kiali/console
+````
+
 ---
