@@ -16,17 +16,28 @@
 # Sleep service
 ##################################################################################################
 apiVersion: v1
-kind: Namespace
+kind: ServiceAccount
+metadata:
+  name: sleep
+---
+apiVersion: v1
+kind: Service
 metadata:
   name: sleep
   labels:
-    istio-injection: disabled
+    app: sleep
+    service: sleep
+spec:
+  ports:
+  - port: 80
+    name: http
+  selector:
+    app: sleep
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sleep
-  namespace: sleep
 spec:
   replicas: 1
   selector:
@@ -37,8 +48,18 @@ spec:
       labels:
         app: sleep
     spec:
+      serviceAccountName: sleep
       containers:
       - name: sleep
         image: governmentpaas/curl-ssl
         command: ["/bin/sleep", "30d"]
         imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - mountPath: /etc/sleep/tls
+          name: secret-volume
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: sleep-secret
+          optional: true
+---
