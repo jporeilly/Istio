@@ -142,7 +142,7 @@ run a shell in the container:
 docker container exec -it $id sh
 ```
 use the details API:  
-default namespace is now PERMISSIVE mTLS:
+default namespace is now PERMISSIVE mTLS:  
 accepts http requests &mTLS:  
 ```
 curl http://details.default.svc.cluster.local:9080/details/1
