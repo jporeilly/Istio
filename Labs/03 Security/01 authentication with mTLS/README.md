@@ -73,6 +73,11 @@ kubectl describe pa -n istio-system
 
 > back to the sleep container session
 
+
+ensure were using the docker daemon from within minikube:
+```
+eval $(minikube docker-env)
+```
 find the sleep app container:
 ```
 docker container ls --filter name=k8s_sleep
@@ -122,6 +127,11 @@ kubectl describe pa -n default
 ```
 > back to the sleep container session
 
+
+ensure were using the docker daemon from within minikube:
+```
+eval $(minikube docker-env)
+```
 find the sleep app container:
 ```
 docker container ls --filter name=k8s_sleep
@@ -150,6 +160,10 @@ notice the change to mTLS.
 
 
 ### <font color='red'> Dig into the TLS certs </font>
+ensure were using the docker daemon from within minikube:
+```
+eval $(minikube docker-env)
+```
 connect the product page proxy:
 ```
 docker container ls --filter name=istio-proxy_productpage
@@ -208,6 +222,10 @@ kubectl describe pa -n default
 ```
 > back to the sleep container session
 
+ensure were using the docker daemon from within minikube:
+```
+eval $(minikube docker-env)
+```
 find the sleep app container:
 ```
 docker container ls --filter name=k8s_sleep
