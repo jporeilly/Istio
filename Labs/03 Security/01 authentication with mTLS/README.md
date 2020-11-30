@@ -31,7 +31,6 @@ check that there are no destination rules on the services:
 kubectl get destinationrules.networking.istio.io --all-namespaces -o yaml
 ```
 
-
 ensure were using the docker daemon from within minikube:
 ```
 eval $(minikube docker-env)
