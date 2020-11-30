@@ -143,7 +143,7 @@ accepts http requests &mTLS:
 curl http://details.default.svc.cluster.local:9080/details/1
 ```
 > http://localhost/productpage  
-```
+
 access kiali dashboard:
 ```
 istioctl dashboard kiali
@@ -173,14 +173,13 @@ ls /etc/certs
 curl -k https://details:9080/details/100 --key /etc/certs/key.pem --cert /etc/certs/cert-chain.pem --cacert /etc/certs/root-cert.pem
 
 cat /etc/certs/cert-chain.pem | openssl x509 -text -noout  | grep Validity -A 2
-
+```
 
 remove namespace mTLS:
 ```
 kubectl delete pa -n default namespace-permissive-policy
 ```
 ---
-
 ### <font color='red'> 3.1.4 Secure a Service </font>
 To set a peer authentication policy for a specific workload (service), you must configure the selector section and specify  
 the labels that match the desired workload. However, Istio cannot aggregate workload-level policies for outbound mutual TLS traffic to a service. 
@@ -192,7 +191,6 @@ Istio applies the narrowest matching policy for each workload using the followin
   > workload-specific  
   > namespace-wide  
   > mesh-wide  
-
 
 check peer athentication:
 ```
@@ -210,7 +208,6 @@ check policy:
 ```
 kubectl describe pa -n default
 ```
-
 > back to the sleep container session
 
 find the sleep app container:
