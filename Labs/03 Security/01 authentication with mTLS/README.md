@@ -70,9 +70,7 @@ check policy:
 ```
 kubectl describe pa -n istio-system
 ```
-
 > back to the sleep container session
-
 
 ensure were using the docker daemon from within minikube:
 ```
@@ -91,7 +89,7 @@ run a shell in the container:
 docker container exec -it $id sh
 ```
 use the details API:  
-it fails as the default namespace is now STRICT mTLS:
+it fails as the istio-system namespace is now STRICT mTLS:  
 does not have the required istio cert:  
 ```
 curl http://details.default.svc.cluster.local:9080/details/1
@@ -126,7 +124,6 @@ check policy:
 kubectl describe pa -n default
 ```
 > back to the sleep container session
-
 
 ensure were using the docker daemon from within minikube:
 ```
