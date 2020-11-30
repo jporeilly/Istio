@@ -194,30 +194,7 @@ check policy:
 ```
 kubectl describe pa -n default
 ```
-> back to the sleep container session
-
-ensure were using the docker daemon from within minikube:
-```
-eval $(minikube docker-env)
-```
-find the sleep app container:
-```
-docker container ls --filter name=k8s_sleep
-```
-retrieve the container ID
-```
-docker container exec -it $(docker container ls --filter name=k8s_sleep --format '{{ .ID}}') sh
-```
-use the details API:  
-default namespace is now PERMISSIVE mTLS:
-```
-curl http://reviews.default.svc.cluster.local:9080/reviews/1
-```
-however details service set as STRICT:  
-```
-curl http://details.default.svc.cluster.local:9080/details/1
-```
-and I can still make a call from my productpage to both details & reviews service:
+to call from my productpage to both details & reviews service:
 ```
 docker container exec -it $(docker container ls --filter name=istio-proxy_productpage --format '{{ .ID}}') sh
 ```
@@ -227,7 +204,6 @@ curl http://reviews:9080/reviews/1
 
 curl http://details:9080/details/1
 ```
-will 
 access kiali dashboard:
 ```
 istioctl dashboard kiali
