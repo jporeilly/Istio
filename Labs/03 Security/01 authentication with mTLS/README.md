@@ -221,11 +221,13 @@ and I can still make a call from my productpage to both details & reviews servic
 ```
 docker container exec -it $(docker container ls --filter name=istio-proxy_productpage --format '{{ .ID}}') sh
 ```
-productpage container to details service:
+productpage service to reviews & details service:
 ```
+curl http://reviews:9080/reviews/1  
+
 curl http://details:9080/details/1
 ```
-
+will 
 access kiali dashboard:
 ```
 istioctl dashboard kiali
