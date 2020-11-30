@@ -38,13 +38,9 @@ find the sleep app container:
 ```
 docker container ls --filter name=k8s_sleep
 ```
-retrieve the container ID:
-```
-$id=$(docker container ls --filter name=k8s_sleep --format '{{ .ID}}')
-```
 run a shell in the container:
 ```
-docker container exec -it $id sh
+docker container exec -it $(docker container ls --filter name=k8s_sleep --format '{{ .ID}}') sh
 ```
 use the details API:
 ```
@@ -80,13 +76,9 @@ find the sleep app container:
 ```
 docker container ls --filter name=k8s_sleep
 ```
-retrieve the container ID
-```
-$id=$(docker container ls --filter name=k8s_sleep --format '{{ .ID}}')
-```
 run a shell in the container:
 ```
-docker container exec -it $id sh
+docker container exec -it $(docker container ls --filter name=k8s_sleep --format '{{ .ID}}') sh
 ```
 use the details API:  
 it fails as the istio-system namespace is now STRICT mTLS:  
@@ -133,10 +125,6 @@ find the sleep app container:
 ```
 docker container ls --filter name=k8s_sleep
 ```
-retrieve the container ID
-```
-$id=$(docker container ls --filter name=k8s_sleep --format '{{ .ID}}')
-```
 run a shell in the container:
 ```
 docker container exec -it $id sh
@@ -169,11 +157,9 @@ docker container exec -it $(docker container ls --filter name=istio-proxy_produc
 ```
 access the details API:
 ```
-curl http://details:9080/details/100
+curl http://details:9080/details/1
 
-curl https://details:9080/details/100
-
-curl -k https://details:9080/details/100
+curl https://details:9080/details/1
 ```
 remove namespace mTLS:
 ```
@@ -220,11 +206,7 @@ docker container ls --filter name=k8s_sleep
 ```
 retrieve the container ID
 ```
-$id=$(docker container ls --filter name=k8s_sleep --format '{{ .ID}}')
-```
-run a shell in the container:
-```
-docker container exec -it $id sh
+docker container exec -it $(docker container ls --filter name=k8s_sleep --format '{{ .ID}}') sh
 ```
 use the details API:  
 default namespace is now PERMISSIVE mTLS:
@@ -235,6 +217,15 @@ however details service set as STRICT:
 ```
 curl http://details.default.svc.cluster.local:9080/details/1
 ```
+and I can still make a call from my productpage to both details & reviews service:
+```
+docker container exec -it $(docker container ls --filter name=istio-proxy_productpage --format '{{ .ID}}') sh
+```
+productpage container to details service:
+```
+curl http://details:9080/details/1
+```
+
 access kiali dashboard:
 ```
 istioctl dashboard kiali
