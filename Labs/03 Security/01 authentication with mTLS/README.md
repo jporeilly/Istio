@@ -18,10 +18,9 @@ If you configure a selector field, the authentication policy only applies to wor
 
 > check http://localhost/productpage
 
+---
 Currently there are no virtual services / destination rules or security policies applied to any of my workspaces (services).
 I'm able to make a request from any service to any service (no peer authentication).
-
-
 check default mesh peer authentication policy:
 ```
 kubectl get pa --all-namespaces
