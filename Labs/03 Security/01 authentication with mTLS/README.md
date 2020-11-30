@@ -143,14 +143,15 @@ accepts http requests &mTLS:
 curl http://details.default.svc.cluster.local:9080/details/1
 ```
 > http://localhost/productpage  
-
+```
 access kiali dashboard:
 ```
 istioctl dashboard kiali
-````
+```
 notice the change to mTLS. 
 
-### Dig into the TLS certs
+
+### <font color='red'> Dig into the TLS certs </font>
 connect the product page proxy:
 ```
 docker container ls --filter name=istio-proxy_productpage
