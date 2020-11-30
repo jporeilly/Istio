@@ -134,8 +134,6 @@ access kiali dashboard:
 ```
 istioctl dashboard kiali
 ````
-````
 > check: http://localhost:20001/kiali/console
-````
 
 ---
