@@ -59,6 +59,10 @@ kubectl apply -f 02_allow-reviews-ratings.yaml
 ---
 
 ### <font color='red'> 3.2.3 Try from Unauthorized Service </font>
+ensure were using the docker daemon from within minikube:
+```
+eval $(minikube docker-env)
+```
 run a shell in the reviews container:
 ```
 docker container ls --filter name=k8s_reviews
