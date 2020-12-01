@@ -8,17 +8,10 @@ deploy the bookinfo app:
 ```
 kubectl apply -f 01_bookinfo.yaml
 ```
-
 check PODs & services:
 ```
 kubectl get pods,svc
 ```
-
-if you need to redeploy app:
-```
-kubectl rollout restart deployment --namespace default
-```
-
 ---
 
 ### <font color='red'> 1.2.2 Deploy Ingress Gateway </font>
