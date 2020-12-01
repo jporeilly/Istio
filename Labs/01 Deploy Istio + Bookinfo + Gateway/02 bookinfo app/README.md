@@ -49,17 +49,7 @@ replace the 127.0.0.1 with IP address
 > check http://localhost/productpage
 ---
 
-### <font color='red'> 1.2.4 Port Forward Gateway </font>
-depending on your environment you may have to port forward requests. 
-
-port forward:
-````
-kubectl port-forward -n istio-system svc/istio-ingressgateway 6324:80
-````
-> check http://localhost:6324/productpage
-----
-
-### <font color='red'> 1.2.5 Kiali + Prometheus + Grafana </font>
+### <font color='red'> 1.2.4 Kiali + Prometheus + Grafana </font>
 Lets have a look at the telementry between the services:
 
 install prometheus:  
@@ -102,9 +92,8 @@ access kiali dashboard:
 ```
 istioctl dashboard kiali
 ````
-````
 > check: http://localhost:20001/kiali/console
-````
+
 access grafana dashboard:
 > http://10.x.x.x:3000/dashboard/db/istio-service-dashboard
 ---

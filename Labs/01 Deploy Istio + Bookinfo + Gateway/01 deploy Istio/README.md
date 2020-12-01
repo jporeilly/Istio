@@ -6,21 +6,10 @@ ensure minikube is up and running:
 ```
 minikube start
 ```
-
 check minikube status:
 ```
 minikube status
 ```
-view addons:
-```
-minikube addons list
-```
-
-in a new terminal access dashboard:
-```
-minikube dashboard
-```
-
 in anew terminal start the loadbalancer:
 ```
 minikube tunnel
@@ -36,11 +25,7 @@ in a new terminal download istio (latest):
 ```
 curl -L https://istio.io/downloadIstio | sh -
 ```
-or in a new terminal download istio (course version 1.7.4):
-```
-curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.7.4 TARGET_ARCH=x86_64 sh -
-```
-add the istioctl client to your path:
+add the istioctl client to your path (follow instructions in download):
 ```
 export PATH="$PATH:/home/foundry/Istio-1.X.X/bin" (replace with Istio version)
 ```
@@ -56,7 +41,7 @@ istioctl profile list
 ```
 deploy Istio 'demo' profile:
 ```
-istioctl install --set profile=demo
+istioctl install --set profile=default
 ```
 check istio:
 ```
@@ -69,7 +54,6 @@ check docker is up and running:
 ```
 systemctl status docker
 ```
-
 check running objects:
 ```
 kubectl get pods,svc
@@ -116,34 +100,13 @@ check istio deployment:
 ```
 istioctl verify-install
 ```
-to upgrade deployment:
-```
-istioctl upgrade
-```
-add the istioctl client to your path:
-```
-sudo nano ~/.bash_profile
-```
-```
-export PATH="$PATH:/home/foundry/Istio-1.X.X/bin"
-```
-
-reload variables:
-```
-source ~/.bash_profile
-```
-check istio:
-```
-istioctl x precheck
-```
-
-
 to delete istio:
 ```
 kubectl delete namespace istio-system
 ```
 
 to clean up minikube:
+delete from kubeconfig:
 ```
 minikube stop
 ```
