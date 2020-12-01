@@ -77,7 +77,9 @@ curl http://reviews:9080/1
 ```
 curl http://ratings:9080/ratings/1
 ```
-they request will be RBAC denied as not authorized from the details service. 
+
+the request will be RBAC denied as not authorized from the details service. 
+
 ---
 
 clean up:
