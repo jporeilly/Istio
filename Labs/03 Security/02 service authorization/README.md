@@ -65,18 +65,19 @@ eval $(minikube docker-env)
 ```
 run a shell in the reviews container:
 ```
-docker container ls --filter name=k8s_reviews
+docker container ls --filter name=k8s_istio-proxy_details
 ```
 ```
-docker container exec -it $(docker container ls --filter name=k8s_reviews_reviews-v1 --format '{{ .ID}}') sh
+docker container exec -it $(docker container ls --filter name=k8s_istio-proxy_details --format '{{ .ID}}') sh
 ```
-try accessing the reviews & ratings APIs:
+try accessing the reviews & ratings services:
 ```
-curl http://productpage:9080/1
+curl http://reviews:9080/1
 ```
 ```
 curl http://ratings:9080/ratings/1
 ```
+they request will be RBAC denied as not authorized from the details service. 
 ---
 
 clean up:
