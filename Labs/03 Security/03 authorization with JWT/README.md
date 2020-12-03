@@ -75,6 +75,11 @@ kubectl apply -f 03_productpage-authz-allow.yaml
 ---
 
 ### <font color='red'> 3.3.4 Allow access by issuer </font>
+From the JWT:
+- Issuer: `testing@secure.istio.io`
+- Subject: `testing@secure.istio.io`
+- Custom: `foo=bar`
+
 apply an authorization policy which allows access by issuer:
 ```
 kubectl apply -f 04_productpage-authz-allow-issuer.yaml
