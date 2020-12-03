@@ -51,7 +51,7 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRIRmJwb0lVcXJZOHQyenBBMnFYZk
 ### <font color='red'> 3.3.3 Restrict access to productpage </font>
 apply a deny-all authorization policy for the product page:
 ```
-kubectl apply -f 02_productpage-authz-deny-all.yaml
+kubectl apply -f 03_productpage-authz-deny-all.yaml
 ```
 > check http://localhost/productpage -> `403`  
 you need to add an authentication header. In Firefox's network tab:
