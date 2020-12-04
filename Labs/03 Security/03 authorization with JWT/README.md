@@ -98,6 +98,11 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRIRmJwb0lVcXJZOHQyenBBMnFYZk
 ---
 
 ### <font color='red'> 3.3.4 Allow access by subject </font>
+a bit of housekeeping to delete the jwt-issuer policy:
+```
+kubectl -n default delete authorizationpolicy jwt-issuer
+```
+
 apply an authorization policy which allows access by subject:
 ```
 kubectl apply -f 04_productpage-authz-allow-subject.yaml
@@ -116,6 +121,10 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRIRmJwb0lVcXJZOHQyenBBMnFYZk
 ---
 
 ### <font color='red'> 3..3.4 Allow access by custom claim </font>
+a bit of housekeeping to delete the jwt-subject policy:
+```
+kubectl -n default delete authorizationpolicy jwt-subject
+```
 apply an authorization policy which allows access by claim:
 ```
 kubectl apply -f 04_productpage-authz-allow-claim.yaml
