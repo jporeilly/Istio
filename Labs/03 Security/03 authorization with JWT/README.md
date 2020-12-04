@@ -140,4 +140,13 @@ Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkRIRmJwb0lVcXJZOHQyenBBMnFYZk
 ```
 
 > check http://localhost/productpage -> `200`  
+
+a bit of housekeeping to delete the jwt-claim policy:
+```
+kubectl -n default delete authorizationpolicy jwt-claim
+```
+and just check:
+```
+kubectl describe -n default authorizationpolicy 
+```
 ---
