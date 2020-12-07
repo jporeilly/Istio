@@ -98,6 +98,47 @@ docker info
 ```
 ---
 
+### <font color='red'> Deploy BookInfo</font>
+deploy the bookinfo app:
+```
+kubectl apply -f 00_bookinfo.yaml
+```
+check PODs & services:
+```
+kubectl get pods,svc
+```
+---
+
+### <font color='red'> Deploy Ingress Gateway </font>
+deploy gateway:
+```
+kubectl apply -f 00_bookinfo-gateway.yaml
+```
+---
+
+### <font color='red'> Verify the Istio-Ingress Gateway </font>
+check PODs:
+```
+kubectl get pods
+```
+check gateway:
+```
+kubectl get gateway
+```
+```
+kubectl get svc istio-ingressgateway -n istio-system
+```
+notice the EXTERNAL-IP 10.x.x.x  this will have to be mapped to localhost in etc/hosts
+```
+sudo nano /etc/hosts
+```
+replace the 127.0.0.1 with IP address
+
+> check http://localhost/productpage
+
+---
+
+
 ### <font color='red'> Deploy Visualization Tools </font>
 install prometheus:  
 ````
