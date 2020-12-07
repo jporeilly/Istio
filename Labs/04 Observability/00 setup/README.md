@@ -9,8 +9,6 @@ Istio generates the following types of telemetry in order to provide overall ser
 
 ---
 ### <font color='red'> Installing Istio </font>
-> Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/)  
-
 ensure minikube is up and running:
 ```
 minikube start
@@ -48,7 +46,7 @@ list istio profiles:
 ```
 istioctl profile list
 ```
-deploy Istio 'demo' profile:
+deploy Istio 'default' profile:
 ```
 istioctl install --set profile=default
 ```
@@ -67,11 +65,7 @@ check running objects:
 ```
 kubectl get pods,svc
 ```
-istio has been deployed to its own namespace istio-system:
-```
-kubectl get pods -n istio-system
-```
-> all components have memory requests
+
 ---
 
 ### <font color='red'> Configure auto proxy injection </font>
@@ -142,17 +136,17 @@ access kiali dashboard:
 ```
 istioctl dashboard kiali
 ````
-````
+
 > check: http://localhost:20001/kiali/console/istio
-````
+
 in the istioctl terminal:
 access grafana dashboard:
 ```
 istioctl dashboard grafana
 ````
-````
+
 > check: http://localhost:3000/
-````
+
 ---
 
 ### <font color='red'> Troubleshooting </font>
@@ -173,6 +167,7 @@ minikube stop
 ```
 minikube delete
 ```
+
 For kubectl commands: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
 ---
