@@ -101,7 +101,7 @@ docker info
 ### <font color='red'> Deploy BookInfo</font>
 deploy the bookinfo app:
 ```
-kubectl apply -f 00_bookinfo.yaml
+kubectl apply -f 00_bookinfo-v1.yaml
 ```
 check PODs & services:
 ```
