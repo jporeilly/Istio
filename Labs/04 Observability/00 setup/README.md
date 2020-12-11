@@ -134,7 +134,7 @@ sudo nano /etc/hosts
 ```
 replace the 127.0.0.1 with IP address
 
-> check http://localhost/productpage
+> check http://bookinfo.local/productpage
 
 ---
 
