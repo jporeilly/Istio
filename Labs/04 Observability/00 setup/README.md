@@ -17,7 +17,7 @@ check minikube status:
 ```
 minikube status
 ```
-in anew terminal start the loadbalancer:
+in a new terminal start the loadbalancer:
 ```
 minikube tunnel
 ```
