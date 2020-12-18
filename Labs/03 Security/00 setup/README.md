@@ -23,7 +23,7 @@ curl -L https://istio.io/downloadIstio | sh -
 ```
 add the istioctl client to your path (follow instructions in terminal):
 ```
-export PATH="$PATH:/home/foundry/Istio-1.X.X/bin"
+export PATH="$PATH:/home/Istio/Istio-1.X.X/bin"
 ```
 check istio:
 ```

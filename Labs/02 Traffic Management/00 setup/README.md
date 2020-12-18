@@ -54,7 +54,7 @@ curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.7.4 TARGET_ARCH=x86_64 
 ```
 add the istioctl client to your path:
 ```
-export PATH="$PATH:/home/foundry/Istio-1.X.X/bin"
+export PATH="$PATH:/home/Istio/Istio-1.X.X/bin"
 ```
 check istio:
 ```
