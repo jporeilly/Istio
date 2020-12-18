@@ -13,7 +13,7 @@ in a new terminal:
 ```
 istioctl dashboard prometheus
 ```
-> browse to http://localhost:9090
+> browse to http://localhost:9090/graph
 - Select `istio_requests_total`
 - Switch to _Graph_
 - Check _Status_/_Targets_ - Kubernetes service discovery
