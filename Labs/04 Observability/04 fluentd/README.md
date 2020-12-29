@@ -5,8 +5,11 @@ Use the EFK stack - Elasticsearch, Fluentd and Kibana to record and search logs.
 
 ### <font color='red'> 4.4.1 Deploy the Logging Stack </font>
 Deployments, services etc. in Elasticsearch, Kibana and Fluentd:
-
-deploy efk on minikube
+list the addons in minikube:
+```
+minikube addons list
+```
+deploy efk on minikube:
 ```
 minikube addons enable efk
 ```
