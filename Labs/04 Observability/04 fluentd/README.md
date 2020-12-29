@@ -17,10 +17,6 @@ check Pods in namespace kube-system:
 ```
 kubectl get pods,svc -n kube-system
 ```
-ensure the logs are forwarded to elasticsearch:
-```
-kubectl logs 
-```
 enter Cluster-IP address for Kibana service:  
 
 > browse to Kibana at http://10.x.x.x:5601
@@ -30,6 +26,6 @@ or port forward:
 kubectl -n kube-system port-forward $(kubectl -n kube-system get pod -l app=kibana -o jsonpath='{.items[0].metadata.name}') 5601:5601 &amp;
 ```
 
-- In _Discover_ create index pattern for `logstash*`
+- In _Discover_ create index pattern for `logstash-*`
 
 ---
