@@ -123,4 +123,4 @@ minikube stop
 minikube delete
 ```
 
-For kubectl commands: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+> kubectl commands: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
