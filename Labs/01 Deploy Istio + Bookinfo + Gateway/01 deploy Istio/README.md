@@ -2,7 +2,16 @@
 
 > Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/)  
 
-ensure minikube is up and running:
+#### <font color='red'>IMPORTANT:</font> 
+<strong>Please ensure you start with a clean environment. 
+If you have previously run minikube, you will need to delete the existing instance.</strong>
+
+to delete  minikube:
+```
+minikube delete
+```
+
+to start minikube:
 ```
 minikube start
 ```
