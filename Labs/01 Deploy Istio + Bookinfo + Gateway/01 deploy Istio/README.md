@@ -2,7 +2,16 @@
 
 > Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/)  
 
-ensure minikube is up and running:
+#### <font color='red'>IMPORTANT:</font> 
+<strong>Please ensure you start with a clean environment. 
+If you have previously run minikube, you will need to delete the existing instance.</strong>
+
+to delete  minikube:
+```
+minikube delete
+```
+
+to start minikube:
 ```
 minikube start
 ```
@@ -10,7 +19,7 @@ check minikube status:
 ```
 minikube status
 ```
-in anew terminal start the loadbalancer:
+in a new terminal start the loadbalancer:
 ```
 minikube tunnel
 ```
@@ -114,4 +123,4 @@ minikube stop
 minikube delete
 ```
 
-For kubectl commands: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+> kubectl commands: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
