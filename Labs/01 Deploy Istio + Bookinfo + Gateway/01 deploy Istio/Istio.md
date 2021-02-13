@@ -114,13 +114,4 @@ to delete istio:
 kubectl delete namespace istio-system
 ```
 
-to clean up minikube:
-delete from kubeconfig:
-```
-minikube stop
-```
-```
-minikube delete
-```
-
 > kubectl commands: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
