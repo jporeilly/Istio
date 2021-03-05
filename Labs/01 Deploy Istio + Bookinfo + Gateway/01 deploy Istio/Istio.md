@@ -2,15 +2,25 @@
 
 > Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/)  
 
+In this lab were going to:
+* install a clean instance of minikube - if required
+* deploy istio
+* deploy istio-ingress gateway
+
+
+
 #### <font color='red'>IMPORTANT:</font> 
 <strong>Please ensure you start with a clean environment. 
 If you have previously run minikube, you will need to delete the existing instance.</strong>
 
+stop an existing minikube instance:
+```
+minikube stop
+```
 to delete  minikube:
 ```
 minikube delete
 ```
-
 to start minikube:
 ```
 minikube start
@@ -23,6 +33,7 @@ in a new terminal start the loadbalancer:
 ```
 minikube tunnel
 ```
+
 ---
 
 ### <font color='red'> 1.1.1 Deploy Istio </font>
@@ -48,7 +59,7 @@ list istio profiles:
 ```
 istioctl profile list
 ```
-deploy Istio 'demo' profile:
+deploy Istio 'default' profile:
 ```
 istioctl install --set profile=default
 ```
@@ -71,7 +82,7 @@ istio has been deployed to its own namespace istio-system:
 ```
 kubectl get pods -n istio-system
 ```
-> all components have memory requests
+
 ---
 
 ### <font color='red'> 1.1.3 Configure auto proxy injection </font>
@@ -115,3 +126,5 @@ kubectl delete namespace istio-system
 ```
 
 > kubectl commands: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+
+---

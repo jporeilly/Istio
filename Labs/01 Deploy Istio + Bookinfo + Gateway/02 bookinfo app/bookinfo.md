@@ -1,4 +1,11 @@
 ## <font color='red'> 1.2 Deploying Bookinfo App </font>
+This example deploys a sample application composed of four separate microservices used to demonstrate various Istio features.
+
+In this lab were going to:
+* deploy bookinfo application
+* deploy an istio-ingress gateway
+* deploy kiali to observe the traffic telementry
+
 
 > modified version of the [Istio BookInfo sample app](https://github.com/istio/istio/tree/master/samples/bookinfo)
 ---

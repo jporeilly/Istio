@@ -3,68 +3,54 @@ Istio’s traffic routing rules let you easily control the flow of traffic and A
 
 Istio’s traffic management model relies on the Envoy proxies that are deployed along with your services. All traffic that your mesh services send and receive (data plane traffic) is proxied through Envoy, making it easy to direct and control traffic around your mesh without making any changes to your services.
 
+**This is a repeat of the previous Lab to setup your environment.  If you have successfully completed the previous Lab then start with Lab 01 Fault Tolerance**
+
+
 ---
-### <font color='red'> Delete Istio & Reset Minikube </font>
 
-> Adapted from the [Istio Quick Start](https://istio.io/docs/setup/kubernetes/quick-start/) 
+#### <font color='red'>IMPORTANT: ONLY REQUIRED IF YOUR INSTALLATION HAS FAILED </font> 
+<strong>Please ensure you start with a clean environment. 
+If you have previously run minikube, you will need to delete the existing instance.
 
-<font color='red'> You only need to delete Istio and Minikube if you wish to start with a clean deployment. </font>
+You do not need to do these steps if you have successfully completed the previous Labs - Deploy Istio + Bookinfo + Gateway </strong>
 
-first delete the Istio namespace
-```
-kubectl delete ns istio-system
-```
-the namesapce can also be deleted using K8s ext. in VS..
-
-ensure minikube is up and running:
-```
-minikube start
-```
-in anew terminal start the loadbalancer:
-```
-minikube tunnel
-```
-in a new terminal check everything:
-```
-minikube dashboard
-```
-
-to clean up:
+stop an existing minikube instance:
 ```
 minikube stop
 ```
+to delete  minikube:
 ```
 minikube delete
 ```
+to start minikube:
+```
+minikube start
+```
+check minikube status:
+```
+minikube status
+```
+in a new terminal start the loadbalancer:
+```
+minikube tunnel
+```
+
 ---
 
 ### <font color='red'> Deploy Istio </font>
-check whats running on Kubernetes:
-```
-kubectl get all
-```
-
 in a new terminal download istio (latest): 
 ```
 curl -L https://istio.io/downloadIstio | sh -
 ```
-in a new terminal download istio (course version 1.7.4):
+add the istioctl client to your path (follow instructions in download):
 ```
-curl -L https://istio.io/downloadIstio | ISTIO_VERSION=1.7.4 TARGET_ARCH=x86_64 sh -
-```
-add the istioctl client to your path:
-```
-export PATH="$PATH:/home/Istio/Istio-1.X.X/bin"
+$ export PATH=$PATH:$HOME/.istioctl/bin
 ```
 check istio:
 ```
 istioctl x precheck
 ```
-
-install istio demo configuration:
-list istio profiles:
-```
-istioctl profile list
+install istio default configuration:
 ```
 deploy Istio 'default' profile:
 ```
@@ -73,6 +59,7 @@ istioctl install --set profile=default
 check istio:
 ```
 kubectl -n istio-system get deploy
+```
 ```
 ---
 
@@ -148,4 +135,5 @@ sudo nano /etc/hosts
 10.x.x.x with IP address
 
 > check http://localhost/productpage
+
 ---
