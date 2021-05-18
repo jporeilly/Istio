@@ -53,9 +53,7 @@ check istio:
 ```
 istioctl x precheck
 ```
-
-install istio default configuration:
-list istio profiles:
+list istio profiles:  
 ```
 istioctl profile list
 ```
