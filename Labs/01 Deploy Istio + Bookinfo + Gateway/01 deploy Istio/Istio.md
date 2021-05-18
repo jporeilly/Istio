@@ -47,7 +47,7 @@ curl -L https://istio.io/downloadIstio | sh -
 ```
 add the istioctl client to your path (follow instructions in download):
 ```
-$ export PATH=$PATH:$HOME/.istioctl/bin
+$ export PATH=$PATH:$HOME/.istioctl/bin  # your path could be different
 ```
 check istio:
 ```
